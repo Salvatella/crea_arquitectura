@@ -63,8 +63,8 @@
 
 .results-list-grid {
   display: grid;
-  gap: 70px var(--site-gap);
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 90px calc(var(--site-gap) * 1.6);
+  grid-template-columns: repeat(4, minmax(0, 1fr));
 }
 
 .results-list-grid > li[hidden] {
