@@ -1,0 +1,236 @@
+.consulting-intro {
+  display: grid;
+  gap: var(--site-gap);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  padding: 68px var(--site-gutter) 84px;
+}
+
+.consulting-intro h1 {
+  font-family: var(--font-heading);
+  font-size: clamp(68px, 11vw, 164px);
+  font-weight: 500;
+  grid-column: 1 / span 7;
+  line-height: 0.88;
+}
+
+.consulting-intro__copy {
+  align-self: end;
+  display: flex;
+  flex-direction: column;
+  font-size: clamp(20px, 2.25vw, 34px);
+  gap: 18px;
+  grid-column: 8 / -1;
+  line-height: 1.15;
+}
+
+.consulting-hero {
+  margin: 0;
+  position: relative;
+}
+
+.consulting-hero img {
+  height: min(72svh, 820px);
+  object-fit: cover;
+  width: 100%;
+}
+
+.consulting-hero figcaption {
+  background: var(--site-bg);
+  bottom: 0;
+  font-size: 13px;
+  left: 0;
+  padding: 10px var(--site-gutter);
+  position: absolute;
+}
+
+.consulting-services {
+  display: grid;
+  gap: var(--site-gap);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  padding: 110px var(--site-gutter) 130px;
+}
+
+.consulting-services__heading {
+  grid-column: 1 / span 4;
+}
+
+.consulting-services__heading > p,
+.consulting-pair__label {
+  font-size: 13px;
+  margin-bottom: 28px;
+}
+
+.consulting-services__heading h2,
+.consulting-pair__copy h2 {
+  font-family: var(--font-heading);
+  font-size: clamp(40px, 4.4vw, 68px);
+  font-weight: 500;
+  line-height: 0.98;
+}
+
+.consulting-services__list {
+  grid-column: 6 / -1;
+}
+
+.consulting-services__list li {
+  align-items: start;
+  border-top: 1px solid var(--site-line);
+  display: grid;
+  gap: 18px;
+  grid-template-columns: 42px minmax(180px, 0.9fr) minmax(220px, 1.1fr);
+  padding-block: 18px 42px;
+}
+
+.consulting-services__list span,
+.consulting-services__list p {
+  font-size: 14px;
+}
+
+.consulting-services__list h3 {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 500;
+  line-height: 1.05;
+}
+
+.consulting-pair {
+  background: #151515;
+  color: #fff;
+  display: grid;
+  gap: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.consulting-pair > img {
+  height: 100%;
+  min-height: 680px;
+  object-fit: cover;
+  width: 100%;
+}
+
+.consulting-pair__copy {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  padding: 34px var(--site-gutter);
+}
+
+.consulting-pair__copy > p:not(.consulting-pair__label) {
+  font-size: 18px;
+  margin-top: auto;
+  max-width: 520px;
+}
+
+.consulting-pair__copy a {
+  border-top: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  font-size: 14px;
+  justify-content: space-between;
+  margin-top: 28px;
+  padding-top: 10px;
+}
+
+.consulting-footer {
+  align-items: end;
+  background: var(--site-bg);
+  border-top: 1px solid var(--site-line);
+  display: grid;
+  gap: var(--site-gap);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  padding: 80px var(--site-gutter) 24px;
+}
+
+.consulting-footer p {
+  font-family: var(--font-heading);
+  font-size: clamp(42px, 6vw, 86px);
+  grid-column: 1 / span 7;
+  line-height: 0.95;
+}
+
+.consulting-footer a:first-of-type {
+  grid-column: 8 / span 3;
+}
+
+.consulting-footer a:last-child {
+  font-weight: 500;
+  grid-column: 11 / -1;
+  justify-self: end;
+}
+
+@media (max-width: 900px) {
+  .consulting-intro h1 {
+    grid-column: 1 / span 6;
+  }
+
+  .consulting-intro__copy {
+    grid-column: 7 / -1;
+  }
+
+  .consulting-services__heading {
+    grid-column: 1 / span 5;
+  }
+
+  .consulting-services__list {
+    grid-column: 6 / -1;
+  }
+
+  .consulting-services__list li {
+    grid-template-columns: 32px 1fr;
+  }
+
+  .consulting-services__list p {
+    grid-column: 2;
+  }
+}
+
+@media (max-width: 767px) {
+  .consulting-intro,
+  .consulting-services {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .consulting-intro {
+    gap: 54px;
+    padding-block: 46px 58px;
+  }
+
+  .consulting-intro h1 {
+    font-size: 58px;
+  }
+
+  .consulting-hero img {
+    height: 64svh;
+  }
+
+  .consulting-services {
+    gap: 64px;
+    padding-block: 76px 88px;
+  }
+
+  .consulting-services__list li {
+    grid-template-columns: 32px 1fr;
+    padding-bottom: 32px;
+  }
+
+  .consulting-pair {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .consulting-pair > img {
+    min-height: 0;
+    aspect-ratio: 4 / 3;
+  }
+
+  .consulting-pair__copy {
+    min-height: 540px;
+  }
+
+  .consulting-footer {
+    align-items: start;
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+}

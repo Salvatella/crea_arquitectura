@@ -1,0 +1,231 @@
+.collection-hero {
+  border-bottom: 1px solid var(--site-line);
+  padding: 72px var(--site-gutter) 84px;
+}
+
+.collection-hero__grid {
+  display: grid;
+  gap: var(--site-gap);
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+}
+
+.collection-hero__title {
+  font-family: var(--font-heading);
+  font-size: clamp(64px, 10vw, 150px);
+  font-weight: 500;
+  grid-column: 1 / span 6;
+  letter-spacing: 0;
+  line-height: 0.9;
+}
+
+.collection-hero__description {
+  align-self: end;
+  font-size: clamp(20px, 2.2vw, 34px);
+  grid-column: 7 / -1;
+  line-height: 1.16;
+  max-width: 720px;
+}
+
+.project-filters {
+  align-items: center;
+  border-bottom: 1px solid var(--site-line);
+  display: flex;
+  gap: 10px 26px;
+  overflow-x: auto;
+  padding: 14px var(--site-gutter);
+  scrollbar-width: none;
+}
+
+.project-filters::-webkit-scrollbar {
+  display: none;
+}
+
+.project-filter {
+  background: none;
+  border: 0;
+  color: inherit;
+  cursor: pointer;
+  flex: 0 0 auto;
+  font-size: 14px;
+  opacity: 0.48;
+  padding: 5px 0;
+}
+
+.project-filter.is-active,
+.project-filter:hover,
+.project-filter:focus-visible {
+  opacity: 1;
+}
+
+.projects-listing {
+  padding: 20px var(--site-gutter) 120px;
+}
+
+.results-list-grid {
+  display: grid;
+  gap: 70px var(--site-gap);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.results-list-grid > li[hidden] {
+  display: none;
+}
+
+.project-card {
+  border-top: 1px solid var(--site-line);
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  padding-top: 8px;
+}
+
+.project-card__category {
+  font-size: 12px;
+  margin-bottom: 10px;
+}
+
+.project-card__thumbnail {
+  aspect-ratio: 4 / 5;
+  background: #ded9d3;
+  overflow: hidden;
+}
+
+.project-card__thumbnail img {
+  height: 100%;
+  object-fit: cover;
+  transition: filter 240ms ease, transform 500ms ease;
+  width: 100%;
+}
+
+.project-card:hover .project-card__thumbnail img {
+  filter: brightness(0.88);
+  transform: scale(1.012);
+}
+
+.project-card__footer {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding-top: 14px;
+}
+
+.project-card__title {
+  font-family: var(--font-heading);
+  font-size: clamp(24px, 2.2vw, 36px);
+  font-weight: 500;
+  line-height: 1.02;
+}
+
+.project-card-info {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 28px;
+}
+
+.project-card-info__block {
+  border-top: 1px solid rgba(5, 5, 5, 0.35);
+  padding-top: 7px;
+}
+
+.project-card-info__label {
+  color: var(--site-muted);
+  font-size: 11px;
+}
+
+.project-card-info__value {
+  font-size: 13px;
+  margin-top: 3px;
+}
+
+.project-card__cta {
+  align-items: center;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 500;
+  gap: 8px;
+  margin-top: 18px;
+}
+
+.project-card__cta svg {
+  fill: currentColor;
+  height: 18px;
+  width: 18px;
+}
+
+.projects-empty {
+  display: none;
+  font-family: var(--font-heading);
+  font-size: 28px;
+  padding-block: 80px;
+}
+
+.projects-empty.is-visible {
+  display: block;
+}
+
+@media (max-width: 1023px) {
+  .collection-hero {
+    padding-block: 56px 68px;
+  }
+
+  .collection-hero__title {
+    grid-column: 1 / span 5;
+  }
+
+  .collection-hero__description {
+    grid-column: 6 / -1;
+  }
+
+  .results-list-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 767px) {
+  .collection-hero {
+    padding-block: 42px 54px;
+  }
+
+  .collection-hero__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 42px;
+  }
+
+  .collection-hero__title {
+    font-size: 70px;
+  }
+
+  .collection-hero__description {
+    font-size: 20px;
+  }
+
+  .project-filters {
+    gap: 20px;
+  }
+
+  .projects-listing {
+    padding-bottom: 80px;
+  }
+
+  .results-list-grid {
+    gap-block: 54px;
+  }
+
+  .project-card__thumbnail {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 520px) {
+  .results-list-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card__thumbnail img {
+    transition: none;
+  }
+}

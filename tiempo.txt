@@ -1,0 +1,5 @@
+{
+    "tiempo": "7 horas",
+    "suscripcions": "1 codex, 2 claudes"
+}
+
