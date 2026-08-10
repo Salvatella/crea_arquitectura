@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Consulting. | CREA Arquitectura.</title>
-    <meta name="description" content="Consultoria, direcció i gestió de projectes d'arquitectura de CREA Arquitectura.">
+    <meta name="description" content="Serveis de consultoria, projectes i gestió d'obra de CREA Arquitectura.">
     <link rel="icon" type="image/png" href="../imgs/logos/logo.png">
     <link rel="stylesheet" href="../shared/general-styles.css">
     <link rel="stylesheet" href="consultoria.css">
@@ -22,12 +22,8 @@
         </div>
       </div>
       <div class="main-header__bar">
-        <a class="main-header__logo" href="../home/" aria-label="CREA Arquitectura, inici">
-          <img src="../imgs/logos/logo.png" alt="CREA Arquitectura">
-        </a>
-        <button class="main-header__menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
-          <span></span><span></span>
-        </button>
+        <a class="main-header__logo" href="../home/" aria-label="CREA Arquitectura, inici"><img src="../imgs/logos/logo.png" alt="CREA Arquitectura"></a>
+        <button class="main-header__menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span></button>
         <nav id="primary-navigation" class="nav-menu" aria-label="Navegació principal">
           <ul class="nav-menu__list">
             <li class="nav-menu__item"><a class="nav-menu__link is-active" href="../consultoria/">Consulting.</a></li>
@@ -39,64 +35,74 @@
       </div>
     </header>
 
-    <main id="MainContent" class="content-for-layout" tabindex="-1">
-      <section class="consulting-intro" aria-labelledby="consulting-title">
-        <h1 id="consulting-title">Consulting.</h1>
-        <div class="consulting-intro__copy">
-          <p>Acompanyem propietaris, empreses i institucions en tot el procés de transformació d'un espai.</p>
-          <p>Estratègia, projecte i obra treballen com una sola decisió.</p>
-        </div>
+    <main id="MainContent" class="consulting-page" tabindex="-1">
+      <section class="consulting-page__intro" aria-labelledby="consulting-title">
+        <p>Consulting.</p>
+        <h1 id="consulting-title">Serveis.</h1>
       </section>
 
-      <figure class="consulting-hero">
-        <img src="../imgs/hero_banner_imgs/2020 Celler NOU PLUS/Celle NOU PLUS (3).JPG" alt="Interior del Celler Nou Plus">
-        <figcaption>De la primera anàlisi a l'espai construït.</figcaption>
-      </figure>
+      <section class="consulting-accordions" aria-label="Serveis de consulting">
+        <article class="consulting-accordion">
+          <button class="consulting-accordion__trigger" type="button" aria-expanded="false" aria-controls="service-01">
+            <span class="consulting-accordion__number">01</span><span class="consulting-accordion__title">Per a immobiliàries</span><span class="consulting-accordion__symbol" aria-hidden="true"></span>
+          </button>
+          <div class="consulting-accordion__content" id="service-01" hidden>
+            <p class="consulting-accordion__summary">Convertim el potencial d'un immoble en un argument de venda.</p>
+            <ul class="consulting-accordion__details">
+              <li><h2>Estudi de l'estat actual de l'habitatge</h2><p>Analitzem l'estat de l'immoble per detectar-ne possibilitats, limitacions i punts forts de cara a la venda.</p></li>
+              <li><h2>Propostes d'opcions a futures reformes</h2><p>Plantegem opcions de reforma que mostren el potencial de l'immoble i augmenten el valor afegit.</p></li>
+            </ul>
+          </div>
+        </article>
 
-      <section class="consulting-services" aria-labelledby="services-title">
-        <div class="consulting-services__heading">
-          <p>Serveis.</p>
-          <h2 id="services-title">Una visió completa del projecte.</h2>
-        </div>
-        <ol class="consulting-services__list">
-          <li>
-            <span>01</span>
-            <h3>Estratègia i viabilitat.</h3>
-            <p>Analitzem el lloc, el programa, la normativa, els costos i les oportunitats abans de definir el projecte.</p>
-          </li>
-          <li>
-            <span>02</span>
-            <h3>Project management.</h3>
-            <p>Coordinem equips, terminis, pressupost i decisions perquè cada fase avanci amb informació clara.</p>
-          </li>
-          <li>
-            <span>03</span>
-            <h3>Direcció i seguiment d'obra.</h3>
-            <p>Controlem la qualitat de l'execució i mantenim la coherència entre projecte, detall i construcció.</p>
-          </li>
-          <li>
-            <span>04</span>
-            <h3>Transformació d'actius.</h3>
-            <p>Detectem nous usos i millores possibles en edificis existents, amb criteris funcionals i sostenibles.</p>
-          </li>
-        </ol>
+        <article class="consulting-accordion">
+          <button class="consulting-accordion__trigger" type="button" aria-expanded="false" aria-controls="service-02">
+            <span class="consulting-accordion__number">02</span><span class="consulting-accordion__title">Per a particulars</span><span class="consulting-accordion__symbol" aria-hidden="true"></span>
+          </button>
+          <div class="consulting-accordion__content" id="service-02" hidden>
+            <p class="consulting-accordion__summary">Acompanyament tècnic per reduir riscos i decidir amb criteri.</p>
+            <ul class="consulting-accordion__details consulting-accordion__details--plain">
+              <li>Projectes d'interiorisme personalitzats.</li>
+              <li>Assessorament en la contractació d'empresa de reformes.</li>
+              <li>Control de construcció fins al final.</li>
+              <li>Redacció de certificat de segona ocupació i obtenció de la cèdula d'habitabilitat.</li>
+              <li>Obtenció de l'etiqueta energètica.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="consulting-accordion">
+          <button class="consulting-accordion__trigger" type="button" aria-expanded="false" aria-controls="service-03">
+            <span class="consulting-accordion__number">03</span><span class="consulting-accordion__title">Management tècnic integrat</span><span class="consulting-accordion__symbol" aria-hidden="true"></span>
+          </button>
+          <div class="consulting-accordion__content" id="service-03" hidden>
+            <p class="consulting-accordion__summary">La gestió d'obra com a servei.</p>
+            <ul class="consulting-accordion__details consulting-accordion__details--plain">
+              <li>Direcció d'obra.</li>
+              <li>Project management.</li>
+              <li>Control de terminis.</li>
+              <li>Control de pressupost.</li>
+              <li>Control de qualitat.</li>
+              <li>Coordinació de tècnics.</li>
+              <li>Seguiment d'obra.</li>
+              <li>Interlocució amb client, constructora i col·laboradors.</li>
+            </ul>
+          </div>
+        </article>
       </section>
 
-      <section class="consulting-pair" aria-label="Procés de treball">
-        <img src="../imgs/hero_banner_imgs/2018 Oficines MÈXIC/Me17 Foto web 6.jpg" alt="Interior de les Oficines Mèxic">
-        <div class="consulting-pair__copy">
-          <p class="consulting-pair__label">Mètode.</p>
-          <h2>Escoltar, ordenar i construir.</h2>
-          <p>Convertim condicionants complexos en un procés comprensible. Cada decisió queda vinculada a l'ús, al pressupost i al valor a llarg termini.</p>
-          <a href="../projects/">Veure projectes <span aria-hidden="true">→</span></a>
-        </div>
+      <section id="contacte" class="consulting-contact" aria-labelledby="contact-title">
+        <div class="consulting-contact__header"><p>Contacte.</p><h2 id="contact-title">Parlem del teu projecte.</h2></div>
+        <form class="consulting-contact__form" novalidate>
+          <div class="consulting-contact__fields">
+            <label>Nom i cognoms<input type="text" name="name" placeholder="Nom i cognoms"></label>
+            <label>Correu electrònic<input type="email" name="email" placeholder="Correu electrònic"></label>
+            <label>Telèfon<input type="tel" name="phone" placeholder="Telèfon"></label>
+            <label>Missatge<textarea name="message" rows="1" placeholder="Explica'ns en què et podem ajudar"></textarea></label>
+          </div>
+          <button type="submit">Enviar consulta <span aria-hidden="true">→</span></button>
+        </form>
       </section>
     </main>
-
-    <footer id="contacte" class="consulting-footer">
-      <p>Parlem del teu projecte.</p>
-      <a href="mailto:info@creaarquitectura.com">info@creaarquitectura.com</a>
-      <a href="../home/">CREA Arquitectura.</a>
-    </footer>
   </body>
 </html>

@@ -14,14 +14,6 @@
   src: url("https://watchhouse.com/cdn/shop/t/221/assets/Balto-Medium.otf?v=44404204925061886291761664541");
 }
 
-@font-face {
-  font-display: swap;
-  font-family: "Tiempos Headline";
-  font-style: normal;
-  font-weight: 500;
-  src: url("https://watchhouse.com/cdn/shop/t/221/assets/TiemposHeadline-Medium.otf?v=94275543287697449091761664542");
-}
-
 :root {
   --site-bg: #f9f4ee;
   --site-ink: #050505;
@@ -193,8 +185,6 @@ ul {
   padding-block: 20px;
 }
 
-.nav-menu__link.is-active,
-.nav-menu__link:hover,
 .nav-menu__link:focus-visible {
   opacity: 0.5;
 }

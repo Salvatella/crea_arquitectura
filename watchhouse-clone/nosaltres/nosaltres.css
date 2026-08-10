@@ -367,6 +367,34 @@
   z-index: 1;
 }
 
+.team-half-banner__linkedin {
+  align-items: center;
+  color: #fff;
+  display: inline-flex;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  position: absolute;
+  right: var(--site-gutter);
+  top: 22px;
+  transform: translateY(-8px);
+  transition: opacity 260ms ease, transform 260ms ease;
+  z-index: 2;
+}
+
+.team-half-banner__linkedin svg {
+  fill: currentColor;
+  height: 30px;
+  width: 30px;
+}
+
+.team-half-banner:hover .team-half-banner__linkedin,
+.team-half-banner:focus-within .team-half-banner__linkedin {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
 .team-half-banner__overlay h2 {
   font-family: var(--font-heading);
   font-size: clamp(30px, 3.3vw, 54px);
