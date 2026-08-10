@@ -5,7 +5,6 @@
   footer.id = 'site-footer';
   footer.className = 'site-footer';
   footer.innerHTML = `
-    <img src="../imgs/hero_banner_imgs/2023. Cases AGE/baixa_003.jpg" alt="" class="site-footer__background" draggable="false">
     <div class="site-footer__overlay">
       <div class="site-footer__social">
         <div class="newsletter-form">
@@ -60,7 +59,7 @@
           </ul></div>
         </div>
       </div>
-      <div class="site-footer__posts">
+      <div class="site-footer__posts footer-social-posts">
         <div class="footer-social-posts__grid">
           <a class="footer-social-post" href="#"><img src="../imgs/hero_banner_imgs/2016. Casa ASSUTZENA/Ass34 Foto web 02 CUINA-EXTERIOR.jpg" alt="Projecte CREA" draggable="false"></a>
           <a class="footer-social-post" href="#"><img src="../imgs/hero_banner_imgs/2018 Oficines MÈXIC/Me17 Foto web 6.jpg" alt="Projecte CREA" draggable="false"></a>

@@ -11,7 +11,7 @@
 
 .collection-hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(64px, 10vw, 150px);
+  font-size: clamp(28px, 6vw, 90px);
   font-weight: 500;
   grid-column: 1 / span 6;
   letter-spacing: 0;
@@ -64,7 +64,12 @@
 .results-list-grid {
   display: grid;
   gap: 90px calc(var(--site-gap) * 1.6);
+  grid-auto-rows: 1fr;
   grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.results-list-grid > li {
+  display: flex;
 }
 
 .results-list-grid > li[hidden] {
@@ -77,6 +82,7 @@
   flex-direction: column;
   min-width: 0;
   padding-top: 8px;
+  width: 100%;
 }
 
 .project-card__category {
@@ -114,6 +120,7 @@
   font-size: clamp(24px, 2.2vw, 36px);
   font-weight: 500;
   line-height: 1.02;
+  min-height: 2.04em;
 }
 
 .project-card-info {
@@ -194,7 +201,7 @@
   }
 
   .collection-hero__title {
-    font-size: 70px;
+    font-size: 32px;
   }
 
   .collection-hero__description {
