@@ -209,7 +209,7 @@ ul {
 .site-footer {
   --footer-gutter: 20px;
   background: var(--site-bg);
-  min-height: 460px;
+  min-height: 340px;
   padding-block: var(--footer-gutter);
   position: relative;
 }
@@ -234,7 +234,7 @@ ul {
   flex-direction: column;
   gap: 20px;
   margin-inline: var(--site-gutter);
-  min-height: 420px;
+  min-height: 300px;
   padding: 26px 28px;
   position: sticky;
   z-index: 1;
