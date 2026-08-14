@@ -22,12 +22,40 @@
       facts: [['Projecte i direcció.', 'José Luis de la Fuente i Cristina Casabona, arquitectes'], ['Localització.', 'Barcelona, Barcelonès']],
       folder: '2019. Reforma HOMER/', images: ['general_homer_1.png', 'cuina_homer_1.png', 'cuina_homer_2.png', 'cuina_homer_3.png', 'general_homero_2.png', 'general_homer_1_complete.png', 'Ho13 Fotos 2022-06-09 Fotos Óscar (1).JPG', 'Ho13 Fotos 2022-06-09 Fotos Óscar (5).JPG', 'Ho13 Fotos 2022-06-09 Fotos Óscar (8).JPG']
     },
+    'casa-troana': {
+      title: 'Casa TROANA.', place: 'Residencial', year: '2023',
+      lead: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      body: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit, mi vitae ultrices finibus, mauris augue facilisis justo, at feugiat nulla arcu a nisi.', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'],
+      facts: [['Projecte i direcció.', 'José Luis de la Fuente i Cristina Casabona, arquitectes'], ['Any.', '2023']],
+      folder: '2023. Casa TROANA/', images: ['troana_01.jpg', 'troana_02.jpg', 'troana_03.jpg', 'troana_04.jpg', 'troana_05.jpg', 'troana_06.jpg', 'troana_07.jpg', 'troana_08.jpg', 'troana_09.jpg', 'troana_10.jpg', 'troana_11.jpg', 'troana_12.png']
+    },
+    'cases-age': {
+      title: 'Cases AGE.', place: 'Residencial', year: '2023',
+      lead: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+      body: ['Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc hendrerit, mi vitae ultrices finibus, mauris augue facilisis justo, at feugiat nulla arcu a nisi.', 'Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.'],
+      facts: [['Projecte i direcció.', 'José Luis de la Fuente i Cristina Casabona, arquitectes'], ['Any.', '2023']],
+      folder: '2023. Cases AGE/', images: [1, 3, 5, 6, 8, 9, 10, 13, 14, 15, 16, 17, 18, 19, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 36, 38, 41, 42, 43, 45, 46, 47, 48, 49, 50, 51, 52, 53].map((number) => `baixa_${String(number).padStart(3, '0')}.jpg`)
+    },
+    'casa-petunia': {
+      title: 'Casa PETÚNIA.', place: 'Castelldefels · Baix Llobregat', year: '2018',
+      lead: 'Una casa unifamiliar aïllada que aprofita una orientació privilegiada al sud i les vistes sobre el mar.',
+      body: ['Projecte per a una casa unifamiliar aïllada.', 'Ubicació privilegiada amb orientació a sud i magnífiques vistes sobre el mar. Es gestiona la transició entre el públic i el privat amb una implantació adaptada al terreny.'],
+      facts: [['Projecte i direcció.', 'José Luis de la Fuente i Cristina Casabona, arquitectes'], ['Col·laboració projecte instal·lacions.', 'BCNOVA TÈCNICS enginyeria'], ["Direcció d'execució i control de qualitat.", 'Gustavo Díaz, arquitecte tècnic'], ['Localització.', 'Castelldefels, Baix Llobregat']],
+      folder: '2018. Casa PETÚNIA/', images: ['Petunia_ia.png', 'Petúnia 27 (1).jpg', 'Petúnia 27 (1).png', 'Petúnia 27 (2).jpg', 'Petúnia 27 (3).jpg', 'Petúnia 27 (4).jpg', 'Petúnia 27 (5).jpg', 'Petúnia 27 (6).jpg']
+    },
+    'habitatges-ab': {
+      title: 'Edifici ARCADI BALAGUER.', place: 'Castelldefels · Baix Llobregat', year: '2017',
+      lead: 'Un edifici urbà de 12 habitatges, locals i aparcament, amb una clara voluntat d’integrar-se a l’entorn.',
+      body: ["Projecte urbà d'un edifici per a 12 habitatges, locals i aparcament. La intervenció suposa l'enderroc de part de l'edificació existent, rehabilitació d'una estructura d'acer molt interessant i una remunta de quatre plantes per configurar el nou conjunt.", "Imatge d'un edifici innovador amb un marcat interès per integrar-se a l'entorn."],
+      facts: [['Projecte i direcció.', 'En col·laboració amb Tuomo Jauhiainen, arquitecte'], ['Col·laboració projecte instal·lacions.', 'BCNOVA TÈCNICS enginyeria'], ["Direcció d'execució i control de qualitat.", 'Gustavo Díaz, arquitecte tècnic'], ['Localització.', 'Castelldefels, Baix Llobregat']],
+      folder: '2017. Habitatges AB/', images: ['hab_ab_01.png', 'hab_ab_02.png', 'hab_ab_03.png', 'hab_ab_04.jpg', 'hab_ab_04.png', 'hab_ab_05.jpg', 'hab_ab_05.png', 'hab_ab_06.png', 'hab_ab_08.png', 'hab_ab_09.png', 'hab_ab_10.png', 'hab_ab_22.png', 'hab_ab_23.png', 'hab_ab_24.png', 'hab_ab_25.png', 'hab_ab_26.png', 'hab_ab_27.png', 'hab_ab_31.png']
+    },
     'casa-valldoreix': {
       title: 'Casa VALLDOREIX.', place: 'Sant Cugat del Vallès · Vallès Occidental', year: '2003',
       lead: "La reforma integral d'una casa suburbana que conserva la seva essència domèstica i aire noucentista.",
       body: ["Projecte de reforma integral d'una casa unifamiliar aïllada. La intervenció buida l'edificació original i n'amplia el volum, mantenint-ne l'essència domèstica i conservant alguns trets d'aire noucentista.", "La proposta actualitza la volumetria i la façana, incorporant nous elements contemporanis sense esborrar completament el caràcter de la casa original. L'interior es reorganitza per generar espais més oberts, funcionals i lluminosos, amb un joc de doble espai a la zona comuna."],
       facts: [['Projecte i direcció.', 'José Luis de la Fuente i Cristina Casabona, arquitectes'], ['Localització.', 'Sant Cugat del Vallès, Vallès Occidental']],
-      folder: '2003. Casa VALLDOREIX/', images: ['front_valldoreix.png', 'inside_peak_valldoreix.png', 'fachada_despres.png', 'fachada_abans.png', 'torre_despres.png', 'torre abans.png', 'step4_interior_valldoreix_1.png', 'step4_interior_valldoreix_2.png', 'Valldoreix foto 2a.avif', 'Valldoreix foto 5_JPG.avif', 'Valldoreix foto 6_JPG.avif', 'Valldoreix foto 6_JPG.jpg', 'Valldoreix foto 7_JPG.avif']
+      folder: '2003. Casa VALLDOREIX/', images: ['front_valldoreix.png', 'inside_peak_valldoreix.png', 'fachada_despres.png', 'fachada_abans.png', 'torre_despres.png', 'torre abans.png', 'step4_interior_valldoreix_1.png', 'step4_interior_valldoreix_2.png', 'Valldoreix foto 6_JPG.avif', 'Valldoreix foto 7_JPG.avif', 'valldo_9.png']
     }
   };
   const slug = new URLSearchParams(window.location.search).get('project');

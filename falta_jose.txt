@@ -1,0 +1,6 @@
+{
+    falta: {
+        1: "fotos del projecte La Quadra"
+        2: "text explicacio projecte casa troana"
+    }
+}

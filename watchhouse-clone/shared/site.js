@@ -64,7 +64,7 @@
           <a class="footer-social-post" href="#"><img src="../imgs/hero_banner_imgs/2016. Casa ASSUTZENA/Ass34 Foto web 02 CUINA-EXTERIOR.jpg" alt="Projecte CREA" draggable="false"></a>
           <a class="footer-social-post" href="#"><img src="../imgs/hero_banner_imgs/2018 Oficines MÈXIC/Me17 Foto web 6.jpg" alt="Projecte CREA" draggable="false"></a>
           <a class="footer-social-post" href="#"><img src="../imgs/hero_banner_imgs/2018. Casa PETÚNIA/Petúnia 27 (3).jpg" alt="Projecte CREA" draggable="false"></a>
-          <a class="footer-social-post" href="#"><img src="../imgs/hero_banner_imgs/2023. Casa TROANA/SVB008.jpg" alt="Projecte CREA" draggable="false"></a>
+          <a class="footer-social-post" href="#"><img src="../imgs/hero_banner_imgs/2023. Casa TROANA/troana_03.jpg" alt="Projecte CREA" draggable="false"></a>
         </div>
         <a class="footer-social-posts__handle" href="#">@creaarquitectura</a>
       </div>
