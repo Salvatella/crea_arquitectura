@@ -118,16 +118,6 @@
   position: relative;
 }
 
-.project-card__thumbnail::after {
-  border: 1px solid currentColor;
-  bottom: 14px;
-  content: "";
-  height: 22px;
-  position: absolute;
-  right: 14px;
-  width: 15px;
-}
-
 .project-card__thumbnail img {
   height: 100%;
   object-fit: cover;
@@ -150,7 +140,7 @@
 
 .project-card__title {
   font-family: var(--font-heading);
-  font-size: 24px;
+  font-size: 21px;
   font-weight: 500;
   line-height: 1.1;
   min-height: 2.2em;

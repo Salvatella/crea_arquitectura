@@ -54,13 +54,10 @@
       scrollAmount        = guideH * steps.length;
       wrapper.style.height = (guideH + scrollAmount) + 'px';
 
-      // Each instance occupies its own vertical scroll band.
-      // scrollStart is the sum of all previous wrappers' heights.
-      scrollStart = 0;
-      const allWrappers = document.querySelectorAll('.product-guide-scroll-wrapper');
-      for (let i = 0; i < instanceIndex; i++) {
-        scrollStart += allWrappers[i].offsetHeight;
-      }
+      // Begin the horizontal movement only when this guide actually reaches
+      // the page viewport. Using the accumulated wrapper heights ignored the
+      // header above the first guide, so it loaded already translated.
+      scrollStart = wrapper.getBoundingClientRect().top + window.scrollY;
 
       // Steps have mixed widths (hero/duo 90%, normal 72%), so a per-step
       // multiply is wrong. Slide by the real overflow: full track content

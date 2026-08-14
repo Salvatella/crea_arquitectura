@@ -16,6 +16,4 @@
       setOpen(item, willOpen);
     });
   });
-
-  document.querySelector('.consulting-contact__form')?.addEventListener('submit', (event) => event.preventDefault());
 })();

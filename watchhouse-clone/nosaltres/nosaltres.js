@@ -14,6 +14,4 @@
     setActive(activeIndex);
     window.setInterval(() => setActive(activeIndex + 1), 3000);
   });
-
-  document.querySelector('.about-contact-form__form')?.addEventListener('submit', (event) => event.preventDefault());
 })();

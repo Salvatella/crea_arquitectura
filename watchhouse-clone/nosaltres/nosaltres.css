@@ -461,7 +461,8 @@
 }
 
 .about-contact-form__intro {
-  grid-column: 1 / -1;
+  grid-column: 1;
+  grid-row: 1;
 }
 
 .about-contact-form__eyebrow {
@@ -485,6 +486,8 @@
   display: flex;
   flex-direction: column;
   gap: 44px;
+  grid-column: 1;
+  grid-row: 2;
 }
 
 .about-contact-detail__label {
@@ -514,7 +517,10 @@
 }
 
 .about-contact-form__form {
-  align-self: end;
+  align-self: start;
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  margin-top: 48px;
 }
 
 .about-contact-form__fields {
@@ -527,7 +533,7 @@
   color: #55514c;
   display: flex;
   flex-direction: column;
-  font-size: 12px;
+  font-size: 16px;
   gap: 8px;
 }
 
@@ -540,6 +546,7 @@
   background: transparent;
   border: 0;
   border-bottom: 1px solid currentColor;
+  font-size: 16px;
   border-top: 1px solid currentColor;
   color: var(--site-ink);
   font: inherit;
@@ -568,7 +575,7 @@
   color: inherit;
   cursor: pointer;
   display: flex;
-  font-size: 11px;
+  font-size: 16px;
   justify-content: space-between;
   letter-spacing: 0.2em;
   margin-top: 34px;
@@ -588,6 +595,13 @@
     grid-template-columns: 1fr;
     padding: 48px 40px;
     row-gap: 48px;
+  }
+
+  .about-contact-form__intro,
+  .about-contact-form__details,
+  .about-contact-form__form {
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .about-contact-form__details {
