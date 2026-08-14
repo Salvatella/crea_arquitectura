@@ -241,6 +241,55 @@ body.template-article img {
   object-position: center bottom;
 }
 
+.product-guide-step--valldoreix {
+  gap: 24px;
+}
+
+.product-guide-step--hero.product-guide-step--valldoreix {
+  flex-basis: 90%;
+}
+
+.product-guide-step--homer {
+  flex-basis: 48%;
+}
+
+.product-guide-step--hero.product-guide-step--homer {
+  flex-basis: 80%;
+}
+
+.product-guide-step--homer-duo {
+  flex-basis: 78%;
+}
+
+.product-guide-step--homer .product-guide-step__image {
+  object-fit: contain;
+}
+
+.product-guide-step--hero.product-guide-step--homer .product-guide-step__image {
+  object-fit: cover;
+  object-position: center top;
+}
+
+.product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__image {
+  object-position: center bottom;
+}
+
+@media (min-width: 1024px) {
+  .product-guide-step--homer-duo .product-guide-step__media {
+    align-items: flex-end;
+    gap: 8px;
+    justify-content: flex-start;
+    margin-top: 32px;
+  }
+
+  .product-guide-step--homer-duo .product-guide-step__image {
+    flex: 1 1 0;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+  }
+}
+
 .product-guide-step--image-only {
   flex-basis: 34%;
 }
