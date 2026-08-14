@@ -1,0 +1,44 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editors and local workspace settings
+.vscode/
+.idea/
+*.code-workspace
+
+# Dependency folders and build output
+node_modules/
+dist/
+build/
+coverage/
+
+# Logs and temporary files
+*.log
+*.tmp
+*.temp
+
+# Local environment files
+.env
+.env.*
+!.env.example
+
+# Working exports and source assets not intended for the website
+exports/
+tmp/
+scratch/
+watchhouse-clone/imgs/originales/
+*.psd
+*.ai
+*.sketch
+*.fig
+*.blend
+*.zip
+*.rar
+
+# Videos should use an external host or Git LFS, not normal Git
+*.mp4
+*.mov
+*.avi
+*.webm

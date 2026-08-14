@@ -48,14 +48,14 @@
       lead: 'Un edifici urbà de 12 habitatges, locals i aparcament, amb una clara voluntat d’integrar-se a l’entorn.',
       body: ["Projecte urbà d'un edifici per a 12 habitatges, locals i aparcament. La intervenció suposa l'enderroc de part de l'edificació existent, rehabilitació d'una estructura d'acer molt interessant i una remunta de quatre plantes per configurar el nou conjunt.", "Imatge d'un edifici innovador amb un marcat interès per integrar-se a l'entorn."],
       facts: [['Projecte i direcció.', 'En col·laboració amb Tuomo Jauhiainen, arquitecte'], ['Col·laboració projecte instal·lacions.', 'BCNOVA TÈCNICS enginyeria'], ["Direcció d'execució i control de qualitat.", 'Gustavo Díaz, arquitecte tècnic'], ['Localització.', 'Castelldefels, Baix Llobregat']],
-      folder: '2017. Habitatges AB/', images: ['hab_ab_01.png', 'hab_ab_02.png', 'hab_ab_03.png', 'hab_ab_04.jpg', 'hab_ab_04.png', 'hab_ab_05.jpg', 'hab_ab_05.png', 'hab_ab_06.png', 'hab_ab_08.png', 'hab_ab_09.png', 'hab_ab_10.png', 'hab_ab_22.png', 'hab_ab_23.png', 'hab_ab_24.png', 'hab_ab_25.png', 'hab_ab_26.png', 'hab_ab_27.png', 'hab_ab_31.png']
+      folder: '2017. Habitatges AB/', images: ['hab_ab_01.webp', 'hab_ab_02.webp', 'hab_ab_03.webp', 'hab_ab_04.jpg', 'hab_ab_04.webp', 'hab_ab_05.jpg', 'hab_ab_05.webp', 'hab_ab_06.webp', 'hab_ab_08.webp', 'hab_ab_09.webp', 'hab_ab_10.webp', 'hab_ab_22.webp', 'hab_ab_23.webp', 'hab_ab_24.webp', 'hab_ab_25.webp', 'hab_ab_26.webp', 'hab_ab_27.webp', 'hab_ab_31.webp']
     },
     'casa-valldoreix': {
       title: 'Casa VALLDOREIX.', place: 'Sant Cugat del Vallès · Vallès Occidental', year: '2003',
       lead: "La reforma integral d'una casa suburbana que conserva la seva essència domèstica i aire noucentista.",
       body: ["Projecte de reforma integral d'una casa unifamiliar aïllada. La intervenció buida l'edificació original i n'amplia el volum, mantenint-ne l'essència domèstica i conservant alguns trets d'aire noucentista.", "La proposta actualitza la volumetria i la façana, incorporant nous elements contemporanis sense esborrar completament el caràcter de la casa original. L'interior es reorganitza per generar espais més oberts, funcionals i lluminosos, amb un joc de doble espai a la zona comuna."],
       facts: [['Projecte i direcció.', 'José Luis de la Fuente i Cristina Casabona, arquitectes'], ['Localització.', 'Sant Cugat del Vallès, Vallès Occidental']],
-      folder: '2003. Casa VALLDOREIX/', images: ['front_valldoreix.png', 'inside_peak_valldoreix.png', 'fachada_despres.png', 'fachada_abans.png', 'torre_despres.png', 'torre abans.png', 'step4_interior_valldoreix_1.png', 'step4_interior_valldoreix_2.png', 'Valldoreix foto 6_JPG.avif', 'Valldoreix foto 7_JPG.avif', 'valldo_9.png']
+      folder: '2003. Casa VALLDOREIX/', images: ['front_valldoreix.png', 'inside_peak_valldoreix.png', 'fachada_despres.png', 'fachada_abans.png', 'torre_despres.png', 'torre abans.png', 'step4_interior_valldoreix_1.png', 'step4_interior_valldoreix_2.png', 'Valldoreix foto 6_JPG.avif', 'Valldoreix foto 7_JPG.avif', 'valldo_9.webp']
     }
   };
   const slug = new URLSearchParams(window.location.search).get('project');
