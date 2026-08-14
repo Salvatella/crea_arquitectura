@@ -104,12 +104,12 @@
           </div>
         </div>
 
-        <form class="about-contact-form__form" novalidate>
+        <form class="about-contact-form__form"  action="https://formsubmit.co/ferran.salvatella.ochoa@gmail.com" method="POST" novalidate>
           <div class="about-contact-form__fields">
-            <label>Nom i cognoms<input type="text" name="name" placeholder="Nom i cognoms"></label>
-            <label>Correu electrònic<input type="email" name="email" placeholder="Correu electrònic"></label>
-            <label>Telèfon<input type="tel" name="phone" placeholder="Telèfon"></label>
-            <label>Missatge<textarea name="message" rows="1" placeholder="Explica'ns en què et podem ajudar"></textarea></label>
+            <label for="nombre">Nom i cognoms<input type="text" name="name" placeholder="Nom i cognoms" id="nombre"></label>
+            <label for="email">Correu electrònic<input type="email" name="email" id="email" placeholder="Correu electrònic"></label>
+            <label for="telefono">Telèfon<input type="tel" name="phone" id="telefono" placeholder="Telèfon"></label>
+            <label for="mensaje">Missatge<textarea name="message" id="mensaje" rows="1" placeholder="Explica'ns en què et podem ajudar"></textarea></label>
           </div>
           <button type="submit">Enviar consulta <span aria-hidden="true">→</span></button>
         </form>
