@@ -341,6 +341,37 @@ body.template-article img {
   height: min(var(--img-h, 52vh), 100%);
 }
 
+/* Valldoreix: every image sits on the bottom edge and keeps its native ratio. */
+@media (min-width: 1024px) {
+  .product-guide-step--photo-duo.product-guide-step--valldoreix .product-guide-step__media {
+    align-items: flex-end;
+    justify-content: flex-start;
+  }
+
+  .product-guide-step--photo-duo.product-guide-step--valldoreix .product-guide-step__image {
+    flex: 0 0 auto;
+    object-fit: contain;
+    object-position: center bottom;
+    width: auto;
+  }
+
+  .product-guide-step--photo-duo.product-guide-step--valldoreix-interior {
+    flex-basis: 88%;
+  }
+
+  .product-guide-step--photo-duo.product-guide-step--valldoreix-tower {
+    flex-basis: 100%;
+  }
+
+  .product-guide-step--photo-duo.product-guide-step--valldoreix-facade {
+    flex-basis: 70%;
+  }
+
+  .product-guide-step--hero.product-guide-step--valldoreix-hero {
+    flex-basis: 78%;
+  }
+}
+
 .product-guide--reversed .product-guide__steps-viewport {
   grid-column: 1 / span 8;
   grid-row: 1;
