@@ -133,6 +133,16 @@ body.template-article img {
   margin-bottom: 8px;
 }
 
+.product-guide__sidebar .text-14-book,
+.product-guide-step .text-14-book,
+.product-guide-step .rte {
+  font-family: var(--font-body);
+  font-size: 16px;
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1.5;
+}
+
 .product-guide__steps-viewport {
   grid-column: 5 / -1;
   height: 100%;
@@ -254,7 +264,7 @@ body.template-article img {
 }
 
 .product-guide-step--hero.product-guide-step--homer {
-  flex-basis: 80%;
+  flex-basis: 68%;
 }
 
 .product-guide-step--homer-duo {
@@ -266,12 +276,43 @@ body.template-article img {
 }
 
 .product-guide-step--hero.product-guide-step--homer .product-guide-step__image {
-  object-fit: cover;
-  object-position: center top;
+  object-fit: contain;
+  object-position: center bottom;
+}
+
+@media (min-width: 1024px) {
+  .product-guide-step--hero.product-guide-step--homer .product-guide-step__media {
+    align-self: stretch;
+    aspect-ratio: 1.345;
+    flex: 0 1 auto;
+    margin-top: auto;
+  }
 }
 
 .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__image {
   object-position: center bottom;
+}
+
+@media (min-width: 1024px) {
+  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) {
+    position: relative;
+  }
+
+  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__content {
+    bottom: calc(52vh + 24px);
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__media {
+    bottom: 0;
+    flex: 0 0 52vh;
+    height: 52vh;
+    left: 0;
+    position: absolute;
+  }
 }
 
 @media (min-width: 1024px) {
@@ -291,7 +332,7 @@ body.template-article img {
 }
 
 .product-guide-step--image-only {
-  flex-basis: 34%;
+  flex-basis: 48%;
 }
 
 .product-guide-step--image-only .product-guide-step__media {
@@ -345,29 +386,72 @@ body.template-article img {
 @media (min-width: 1024px) {
   .product-guide-step--photo-duo.product-guide-step--valldoreix .product-guide-step__media {
     align-items: flex-end;
-    justify-content: flex-start;
+    display: grid;
+    flex: 1 1 auto;
+    grid-template-columns: var(--valldoreix-image-columns, 1fr 1fr);
+    justify-content: stretch;
+    width: 100%;
   }
 
   .product-guide-step--photo-duo.product-guide-step--valldoreix .product-guide-step__image {
-    flex: 0 0 auto;
+    height: min(var(--img-h, 52vh), 100%);
+    min-width: 0;
     object-fit: contain;
     object-position: center bottom;
-    width: auto;
+    width: 100%;
   }
 
   .product-guide-step--photo-duo.product-guide-step--valldoreix-interior {
-    flex-basis: 88%;
+    --valldoreix-image-columns: 0.8fr 1.5fr;
+    flex-basis: 82%;
+    position: relative;
+  }
+
+  .product-guide-step--valldoreix-interior .product-guide-step__content {
+    bottom: calc(44vh + 24px);
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .product-guide-step--valldoreix-interior .product-guide-step__media {
+    bottom: 0;
+    flex: 0 0 44vh;
+    height: 44vh;
+    left: 0;
+    position: absolute;
   }
 
   .product-guide-step--photo-duo.product-guide-step--valldoreix-tower {
-    flex-basis: 100%;
+    --valldoreix-image-columns: 1fr 1fr;
+    flex-basis: 74%;
   }
 
   .product-guide-step--photo-duo.product-guide-step--valldoreix-facade {
+    --valldoreix-image-columns: 1fr 1fr;
     flex-basis: 70%;
+    position: relative;
+  }
+
+  .product-guide-step--valldoreix-facade .product-guide-step__content {
+    bottom: calc(52vh + 24px);
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .product-guide-step--valldoreix-facade .product-guide-step__media {
+    bottom: 0;
+    flex: 0 0 52vh;
+    height: 52vh;
+    left: 0;
+    position: absolute;
   }
 
   .product-guide-step--hero.product-guide-step--valldoreix-hero {
+    --valldoreix-image-columns: 1.12fr 0.8fr;
     flex-basis: 78%;
   }
 }
