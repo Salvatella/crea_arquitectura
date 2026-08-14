@@ -1,6 +1,6 @@
 .collection-hero {
   border-bottom: 1px solid var(--site-line);
-  padding: 72px var(--site-gutter) 84px;
+  padding: 48px var(--site-gutter) 48px;
 }
 
 .collection-hero__grid {
@@ -11,19 +11,21 @@
 
 .collection-hero__title {
   font-family: var(--font-heading);
-  font-size: clamp(28px, 6vw, 90px);
+  font-size: clamp(44px, 5.2vw, 76px);
   font-weight: 500;
-  grid-column: 1 / span 6;
-  letter-spacing: 0;
-  line-height: 0.9;
+  grid-column: 1 / span 7;
+  letter-spacing: -0.035em;
+  line-height: 0.94;
+  margin: 0;
 }
 
 .collection-hero__description {
   align-self: end;
-  font-size: clamp(20px, 2.2vw, 34px);
-  grid-column: 7 / -1;
-  line-height: 1.16;
-  max-width: 720px;
+  font-size: clamp(20px, 2vw, 30px);
+  grid-column: 8 / -1;
+  line-height: 1.15;
+  margin: 0;
+  max-width: 580px;
 }
 
 .project-filters {
@@ -46,7 +48,7 @@
   color: inherit;
   cursor: pointer;
   flex: 0 0 auto;
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.48;
   padding: 5px 0;
 }
@@ -155,11 +157,15 @@
 }
 
 .project-card-info {
-  display: grid;
+  display: flex;
   gap: 8px;
-  grid-template-columns: minmax(0, auto) minmax(0, min-content);
+  justify-content: space-between;
   margin-top: 0;
   min-height: 34px;
+}
+
+.project-card-info__block:last-child {
+  text-align: right;
 }
 
 .project-card-info__block {
@@ -186,7 +192,7 @@
   font-weight: 500;
   justify-content: space-between;
   margin-top: auto;
-  min-height: 55px;
+  min-height: 40px;
 }
 
 .project-card__cta svg {
@@ -207,18 +213,6 @@
 }
 
 @media (max-width: 1023px) {
-  .collection-hero {
-    padding-block: 56px 68px;
-  }
-
-  .collection-hero__title {
-    grid-column: 1 / span 5;
-  }
-
-  .collection-hero__description {
-    grid-column: 6 / -1;
-  }
-
   .results-list-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -226,25 +220,17 @@
 
 @media (max-width: 767px) {
   .collection-hero {
-    padding-block: 42px 54px;
-  }
-
-  .collection-hero__grid {
-    display: flex;
-    flex-direction: column;
-    gap: 42px;
-  }
-
-  .collection-hero__title {
-    font-size: 32px;
-  }
-
-  .collection-hero__description {
-    font-size: 20px;
+    display: none;
   }
 
   .project-filters {
-    gap: 20px;
+    flex-wrap: wrap;
+    gap: 12px 20px;
+    overflow-x: visible;
+  }
+
+  .project-filter {
+    font-size: 12px;
   }
 
   .projects-listing {

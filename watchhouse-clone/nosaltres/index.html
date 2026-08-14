@@ -23,25 +23,23 @@
       </div>
       <div class="main-header__bar">
         <a class="main-header__logo" href="../home/" aria-label="CREA Arquitectura, inici">
-          <img src="../imgs/logos/logo.png" alt="CREA Arquitectura">
+          <img src="../imgs/logos/logo_sinfondo.png" alt="CREA Arquitectura">
         </a>
         <button class="main-header__menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation">
           <span></span><span></span>
         </button>
         <nav id="primary-navigation" class="nav-menu" aria-label="Navegació principal">
           <ul class="nav-menu__list">
-            <li class="nav-menu__item"><a class="nav-menu__link" href="../consultoria/">Consulting.</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="../consultoria/">Consultoria.</a></li>
             <li class="nav-menu__item"><a class="nav-menu__link" href="../projects/">Projectes.</a></li>
             <li class="nav-menu__item"><a class="nav-menu__link is-active" href="../nosaltres/">Nosaltres.</a></li>
           </ul>
         </nav>
-        <a class="main-header__search" href="#contacte">Contacte.</a>
       </div>
     </header>
 
     <main id="MainContent" class="team-page" tabindex="-1">
       <section class="team-page__intro" aria-labelledby="about-title">
-        <p>CREA Arquitectura · Barcelona</p>
         <h1 id="about-title">Nosaltres.</h1>
         <p class="team-page__lead">Dues mirades complementàries per pensar, projectar i acompanyar l'arquitectura.</p>
       </section>
@@ -57,7 +55,7 @@
             <a class="team-half-banner__linkedin" href="#" aria-label="LinkedIn" target="_blank" rel="noreferrer">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.44-2.13 2.94v5.67H9.35V9h3.42v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.07 2.07 0 1 1 0-4.14 2.07 2.07 0 0 1 0 4.14zM7.12 20.45H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.73v20.54C0 23.22.79 24 1.77 24h20.45c.98 0 1.78-.78 1.78-1.73V1.73C24 .77 23.2 0 22.22 0z"/></svg>
             </a>
-            <h2><a href="https://es.linkedin.com/in/jos%C3%A9-luis-de-la-fuente-atance-50340a2b" target="_blank" rel="noreferrer">José Luis de la Fuente Atance.</a></h2>
+            <h2><a href="https://es.linkedin.com/in/jos%C3%A9-luis-de-la-fuente-atance-50340a2b" target="_blank" rel="noreferrer">José Luis de la Fuente<br>Atance.</a></h2>
             <div class="team-half-banner__copy">
               <p>Experiència en projectes d'arquitectura, direcció de projectes, gestió d'equips multidisciplinaris, coordinació de projectes i direcció d'obres de gran volum.</p>
               <p>Objectiu clar en la recerca i el desenvolupament d'arquitectura i construcció sostenibles, i en la reutilització i la rehabilitació com a eines de creixement i desenvolupament.</p>
@@ -85,9 +83,40 @@
           </div>
         </article>
       </section>
+      <section id="contacte" class="about-contact-form" aria-labelledby="contact-form-title">
+        <div class="about-contact-form__intro">
+          <p class="about-contact-form__eyebrow">Contacte</p>
+          <h2 id="contact-form-title">Parlem del teu projecte.</h2>
+        </div>
+
+        <div class="about-contact-form__details">
+          <div class="about-contact-detail">
+            <p class="about-contact-detail__label">Despatx</p>
+            <address>
+              Ronda del General Mitre, 93 Principal<br>
+              Sarrià-Sant Gervasi<br>
+              08022 Barcelona
+            </address>
+          </div>
+          <div class="about-contact-detail">
+            <p class="about-contact-detail__label">Escriu-nos</p>
+            <a href="mailto:info@creaarquitectura.com">info@creaarquitectura.com</a>
+          </div>
+        </div>
+
+        <form class="about-contact-form__form" novalidate>
+          <div class="about-contact-form__fields">
+            <label>Nom i cognoms<input type="text" name="name" placeholder="Nom i cognoms"></label>
+            <label>Correu electrònic<input type="email" name="email" placeholder="Correu electrònic"></label>
+            <label>Telèfon<input type="tel" name="phone" placeholder="Telèfon"></label>
+            <label>Missatge<textarea name="message" rows="1" placeholder="Explica'ns en què et podem ajudar"></textarea></label>
+          </div>
+          <button type="submit">Enviar consulta <span aria-hidden="true">→</span></button>
+        </form>
+      </section>
     </main>
 
-    <footer id="contacte" class="about-contact">
+    <footer class="about-contact">
       <p>Construïm la conversa.</p>
       <div>
         <a href="mailto:info@creaarquitectura.com">info@creaarquitectura.com</a>

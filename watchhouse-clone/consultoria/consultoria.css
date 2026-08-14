@@ -3,7 +3,7 @@
 }
 
 .consulting-page__intro {
-  padding: 72px 0 72px;
+  padding: 48px 0 48px;
 }
 
 .consulting-page__intro > p,
@@ -60,6 +60,7 @@
 }
 
 .consulting-accordion__symbol {
+  align-self: center;
   display: block;
   height: 12px;
   justify-self: end;
@@ -86,8 +87,29 @@
 .consulting-accordion.is-open .consulting-accordion__symbol::after { transform: rotate(-45deg); }
 
 .consulting-accordion__content {
+  display: block;
+  max-height: 0;
   overflow: hidden;
-  padding: 2px 0 28px 56px;
+  transition: max-height 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.consulting-accordion.is-open .consulting-accordion__content {
+  max-height: 900px;
+}
+
+.consulting-accordion__inner {
+  min-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding: 22px 0 32px 56px;
+  transform: translateY(-8px);
+  transition: opacity 260ms ease, transform 420ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+.consulting-accordion.is-open .consulting-accordion__inner {
+  opacity: 1;
+  transform: none;
+  transition-delay: 60ms;
 }
 
 .consulting-accordion__summary {
@@ -138,7 +160,24 @@
   margin: 6px 0 0;
 }
 
-.consulting-accordion__details--plain { gap: 18px 54px; }
+/* Llista simple: columnes CSS en comptes de grid perquè un ítem que ocupa
+   dues línies no infli la fila i separi el següent. Flux vertical, gap uniforme. */
+.consulting-accordion__details--plain {
+  column-count: 2;
+  column-gap: 54px;
+  display: block;
+  gap: 0;
+  grid-template-columns: none;
+}
+
+.consulting-accordion__details--plain li {
+  break-inside: avoid;
+  margin-bottom: 18px;
+}
+
+.consulting-accordion__details--plain li:last-child {
+  margin-bottom: 0;
+}
 
 .consulting-contact {
   background: #ede8e2;
@@ -219,6 +258,7 @@
   .consulting-accordion__title { font-size: 22px; }
   .consulting-accordion__content { padding: 2px 0 24px 40px; }
   .consulting-accordion__details { gap: 18px; grid-template-columns: 1fr; margin-top: 24px; }
+  .consulting-accordion__details--plain { column-count: 1; }
   .consulting-contact { display: block; margin-top: 64px; padding: 20px; }
   .consulting-contact__form { margin-top: 42px; }
   .consulting-contact__fields { grid-template-columns: 1fr; }
@@ -226,5 +266,7 @@
 
 @media (prefers-reduced-motion: reduce) {
   .consulting-accordion__symbol::before,
-  .consulting-accordion__symbol::after { transition: none; }
+  .consulting-accordion__symbol::after,
+  .consulting-accordion__content,
+  .consulting-accordion__inner { transition: none; }
 }

@@ -1,0 +1,84 @@
+{
+  "projectes": [
+    {
+      "nom": "Club Petanca",
+      "categoria": "equipaments",
+      "ubicacio": "Santa Coloma de Gramenet"
+    },
+    {
+      "nom": "Aparcament Vall Palau",
+      "categoria": "equipaments",
+      "ubicacio": "Sant Andreu de la Barca"
+    },
+    {
+      "nom": "Aparcament Laguna Lanau",
+      "categoria": "equipaments",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Escola Cultura Pràctica",
+      "categoria": "equipaments",
+      "ubicacio": "Terrassa"
+    },
+    {
+      "nom": "Escola Sadako",
+      "categoria": "equipaments",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Concurs Biblioteca Olesa",
+      "categoria": "equipaments",
+      "ubicacio": "Olesa de Montserrat"
+    },
+    {
+      "nom": "Centre Encuny",
+      "categoria": "equipaments",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Oficines RP Economistes",
+      "categoria": "oficines_i_industrial",
+      "ubicacio": "Reus"
+    },
+    {
+      "nom": "Oficines Mèxic",
+      "categoria": "oficines_i_industrial",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Oficines Breda",
+      "categoria": "oficines_i_industrial",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Celler Nou Plus",
+      "categoria": "oficines_i_industrial",
+      "ubicacio": "La Nou de Gaià"
+    },
+    {
+      "nom": "Consultes Clínica del Remei",
+      "categoria": "sanitari",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Clínica Casa Jove Marina",
+      "categoria": "sanitari",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Dexeus Hospital General de Catalunya",
+      "categoria": "sanitari",
+      "ubicacio": "Sant Cugat del Vallès"
+    },
+    {
+      "nom": "Clínica Dexme-Midlife",
+      "categoria": "sanitari",
+      "ubicacio": "Barcelona"
+    },
+    {
+      "nom": "Dexeus Hospital Viamed Tarragona",
+      "categoria": "sanitari",
+      "ubicacio": "Tarragona"
+    }
+  ]
+}
