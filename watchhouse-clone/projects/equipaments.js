@@ -6,7 +6,7 @@
       lead: 'La seu social d’un petit club esportiu, concebuda de manera cooperativa amb els seus usuaris.',
       body: ['Projecte d’equipament com a seu social d’un club esportiu de petites dimensions, concebut de forma cooperativa amb els usuaris amb resultats satisfactoris per tots els intervinents.'],
       facts: [['Projecte i direcció.', 'José Luis de la Fuente, arquitecte'], ['Col·laboració.', 'Vanessa Campos, arquitecta'], ['Client.', 'Ajuntament de Santa Coloma de Gramenet'], ['Localització.', 'Santa Coloma de Gramenet, Barcelonès']],
-      folder: '2005. Club PETANCA/', images: ['Club PETANCA Foto 1.jpg', 'Club PETANCA Foto 2.jpg']
+      folder: '2005. Club PETANCA/', images: ['club_petanca_01.jpg', 'club_petanca_02.jpg']
     },
     'escola-sadako': {
       title: 'Escola SADAKO.', place: 'Barcelona · Barcelonès', year: '2015',
@@ -20,7 +20,7 @@
       lead: 'Un aparcament públic que transforma un antic edifici industrial en una nova plaça verda.',
       body: ['Projecte d’un aparcament públic substituint un antic edifici industrial en desús, solucionat en diferents nivells adaptats a una topografia de pendent molt pronunciada, i proporcionant una nova plaça pública verda sobre la coberta, urbanitzada posteriorment.'],
       facts: [['Projecte i direcció.', 'Jordi Nadal, Josep Puigdengoles i José Luis de la Fuente, arquitectes'], ['Col·laboració.', 'NOLAC ENGINYERS, estructura'], ['Client.', 'Ajuntament de Barcelona'], ['Localització.', 'Barcelona, Barcelonès']],
-      folder: '2017. Aparcament LAGUNA LANAO/', images: ['Aparcament LAGUNA LANAO Foto 1.JPG', 'Aparcament LAGUNA LANAO Foto 2.JPG', 'laguna_12.png', 'laguna_13.png', 'laguna_14.png', 'laguna_15.png', 'laguna_16.png']
+      folder: '2017. Aparcament LAGUNA LANAO/', images: ['aparcament_laguna_lanao_01.jpg', 'aparcament_laguna_lanao_02.jpg', 'laguna_12.png', 'laguna_13.png', 'laguna_14.png', 'laguna_15.png', 'laguna_16.png']
     },
     'aparcament-vall-palau': {
       title: 'Aparcament VALL PALAU.', place: 'Sant Andreu de la Barca · Baix Llobregat', year: '2006',
@@ -41,6 +41,6 @@
   document.querySelector('#MainContent').innerHTML = `
     <section class="project-intro" aria-labelledby="project-title"><div class="project-intro__copy"><p class="project-intro__eyebrow">Equipaments · ${project.year}</p><h1 id="project-title">${project.title.replace('.', '').replace(' ', '<br>')}</h1><p class="project-intro__place">${project.place}</p></div><a class="project-intro__scroll" href="#gallery">Descobrir el projecte <span aria-hidden="true">↓</span></a></section>
     <section class="project-story" aria-label="Descripció del projecte"><div class="project-story__lead"><p>${project.lead}</p></div><div class="project-story__body">${project.body.map((text) => `<p>${text}</p>`).join('')}</div><dl class="project-facts">${project.facts.map(([term, definition]) => `<div><dt>${term}</dt><dd>${definition}</dd></div>`).join('')}</dl></section>
-    <section id="gallery" class="sticky-gallery ${project.images.length <= 2 ? 'sticky-gallery--compact' : ''}" aria-label="Galeria de ${project.title}"><div class="sticky-gallery__column sticky-gallery__column--left">${left.map(image).join('')}</div><div class="sticky-gallery__column sticky-gallery__column--center">${image(hero, true)}<div class="sticky-gallery__caption"><span>01 — ${String(project.images.length).padStart(2, '0')}</span><span>${project.title}</span></div></div><div class="sticky-gallery__column sticky-gallery__column--right">${right.map(image).join('')}</div></section>
+    <section id="gallery" class="sticky-gallery ${project.images.length <= 2 ? 'sticky-gallery--compact' : ''}" aria-label="Galeria de ${project.title}"><div class="sticky-gallery__column sticky-gallery__column--left">${left.map(image).join('')}</div><div class="sticky-gallery__column sticky-gallery__column--center">${image(hero, true)}</div><div class="sticky-gallery__column sticky-gallery__column--right">${right.map(image).join('')}</div></section>
     <nav class="project-next" aria-label="Navegació de projectes"><a href="./" class="project-next__back">← Tots els projectes</a><a href="#site-header" class="project-next__top">Tornar a l'inici ↑</a></nav>`;
 })();
