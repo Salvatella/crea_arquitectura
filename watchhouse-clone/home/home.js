@@ -6,11 +6,27 @@
   const slides = Array.from(section.querySelectorAll('[data-hero-slide]'));
   const thumbs = Array.from(section.querySelectorAll('[data-hero-thumb]'));
   const bullets = Array.from(section.querySelectorAll('[data-hero-go-to]'));
-  const interval = 6000;
+  const interval = 4000;
   let activeIndex = 0;
   let startedAt = performance.now();
   let isPaused = false;
+  let pausedAt = null;
   let rafId = null;
+
+  const pause = () => {
+    if (!isPaused) {
+      isPaused = true;
+      pausedAt = performance.now();
+    }
+  };
+
+  const resume = () => {
+    if (isPaused && pausedAt !== null) {
+      startedAt += performance.now() - pausedAt;
+      pausedAt = null;
+    }
+    isPaused = false;
+  };
 
   const setActive = (index) => {
     activeIndex = (index + slides.length) % slides.length;
@@ -61,18 +77,16 @@
 
   thumbs.forEach((thumb) => {
     thumb.addEventListener('mouseenter', () => {
-      setActive(Number(thumb.dataset.index0));
-      isPaused = true;
+      pause();
     });
   });
 
   section.addEventListener('mouseenter', () => {
-    isPaused = true;
+    pause();
   });
 
   section.addEventListener('mouseleave', () => {
-    isPaused = false;
-    startedAt = performance.now();
+    resume();
   });
 
   setActive(0);

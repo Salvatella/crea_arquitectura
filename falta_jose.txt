@@ -1,6 +1,15 @@
 {
     falta: {
         1: "fotos del projecte La Quadra"
-        2: "text explicacio projecte casa troana"
+        2: "text explicacio projecte casa TROANA"
+        3. "2019. Escola CULTURA PRÀCTICA" Es render + falta explicacio
+        4: "2020. Biblioteca OLESA" Es render + falta explicacio
+        5: "2022. Centre assistencial ENCUNY" Es render + falta explicacio
+        6:  Equipaments, Club PETANCA falten fotos
+        7: "2016. Habitatges COMERÇ" Es render + falta explicacio, La faig?
+        8: "2020. Habitatges ÀG" Es render + falta explicacio
+        9: "2021. Cases SH10" Es render + falta explicacio
+        10: 2023. Cases AGE" no te explicacio
+
     }
 }

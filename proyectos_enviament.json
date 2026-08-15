@@ -1,0 +1,56 @@
+{
+  "categorias": [
+    {
+      "categoria": "CREA Web EQUIPAMENTS",
+      "proyectos": [
+        { "carpeta": "2005. Club PETANCA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2006. Aparcament VALL PALAU", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2015. Escola SADAKO", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2017. Aparcament LAGUNA LANAO", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2019. Escola CULTURA PRÀCTICA", "en_grid": true, "tiene_detalle": false, "tiene_explicacion_real": false },
+        { "carpeta": "2020. Biblioteca OLESA", "en_grid": true, "tiene_detalle": false, "tiene_explicacion_real": false },
+        { "carpeta": "2022. Centre assistencial ENCUNY", "en_grid": true, "tiene_detalle": false, "tiene_explicacion_real": false }
+      ]
+    },
+    {
+      "categoria": "CREA Web MANAGEMENT i OBRA",
+      "proyectos": []
+    },
+    {
+      "categoria": "CREA Web OFICINES i INDUSTRIAL",
+      "proyectos": [
+        { "carpeta": "2017 Oficines RP ECONOMISTES", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2018 Oficines MÈXIC", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2019 Oficines BREDA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2020 Celler NOU PLUS", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true }
+      ]
+    },
+    {
+      "categoria": "CREA Web RESIDENCIAL",
+      "proyectos": [
+        { "carpeta": "2003. Casa LA SELVA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2003. Casa VALLDOREIX", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2015. Casa LA QUADRA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2016. Casa ASSUTZENA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2016. Habitatges COMERÇ", "en_grid": true, "tiene_detalle": false, "tiene_explicacion_real": false },
+        { "carpeta": "2017. Habitatges AB", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2018. Casa PETÚNIA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2019. Reforma HOMER", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2020. Habitatges ÀG", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": false },
+        { "carpeta": "2021. Cases SH10", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": false },
+        { "carpeta": "2023. Casa TROANA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": false },
+        { "carpeta": "2023. Cases AGE", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": false }
+      ]
+    },
+    {
+      "categoria": "CREA Web SANITARI",
+      "proyectos": [
+        { "carpeta": "2016. clínica del REMEI", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2019. Casa JOVE MARINA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2022. DEXEUS Hospital General de Catalunya", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2025. clínica DEXME-MIDLIFE", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true },
+        { "carpeta": "2025. DEXEUS Hospital Viamed TARRAGONA", "en_grid": true, "tiene_detalle": true, "tiene_explicacion_real": true }
+      ]
+    }
+  ]
+}
