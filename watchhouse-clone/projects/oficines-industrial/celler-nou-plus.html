@@ -3,17 +3,16 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Consultoria. | CREA Arquitectura.</title>
-    <meta name="description" content="Serveis de consultoria, projectes i gestió d'obra de CREA Arquitectura.">
-    <link rel="icon" type="image/png" href="../imgs/logos/fav_icon_logo.png">
-    <link rel="stylesheet" href="../shared/general-styles.css">
-    <link rel="stylesheet" href="consultoria.css">
-    <script defer src="../shared/site.js"></script>
-    <script defer src="consultoria.js"></script>
+    <title>Celler NOU PLUS. | Crea Arquitectura.</title>
+    <meta name="description" content="Celler NOU PLUS a La Nou de Gaià. Projecte de Crea Arquitectura.">
+    <link rel="icon" type="image/png" href="../../imgs/logos/fav_icon_logo.png">
+    <link rel="stylesheet" href="../../shared/general-styles.css">
+    <link rel="stylesheet" href="../project-detail.css?v=3">
   </head>
-  <body class="template-page template-consulting">
+  <body class="project-page">
     <a class="visually-hidden" href="#MainContent">Anar al contingut</a>
-    <header id="site-header" class="main-header">
+
+    <header id="site-header" class="main-header project-header">
       <div class="language-bar" aria-label="Selector d'idioma">
         <div class="language-bar__inner">
           <button class="language-bar__button" type="button" aria-pressed="false">English</button>
@@ -22,93 +21,61 @@
         </div>
       </div>
       <div class="main-header__bar">
-        <a class="main-header__logo" href="../home/" aria-label="CREA Arquitectura, inici"><img src="../imgs/logos/logo_sinfondo.png" alt="CREA Arquitectura"></a>
-        <button class="main-header__menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open navigation"><span></span><span></span></button>
+        <a class="main-header__logo" href="../../home/" aria-label="Crea Arquitectura, inici">
+          <img src="../../imgs/logos/logo_sinfondo.png" alt="Crea Arquitectura">
+        </a>
+        <button class="main-header__menu-button" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Obrir navegació"><span></span><span></span></button>
         <nav id="primary-navigation" class="nav-menu" aria-label="Navegació principal">
           <ul class="nav-menu__list">
-            <li class="nav-menu__item"><a class="nav-menu__link is-active" href="../consultoria/">Consultoria.</a></li>
-            <li class="nav-menu__item"><a class="nav-menu__link" href="../projects/">Projectes.</a></li>
-            <li class="nav-menu__item"><a class="nav-menu__link" href="../nosaltres/">Nosaltres.</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="../../consultoria/">Consultoria.</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link is-active" href="../">Projectes.</a></li>
+            <li class="nav-menu__item"><a class="nav-menu__link" href="../../nosaltres/">Nosaltres.</a></li>
           </ul>
         </nav>
       </div>
     </header>
 
-    <main id="MainContent" class="consulting-page" tabindex="-1">
-      <section class="consulting-page__intro" aria-labelledby="consulting-title">
-        <h1 id="consulting-title">Els nostres serveis.</h1>
+    <main id="MainContent" tabindex="-1">
+      <section class="project-intro" aria-labelledby="project-title">
+        <div class="project-intro__copy">
+          <p class="project-intro__eyebrow">Oficines i industrial · 2020</p>
+          <h1 id="project-title">Celler<br>NOU PLUS.</h1>
+          <p class="project-intro__place">La Nou de Gaià · Tarragonès</p>
+        </div>
+        <a class="project-intro__scroll" href="#gallery">Descobrir el projecte <span aria-hidden="true">↓</span></a>
       </section>
 
-      <section class="consulting-accordions" aria-label="Serveis de consultoria">
-        <article class="consulting-accordion">
-          <button class="consulting-accordion__trigger" type="button" aria-expanded="false" aria-controls="service-01">
-            <span class="consulting-accordion__number">01</span><span class="consulting-accordion__title">Per a immobiliàries</span><span class="consulting-accordion__symbol" aria-hidden="true"></span>
-          </button>
-          <div class="consulting-accordion__content" id="service-01">
-            <div class="consulting-accordion__inner">
-              <p class="consulting-accordion__summary">Convertim el potencial d'un immoble en un argument de venda.</p>
-              <ul class="consulting-accordion__details">
-                <li><h2>Estudi de l'estat actual de l'habitatge</h2><p>Analitzem l'estat de l'immoble per detectar-ne possibilitats, limitacions i punts forts de cara a la venda.</p></li>
-                <li><h2>Propostes d'opcions a futures reformes</h2><p>Plantegem opcions de reforma que mostren el potencial de l'immoble i augmenten el valor afegit.</p></li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="consulting-accordion">
-          <button class="consulting-accordion__trigger" type="button" aria-expanded="false" aria-controls="service-02">
-            <span class="consulting-accordion__number">02</span><span class="consulting-accordion__title">Per a particulars</span><span class="consulting-accordion__symbol" aria-hidden="true"></span>
-          </button>
-          <div class="consulting-accordion__content" id="service-02">
-            <div class="consulting-accordion__inner">
-              <p class="consulting-accordion__summary">Acompanyament tècnic per reduir riscos i decidir amb criteri.</p>
-              <ul class="consulting-accordion__details consulting-accordion__details--plain">
-                <li>Projectes d'interiorisme personalitzats.</li>
-                <li>Assessorament en la contractació d'empresa de reformes.</li>
-                <li>Control de construcció fins al final.</li>
-                <li>Redacció de certificat de segona ocupació i obtenció de la cèdula d'habitabilitat.</li>
-                <li>Obtenció de l'etiqueta energètica.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
-
-        <article class="consulting-accordion">
-          <button class="consulting-accordion__trigger" type="button" aria-expanded="false" aria-controls="service-03">
-            <span class="consulting-accordion__number">03</span><span class="consulting-accordion__title">Management tècnic integrat</span><span class="consulting-accordion__symbol" aria-hidden="true"></span>
-          </button>
-          <div class="consulting-accordion__content" id="service-03">
-            <div class="consulting-accordion__inner">
-              <p class="consulting-accordion__summary">La gestió d'obra com a servei.</p>
-              <ul class="consulting-accordion__details consulting-accordion__details--plain">
-                <li>Direcció d'obra.</li>
-                <li>Project management.</li>
-                <li>Control de terminis.</li>
-                <li>Control de pressupost.</li>
-                <li>Control de qualitat.</li>
-                <li>Coordinació de tècnics.</li>
-                <li>Seguiment d'obra.</li>
-                <li>Interlocució amb client, constructora i col·laboradors.</li>
-              </ul>
-            </div>
-          </div>
-        </article>
+      <section class="project-story" aria-label="Descripció del projecte">
+        <div class="project-story__lead">
+          <p>Un celler íntim dins del nucli urbà que fa dialogar l'activitat agrícola amb la vida del poble.</p>
+        </div>
+        <div class="project-story__body">
+          <p>Encàrrec per un projecte molt íntim i personal d’un celler dins d’un nucli urbà que ha de fer dialogar un ús industrial i agrícola amb la vida d’un poble, obrint el seu interior amb una sala de tast que s’obre a ús públic tot amagada a les golfes del celler.</p>
+          <p>Materials directes, naturals, reutilitzats, sense artifici, com el producte que es crea al seu interior.</p>
+        </div>
+        <dl class="project-facts">
+          <div><dt>Projecte i direcció.</dt><dd>José Luis de la Fuente i Cristina Casabona, arquitectes</dd></div>
+          <div><dt>Client.</dt><dd>Celler NOU PLUS</dd></div>
+          <div><dt>Localització.</dt><dd>La Nou de Gaià, Tarragonès</dd></div>
+        </dl>
       </section>
 
-      <section id="contacte" class="consulting-contact" aria-labelledby="contact-title">
-        <div class="consulting-contact__header"><p>Contacte.</p><h2 id="contact-title">Parlem del teu projecte.</h2></div>
-        <form class="consulting-contact__form" action="https://formsubmit.co/ferran.salvatella.ochoa@gmail.com" method="POST" novalidate>
-          <div class="consulting-contact__fields">
-            <label>Nom i cognoms<input type="text" name="name" placeholder="Nom i cognoms"></label>
-            <label>Correu electrònic<input type="email" name="email" placeholder="Correu electrònic"></label>
-            <label>Telèfon<input type="tel" name="phone" placeholder="Telèfon"></label>
-            <label>Missatge<textarea name="message" rows="1" placeholder="Explica'ns en què et podem ajudar"></textarea></label>
-          </div>
-          <button type="submit">Enviar consulta <span aria-hidden="true">→</span></button>
-        </form>
+      <section id="gallery" class="celler-gallery" aria-label="Galeria del Celler NOU PLUS">
+        <figure class="celler-gallery__featured"><img src="../../imgs/Enviament%201%202026-05-09/Enviament%201%202025-05-09/CREA%20Web%20OFICINES%20i%20INDUSTRIAL/2020%20Celler%20NOU%20PLUS/celler_nou_plus_01.jpg" alt="Vista exterior del Celler NOU PLUS"></figure>
+        <figure><img loading="lazy" src="../../imgs/Enviament%201%202026-05-09/Enviament%201%202025-05-09/CREA%20Web%20OFICINES%20i%20INDUSTRIAL/2020%20Celler%20NOU%20PLUS/celler_nou_plus_02.jpg" alt="Interior del Celler NOU PLUS"></figure>
+        <figure><img loading="lazy" src="../../imgs/Enviament%201%202026-05-09/Enviament%201%202025-05-09/CREA%20Web%20OFICINES%20i%20INDUSTRIAL/2020%20Celler%20NOU%20PLUS/celler_nou_plus_03.jpg" alt="Espai interior del celler"></figure>
+        <figure><img loading="lazy" src="../../imgs/Enviament%201%202026-05-09/Enviament%201%202025-05-09/CREA%20Web%20OFICINES%20i%20INDUSTRIAL/2020%20Celler%20NOU%20PLUS/celler_nou_plus_04.jpg" alt="Sala de tast del celler"></figure>
+        <figure><img loading="lazy" src="../../imgs/Enviament%201%202026-05-09/Enviament%201%202025-05-09/CREA%20Web%20OFICINES%20i%20INDUSTRIAL/2020%20Celler%20NOU%20PLUS/celler_nou_plus_05.jpg" alt="Detall dels materials del celler"></figure>
+        <figure><img loading="lazy" src="../../imgs/Enviament%201%202026-05-09/Enviament%201%202025-05-09/CREA%20Web%20OFICINES%20i%20INDUSTRIAL/2020%20Celler%20NOU%20PLUS/celler_nou_plus_06.jpg" alt="Detall de l'arquitectura interior"></figure>
       </section>
+
+      <nav class="project-next" aria-label="Navegació de projectes">
+        <a href="../" class="project-next__back">← Tots els projectes</a>
+        <a href="#site-header" class="project-next__top">Tornar a l'inici ↑</a>
+      </nav>
     </main>
-    <footer id="site-footer" class="site-footer">
+    <script src="../../shared/site.js"></script>
+    <script src="../project-detail.js"></script>    <footer id="site-footer" class="site-footer">
       <div class="site-footer__overlay">
         <div class="site-footer__social">
           <div class="newsletter-form">
@@ -166,17 +133,17 @@
             <div class="footer-column__content">
               <ul>
                 <li>
-                  <a class="footer-column__link" href="../nosaltres/">
+                  <a class="footer-column__link" href="../../nosaltres/">
                     Nosaltres
                   </a>
                 </li>
                 <li>
-                  <a class="footer-column__link" href="../conceptes/">
+                  <a class="footer-column__link" href="../../conceptes/">
                     Conceptes
                   </a>
                 </li>
                 <li>
-                  <a class="footer-column__link" href="../consultoria/">
+                  <a class="footer-column__link" href="../../consultoria/">
                     Consultoria
                   </a>
                 </li>
@@ -196,7 +163,7 @@
             <div class="footer-column__content">
               <ul>
                 <li>
-                  <a class="footer-column__link" href="../projects/">
+                  <a class="footer-column__link" href="../../projects/">
                     Residencial
                   </a>
                 </li>
@@ -252,16 +219,16 @@
         <div class="site-footer__posts">
           <div class="footer-social-posts__grid">
             <a class="footer-social-post" href="#">
-              <img src="../imgs/hero_banner_imgs/2016. Casa ASSUTZENA/Ass34 Foto web 02 CUINA-EXTERIOR.jpg" alt="Projecte CREA" draggable="false">
+              <img src="../../imgs/hero_banner_imgs/2016. Casa ASSUTZENA/Ass34 Foto web 02 CUINA-EXTERIOR.jpg" alt="Projecte CREA" draggable="false">
             </a>
             <a class="footer-social-post" href="#">
-              <img src="../imgs/hero_banner_imgs/2018 Oficines MÈXIC/Me17 Foto web 6.jpg" alt="Projecte CREA" draggable="false">
+              <img src="../../imgs/hero_banner_imgs/2018 Oficines MÈXIC/Me17 Foto web 6.jpg" alt="Projecte CREA" draggable="false">
             </a>
             <a class="footer-social-post" href="#">
-              <img src="../imgs/hero_banner_imgs/2018. Casa PETÚNIA/Petúnia 27 (3).jpg" alt="Projecte CREA" draggable="false">
+              <img src="../../imgs/hero_banner_imgs/2018. Casa PETÚNIA/Petúnia 27 (3).jpg" alt="Projecte CREA" draggable="false">
             </a>
             <a class="footer-social-post" href="#">
-              <img src="../imgs/hero_banner_imgs/2023. Casa TROANA/troana_03.jpg" alt="Projecte CREA" draggable="false">
+              <img src="../../imgs/hero_banner_imgs/2023. Casa TROANA/troana_03.jpg" alt="Projecte CREA" draggable="false">
             </a>
           </div>
           <a class="footer-social-posts__handle" href="#">

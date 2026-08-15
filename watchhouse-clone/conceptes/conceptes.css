@@ -402,7 +402,7 @@ body.template-article img {
   }
 
   .product-guide-step--photo-duo.product-guide-step--valldoreix-interior {
-    --valldoreix-image-columns: 0.8fr 1.5fr;
+    --valldoreix-image-columns: 1fr 1fr;
     flex-basis: 82%;
     position: relative;
   }
