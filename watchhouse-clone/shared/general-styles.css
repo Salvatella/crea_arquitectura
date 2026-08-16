@@ -216,11 +216,6 @@ ul {
   position: relative;
 }
 
-/* Les pàgines de detall utilitzen la seva pròpia paleta de projecte. */
-.project-page .site-footer {
-  background: var(--project-paper);
-}
-
 .site-footer::after {
   display: none;
 }

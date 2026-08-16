@@ -1,0 +1,7 @@
+.project-page { --project-gallery-gap: 3px; }
+
+.project-landscape-gallery { background: var(--project-ink); display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(2, minmax(0, 1fr)); padding: var(--project-gallery-gap); }
+.project-landscape-gallery figure { align-items: center; background: #101812; display: flex; height: min(42vw, 70vh); justify-content: center; margin: 0; }
+.project-landscape-gallery img { display: block; height: 100%; object-fit: contain; width: 100%; }
+
+@media (max-width: 767px) { .project-landscape-gallery { display: block; padding: 0; } .project-landscape-gallery figure { height: auto; margin-bottom: var(--project-gallery-gap); } .project-landscape-gallery img { height: auto; width: 100%; } }

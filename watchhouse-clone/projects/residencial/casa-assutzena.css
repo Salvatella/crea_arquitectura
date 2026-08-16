@@ -1,0 +1,6 @@
+.project-page { --project-gallery-gap: 3px; }
+
+.sticky-gallery__column--center { display: grid; gap: var(--project-gallery-gap); grid-template-rows: repeat(3, minmax(0, 1fr)); }
+.sticky-gallery__column--center figure { height: auto; min-height: 0; }
+
+@media (max-width: 767px) { .sticky-gallery__column--center { display: block; } }
