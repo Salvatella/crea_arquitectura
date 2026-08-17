@@ -1017,3 +1017,109 @@ body.template-article img {
     width: 100%;
   }
 }
+
+/* Large desktop: retain a roomy, stable two-column guide without allowing
+   the sidebar or the example track to grow beyond a comfortable reading size. */
+@media (min-width: 1400px) {
+  :root {
+    --concept-gutter: clamp(24px, 2.1vw, 48px);
+    --concept-grid-gap: clamp(28px, 2.2vw, 52px);
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide {
+    height: calc(100svh - 112px);
+    min-height: 680px;
+  }
+
+  .product-guide__sidebar > div {
+    max-width: 420px;
+  }
+}
+
+/* Tablet: keep the carousel horizontal, with a complete, touch-friendly card
+   visible at a time. Every variant deliberately receives the same width. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  :root {
+    --concept-gutter: 24px;
+  }
+
+  .concept-intro {
+    padding-block: clamp(56px, 10vw, 96px);
+  }
+
+  .concept-intro__title {
+    font-size: clamp(72px, 12vw, 112px);
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide__steps-viewport {
+    height: clamp(540px, 66svh, 680px);
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--hero,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo-duo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--duo-wide,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--stacked,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--wide,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--quadra,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--homer,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--homer-duo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--homer-07,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--valldoreix,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--image-only {
+    flex: 0 0 min(88vw, 720px);
+    width: min(88vw, 720px);
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step__image {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
+
+/* Mobile: a single-column entry panel and generous, finger-friendly examples.
+   The image is always contained so no project photography is cropped. */
+@media (max-width: 767px) {
+  .concept-intro {
+    align-items: flex-start;
+    padding-block: clamp(48px, 16vw, 88px);
+  }
+
+  .concept-intro__description {
+    font-size: clamp(18px, 5.2vw, 24px);
+    max-width: 100%;
+  }
+
+  .concept-intro__action {
+    margin-top: 32px;
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide__steps-viewport {
+    height: min(66svh, 620px);
+    min-height: 460px;
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--hero,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo-duo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--duo-wide,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--stacked,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--wide,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--quadra,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--homer,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--homer-duo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--homer-07,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--valldoreix,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--image-only {
+    flex: 0 0 min(88vw, 460px);
+    width: min(88vw, 460px);
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step__image,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo-duo .product-guide-step__image {
+    object-fit: contain;
+    object-position: center bottom;
+  }
+}
