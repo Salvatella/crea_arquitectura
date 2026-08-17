@@ -621,6 +621,138 @@
   }
 }
 
+/* Large desktop: preserve the editorial two-card layout while preventing the
+   portraits and contact panel from becoming uncomfortably tall or wide. */
+@media (min-width: 1400px) {
+  .team-page__intro {
+    padding-block: 64px;
+  }
+
+  .team-page__intro h1 {
+    font-size: clamp(68px, 5.2vw, 92px);
+  }
+
+  .team-page__lead {
+    font-size: clamp(24px, 1.8vw, 32px);
+  }
+
+  .team-half-banners {
+    gap: clamp(24px, 2vw, 48px);
+    padding-block: clamp(24px, 2vw, 48px);
+  }
+
+  .team-half-banner {
+    aspect-ratio: auto;
+    height: min(72svh, 860px);
+    min-height: 620px;
+  }
+
+  .team-half-banner__overlay {
+    padding: clamp(24px, 2vw, 40px);
+  }
+
+  .team-half-banner__linkedin {
+    right: clamp(24px, 2vw, 40px);
+    top: clamp(24px, 2vw, 40px);
+  }
+
+  .about-contact-form {
+    margin-bottom: 72px;
+    padding: clamp(56px, 4vw, 88px);
+  }
+}
+
+/* Tablet: retain the paired team cards and two-column contact form, with
+   smaller type and spacing so that neither card text nor form fields overflow. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .team-page__intro {
+    gap: 28px;
+    padding-block: 44px;
+  }
+
+  .team-page__intro h1 {
+    font-size: clamp(52px, 7vw, 68px);
+    grid-column: 1 / span 6;
+  }
+
+  .team-page__lead {
+    font-size: clamp(20px, 2.5vw, 26px);
+    grid-column: 7 / -1;
+  }
+
+  .team-half-banners {
+    gap: 16px;
+    padding-block: 16px 24px;
+  }
+
+  .team-half-banner {
+    aspect-ratio: 1 / 1.12;
+  }
+
+  .team-half-banner__overlay {
+    padding: 18px;
+  }
+
+  .team-half-banner__overlay h2 {
+    font-size: clamp(28px, 3.4vw, 38px);
+  }
+
+  .team-half-banner__copy {
+    font-size: 14px;
+    margin-top: 24px;
+  }
+
+  .team-half-banner__linkedin {
+    right: 18px;
+    top: 18px;
+  }
+
+  .about-contact-form {
+    column-gap: 32px;
+    margin-block: 20px 40px;
+    padding: 48px 32px;
+  }
+
+  .about-contact-form__form {
+    margin-top: 24px;
+  }
+}
+
+/* Mobile refinements: one clear column, compact contact card and controls
+   that remain available without hover. */
+@media (max-width: 767px) {
+  .team-page__intro {
+    padding-inline: var(--site-gutter);
+  }
+
+  .team-half-banner__overlay {
+    padding: 20px;
+  }
+
+  .team-half-banner__linkedin {
+    right: 20px;
+    top: 20px;
+  }
+
+  .about-contact-form {
+    margin: 16px var(--site-gutter) 32px;
+    padding: 32px 20px;
+    row-gap: 36px;
+  }
+
+  .about-contact-form__details {
+    gap: 28px;
+  }
+}
+
+@media (hover: none) {
+  .team-half-banner__linkedin {
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .team-half-banner__media img {
     transition: none;

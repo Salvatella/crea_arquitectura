@@ -210,7 +210,23 @@
 
 @media (max-width: 767px) {
   .collection-hero {
-    display: none;
+    padding-block: 32px 36px;
+  }
+
+  .collection-hero__grid {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .collection-hero__title {
+    font-size: clamp(42px, 13vw, 62px);
+  }
+
+  .collection-hero__description {
+    align-self: auto;
+    font-size: 18px;
+    max-width: 32ch;
   }
 
   .project-filters {
@@ -265,5 +281,84 @@
 @media (prefers-reduced-motion: reduce) {
   .project-card__thumbnail img {
     transition: none;
+  }
+}
+
+/* Large desktop: a denser project overview with restrained reading widths,
+   so the gallery stays balanced on large monitors. */
+@media (min-width: 1400px) {
+  .collection-hero {
+    padding-block: clamp(56px, 5vw, 96px);
+  }
+
+  .collection-hero__title {
+    font-size: clamp(68px, 5.2vw, 96px);
+    max-width: 11ch;
+  }
+
+  .collection-hero__description {
+    font-size: clamp(22px, 1.7vw, 28px);
+  }
+
+  .projects-listing {
+    padding-bottom: 144px;
+    padding-top: 40px;
+  }
+
+  .results-list-grid {
+    gap: 88px clamp(32px, 2.2vw, 56px);
+  }
+}
+
+@media (min-width: 1680px) {
+  .results-list-grid {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+}
+
+/* Tablet: retain the two-column grid, but compress the heading, filters and
+   card metadata before the mobile single-column header is used. */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .collection-hero {
+    padding-block: 44px;
+  }
+
+  .collection-hero__title {
+    font-size: clamp(52px, 7vw, 68px);
+    grid-column: 1 / span 6;
+  }
+
+  .collection-hero__description {
+    font-size: clamp(19px, 2.5vw, 24px);
+    grid-column: 7 / -1;
+  }
+
+  .project-filters {
+    gap: 10px 22px;
+  }
+
+  .projects-listing {
+    padding-bottom: 96px;
+  }
+
+  .results-list-grid {
+    gap: 64px 28px;
+  }
+}
+
+/* Mobile: keep two cards per row, expose the page context and prevent long
+   titles, locations or years from forcing a horizontal overflow. */
+@media (max-width: 767px) {
+  .project-card__title,
+  .project-card-info__value {
+    overflow-wrap: anywhere;
+  }
+
+  .project-card-info {
+    gap: 6px;
+  }
+
+  .project-card-info__block {
+    min-width: 0;
   }
 }

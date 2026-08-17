@@ -115,7 +115,7 @@ body.template-article img {
   display: grid;
   grid-template-columns: repeat(12, minmax(0, 1fr));
   overflow: hidden;
-  padding: 20px var(--concept-gutter);
+  padding: 48px calc(var(--concept-gutter) + 24px);
   position: sticky;
   width: 100%;
 }
@@ -163,12 +163,13 @@ body.template-article img {
 
 .product-guide-step {
   display: flex;
-  flex: 0 0 82%;
+  flex: 0 0 100%;
   flex-direction: row-reverse;
   gap: 18px;
   height: 100%;
   min-width: 0;
   overflow: hidden;
+  padding: 32px;
 }
 
 .product-guide-step__content {
@@ -306,9 +307,28 @@ body.template-article img {
 
 .product-guide-step--duo-wide {
   display: grid;
-  flex-basis: 118%;
+  flex-basis: 100%;
   gap: 24px;
   grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+/* Un step per pantalla: totes les variants ocupen el 100% del viewport,
+   de manera que en lliscar només apareix un step alhora. */
+.product-guide-step,
+.product-guide-step--hero,
+.product-guide-step--stacked,
+.product-guide-step--hero.product-guide-step--stacked,
+.product-guide-step--wide,
+.product-guide-step--quadra,
+.product-guide-step--hero.product-guide-step--quadra,
+.product-guide-step--hero.product-guide-step--valldoreix,
+.product-guide-step--homer,
+.product-guide-step--hero.product-guide-step--homer,
+.product-guide-step--homer-duo,
+.product-guide-step--image-only,
+.product-guide-step--duo-wide {
+  flex-basis: 100%;
+  max-width: 100%;
 }
 
 .product-guide-step__duo-col {
@@ -534,7 +554,7 @@ body.template-article img {
 .concept-guide-controls {
   display: flex;
   gap: 8px;
-  margin-top: auto;
+  margin-top: clamp(32px, 3vw, 56px);
 }
 
 .concept-guide-controls button {

@@ -136,3 +136,94 @@
     });
   });
 })();
+
+// Validació client-side dels formularis de contacte (consultoria i nosaltres).
+(() => {
+  const forms = Array.from(
+    document.querySelectorAll('.consulting-contact__form, .about-contact-form__form')
+  );
+
+  if (!forms.length) return;
+
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+  // Retorna missatge d'error o null si el camp és vàlid.
+  const validators = {
+    name(value) {
+      if (!value.trim()) return 'Escriu el teu nom i cognoms.';
+      if (value.trim().length < 2) return 'El nom és massa curt.';
+      return null;
+    },
+    email(value) {
+      if (!value.trim()) return 'Escriu el teu correu electrònic.';
+      if (!emailPattern.test(value.trim())) return "El correu no té un format vàlid (ex. nom@domini.com).";
+      return null;
+    },
+    phone(value) {
+      // Opcional: només es valida si l'usuari escriu alguna cosa.
+      if (!value.trim()) return null;
+      const digits = value.replace(/\D/g, '');
+      if (digits.length < 9) return 'El telèfon ha de tenir com a mínim 9 xifres.';
+      return null;
+    },
+    message(value) {
+      if (!value.trim()) return 'Explica’ns breument en què et podem ajudar.';
+      return null;
+    },
+  };
+
+  let uid = 0;
+
+  forms.forEach((form) => {
+    const fields = Array.from(form.querySelectorAll('input[name], textarea[name]'))
+      .filter((el) => validators[el.name])
+      .map((el) => {
+        const label = el.closest('label') || el.parentElement;
+        const error = document.createElement('span');
+        error.className = 'field-error';
+        error.hidden = true;
+        error.id = `field-error-${(uid += 1)}`;
+        error.setAttribute('aria-live', 'polite');
+        label.appendChild(error);
+        el.setAttribute('aria-describedby', error.id);
+        return { el, error };
+      });
+
+    const showError = (field, message) => {
+      if (message) {
+        field.error.textContent = message;
+        field.error.hidden = false;
+        field.el.classList.add('is-invalid');
+        field.el.setAttribute('aria-invalid', 'true');
+      } else {
+        field.error.hidden = true;
+        field.el.classList.remove('is-invalid');
+        field.el.removeAttribute('aria-invalid');
+      }
+      return !message;
+    };
+
+    const validateField = (field) => showError(field, validators[field.el.name](field.el.value));
+
+    fields.forEach((field) => {
+      // Valida en sortir del camp; neteja l'error mentre s'escriu si ja era vàlid.
+      field.el.addEventListener('blur', () => validateField(field));
+      field.el.addEventListener('input', () => {
+        if (field.el.classList.contains('is-invalid')) validateField(field);
+      });
+    });
+
+    form.addEventListener('submit', (event) => {
+      let firstInvalid = null;
+      fields.forEach((field) => {
+        const ok = validateField(field);
+        if (!ok && !firstInvalid) firstInvalid = field.el;
+      });
+
+      if (firstInvalid) {
+        event.preventDefault();
+        firstInvalid.focus();
+      }
+    });
+  });
+})();

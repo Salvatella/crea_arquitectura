@@ -6,7 +6,7 @@
   const slides = Array.from(section.querySelectorAll('[data-hero-slide]'));
   const thumbs = Array.from(section.querySelectorAll('[data-hero-thumb]'));
   const bullets = Array.from(section.querySelectorAll('[data-hero-go-to]'));
-  const interval = 4000;
+  const interval = 3500;
   let activeIndex = 0;
   let startedAt = performance.now();
   let isPaused = false;
@@ -95,4 +95,60 @@
   window.addEventListener('pagehide', () => {
     if (rafId) cancelAnimationFrame(rafId);
   });
+})();
+
+// Count-up de #studio-figures quan entra al viewport.
+(() => {
+  const figures = document.querySelector('#studio-figures');
+
+  if (!figures) return;
+
+  const counters = Array.from(figures.querySelectorAll('[data-count-to]'));
+
+  if (!counters.length) return;
+
+  const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const setFinal = () => {
+    counters.forEach((el) => {
+      el.textContent = el.dataset.countTo;
+    });
+  };
+
+  if (reduceMotion || !('IntersectionObserver' in window)) {
+    setFinal();
+    return;
+  }
+
+  const duration = 1400;
+  const easeOut = (t) => 1 - Math.pow(1 - t, 3);
+
+  const run = () => {
+    const start = performance.now();
+
+    const step = (now) => {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased = easeOut(progress);
+
+      counters.forEach((el) => {
+        const target = Number(el.dataset.countTo);
+        el.textContent = String(Math.round(eased * target));
+      });
+
+      if (progress < 1) requestAnimationFrame(step);
+    };
+
+    requestAnimationFrame(step);
+  };
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        run();
+        observer.disconnect();
+      }
+    });
+  }, { threshold: 0.4 });
+
+  observer.observe(figures);
 })();
