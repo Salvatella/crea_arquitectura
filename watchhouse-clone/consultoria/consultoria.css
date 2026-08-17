@@ -3,7 +3,6 @@
 }
 
 .consulting-page__intro {
-  border-bottom: 1px solid var(--site-line);
   display: grid;
   gap: var(--site-gap);
   grid-template-columns: repeat(12, minmax(0, 1fr));

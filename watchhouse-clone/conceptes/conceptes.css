@@ -1,3 +1,4 @@
+/* Foundation */
 :root {
   --concept-bg: rgb(249, 244, 238);
   --concept-text: rgb(0, 0, 0);
@@ -95,13 +96,15 @@ body.template-article img {
   margin: 0;
 }
 
-/* Scroll-driven project guides */
+/* Project guides: structural layout */
 .content-for-layout {
   width: 100%;
 }
 
 .product-guide-scroll-wrapper {
+  min-height: 100svh;
   position: relative;
+  scroll-margin-top: 150px;
   width: 100%;
 }
 
@@ -187,6 +190,7 @@ body.template-article img {
 }
 
 .product-guide-step__image {
+  background: var(--concept-bg);
   flex: 1 1 0;
   height: 100%;
   min-width: 0;
@@ -194,6 +198,7 @@ body.template-article img {
   width: 100%;
 }
 
+/* Project guide: step variants */
 .product-guide-step--hero {
   flex-basis: 90%;
 }
@@ -280,56 +285,15 @@ body.template-article img {
   object-position: center bottom;
 }
 
-@media (min-width: 1024px) {
-  .product-guide-step--hero.product-guide-step--homer .product-guide-step__media {
-    align-self: stretch;
-    aspect-ratio: 1.345;
-    flex: 0 1 auto;
-    margin-top: auto;
-  }
-}
+
 
 .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__image {
   object-position: center bottom;
 }
 
-@media (min-width: 1024px) {
-  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) {
-    position: relative;
-  }
 
-  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__content {
-    bottom: calc(52vh + 24px);
-    left: 0;
-    margin: 0;
-    position: absolute;
-    width: 100%;
-  }
 
-  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__media {
-    bottom: 0;
-    flex: 0 0 52vh;
-    height: 52vh;
-    left: 0;
-    position: absolute;
-  }
-}
 
-@media (min-width: 1024px) {
-  .product-guide-step--homer-duo .product-guide-step__media {
-    align-items: flex-end;
-    gap: 8px;
-    justify-content: flex-start;
-    margin-top: 32px;
-  }
-
-  .product-guide-step--homer-duo .product-guide-step__image {
-    flex: 1 1 0;
-    height: 100%;
-    object-fit: cover;
-    width: 100%;
-  }
-}
 
 .product-guide-step--image-only {
   flex-basis: 48%;
@@ -383,6 +347,295 @@ body.template-article img {
 }
 
 /* Valldoreix: every image sits on the bottom edge and keeps its native ratio. */
+
+
+/* Rehabilitar: reversed guide layout */
+.product-guide--reversed .product-guide__steps-viewport {
+  grid-column: 1 / span 8;
+  grid-row: 1;
+}
+
+.product-guide--reversed .product-guide__sidebar {
+  border-left: 1px solid var(--concept-border);
+  border-right: 0;
+  grid-column: 9 / -1;
+  grid-row: 1;
+  padding: 0 0 32px 32px;
+}
+
+
+
+
+
+
+
+
+
+/* Concept entry panels and native horizontal examples carousel. */
+
+.concept-intro {
+  align-items: center;
+  display: flex;
+  inset: 0;
+  min-height: 0;
+  padding: clamp(48px, 10vw, 150px) var(--concept-gutter);
+  position: absolute;
+  transition: height 500ms ease, opacity 280ms ease, padding 500ms ease;
+}
+
+.concept-intro__content {
+  max-width: 1180px;
+  padding-top: 42px;
+  position: relative;
+}
+
+.concept-intro--reversed .concept-intro__content {
+  margin-left: auto;
+}
+
+
+.concept-intro--reversed  {
+  left: auto;
+  right: 0;
+}
+
+.concept-intro__title {
+  font-family: var(--font-heading);
+  font-size: clamp(62px, 7.6vw, 142px);
+  font-weight: 500;
+  letter-spacing: -.065em;
+  line-height: .82;
+  margin: 0 0 42px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.concept-intro__description {
+  font-size: clamp(18px, 2vw, 27px);
+  line-height: 1.16;
+  margin: 0;
+  max-width: 640px;
+}
+
+.concept-intro__action {
+  background: transparent;
+  border: 0;
+  border-bottom: 1px solid currentColor;
+  color: inherit;
+  cursor: pointer;
+  font-size: 15px;
+  margin-top: 46px;
+  padding: 0 0 9px;
+}
+
+.concept-intro__action span {
+  display: inline-block;
+  font-size: 21px;
+  margin-left: 20px;
+  transition: transform 180ms ease;
+}
+
+.concept-intro__action:hover span,
+.concept-intro__action:focus-visible span {
+  transform: translateX(6px);
+}
+
+/* Guide entry and expanded state */
+.product-guide-scroll-wrapper:not(.is-expanded) .product-guide {
+  display: none;
+}
+
+.product-guide-scroll-wrapper.is-expanded .concept-intro {
+  opacity: 0;
+  overflow: hidden;
+  padding-block: 0;
+  pointer-events: none;
+}
+
+.product-guide-scroll-wrapper.is-expanded {
+  min-height: 0;
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide {
+  animation: concept-guide-enter 520ms cubic-bezier(.22,.61,.36,1) both;
+  display: grid;
+  height: calc(100svh - 112px);
+  min-height: 600px;
+  position: relative;
+  top: auto;
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide__steps-viewport {
+  cursor: grab;
+  -ms-overflow-style: none;
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  scroll-snap-type: x proximity;
+  touch-action: pan-x;
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide__steps-viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.product-guide__steps-viewport.is-dragging {
+  cursor: grabbing;
+  scroll-behavior: auto;
+  user-select: none;
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-steps__track {
+  min-width: max-content;
+  padding-bottom: 12px;
+  width: max-content;
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-step {
+  flex-basis: min(62vw, 780px);
+  scroll-snap-align: start;
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--hero {
+  flex-basis: min(72vw, 920px);
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--stacked,
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--quadra,
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--homer {
+  flex-basis: min(42vw, 560px);
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--hero.product-guide-step--stacked,
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--hero.product-guide-step--quadra,
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--hero.product-guide-step--homer,
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--photo-duo {
+  flex-basis: min(64vw, 820px);
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--hero.product-guide-step--homer {
+  flex: 0 0 min(78vw, 1040px);
+  max-width: 78vw;
+  width: min(78vw, 1040px);
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--homer-duo {
+  flex: 0 0 min(78vw, 1120px);
+  width: min(78vw, 1120px);
+}
+
+.product-guide-scroll-wrapper.is-expanded .product-guide-step--homer-07 {
+  flex: 0 0 min(52vw, 680px);
+  width: min(52vw, 680px);
+}
+
+.concept-guide-controls {
+  display: flex;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.concept-guide-controls button {
+  background: transparent;
+  border: 1px solid currentColor;
+  color: inherit;
+  cursor: pointer;
+  font-size: 20px;
+  height: 42px;
+  width: 42px;
+}
+
+@keyframes concept-guide-enter {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive rules: keep these after the component rules. */
+
+@media (min-width: 1024px) {
+  .product-guide-scroll-wrapper.is-expanded .product-guide-steps__track {
+    gap: 56px;
+  }
+
+  .product-guide-step--hero.product-guide-step--homer .product-guide-step__media {
+    align-self: stretch;
+    aspect-ratio: 1519 / 1035;
+    flex: 0 0 auto;
+    height: auto;
+    margin-top: auto;
+    width: 100%;
+  }
+
+  .product-guide-step--hero.product-guide-step--homer .product-guide-step__image {
+    height: auto;
+    width: 100%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) {
+    position: relative;
+  }
+
+  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__content {
+    bottom: calc(52vh + 24px);
+    left: 0;
+    margin: 0;
+    position: absolute;
+    width: 100%;
+  }
+
+  .product-guide-step--homer:not(.product-guide-step--hero):not(.product-guide-step--homer-duo) .product-guide-step__media {
+    bottom: 0;
+    flex: 0 0 52vh;
+    height: 52vh;
+    left: 0;
+    position: absolute;
+  }
+}
+
+@media (min-width: 1024px) {
+  .product-guide-step--homer-duo .product-guide-step__media {
+    align-items: flex-end;
+    gap: 8px;
+    justify-content: flex-start;
+    margin-top: 32px;
+  }
+
+  .product-guide-step--homer-duo .product-guide-step__image {
+    flex: 1 1 0;
+    height: 100%;
+    object-fit: contain;
+    width: 100%;
+  }
+
+  .product-guide-step.product-guide-step--homer.product-guide-step--homer-07 {
+    overflow: visible;
+    position: static;
+  }
+
+  .product-guide-step.product-guide-step--homer.product-guide-step--homer-07 .product-guide-step__content {
+    position: static;
+    width: 100%;
+  }
+
+  .product-guide-step.product-guide-step--homer.product-guide-step--homer-07 .product-guide-step__media {
+    aspect-ratio: 1;
+    flex: 0 0 auto;
+    height: auto;
+    position: static;
+    width: 100%;
+  }
+
+  .product-guide-step.product-guide-step--homer.product-guide-step--homer-07 .product-guide-step__image {
+    height: auto;
+    object-fit: contain;
+    width: 100%;
+  }
+}
+
 @media (min-width: 1024px) {
   .product-guide-step--photo-duo.product-guide-step--valldoreix .product-guide-step__media {
     align-items: flex-end;
@@ -454,19 +707,6 @@ body.template-article img {
     --valldoreix-image-columns: 1.12fr 0.8fr;
     flex-basis: 78%;
   }
-}
-
-.product-guide--reversed .product-guide__steps-viewport {
-  grid-column: 1 / span 8;
-  grid-row: 1;
-}
-
-.product-guide--reversed .product-guide__sidebar {
-  border-left: 1px solid var(--concept-border);
-  border-right: 0;
-  grid-column: 9 / -1;
-  grid-row: 1;
-  padding: 0 0 32px 32px;
 }
 
 @media (max-width: 1399px) and (min-width: 1024px) {
@@ -637,5 +877,143 @@ body.template-article img {
 
   .product-guide-steps__track {
     will-change: auto;
+  }
+}
+
+@media (max-width: 1023px) {
+  .concept-intro,
+  .product-guide-scroll-wrapper.is-expanded .product-guide {
+    min-height: calc(100svh - 90px);
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide,
+  .product-guide-scroll-wrapper.is-expanded .product-guide.product-guide--reversed {
+    display: flex;
+    height: auto !important;
+    min-height: 0;
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide__sidebar,
+  .product-guide-scroll-wrapper.is-expanded .product-guide--reversed .product-guide__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 28px;
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide__steps-viewport {
+    height: min(70vh, 650px);
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide-steps__track {
+    display: flex;
+    gap: 18px;
+    height: 100%;
+  }
+
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--hero,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo-duo,
+  .product-guide-scroll-wrapper.is-expanded .product-guide-step--duo-wide {
+    display: flex;
+    flex: 0 0 min(82vw, 560px);
+    height: 100%;
+    overflow: hidden;
+  }
+}
+
+@media (max-width: 767px) {
+  .concept-intro__content {
+    max-width: 100%;
+  }
+
+  .concept-intro__title {
+    font-size: clamp(58px, 17vw, 104px);
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .concept-intro,
+  .concept-intro__action span,
+  .product-guide-scroll-wrapper.is-expanded .product-guide {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Rehabilitar desktop carousel: every project is one consistent frame. */
+@media (min-width: 1024px) {
+  #rehabilita.is-expanded .product-guide-steps__track {
+    gap: 56px;
+  }
+
+  #rehabilita.is-expanded .product-guide-step,
+  #rehabilita.is-expanded .product-guide-step--hero,
+  #rehabilita.is-expanded .product-guide-step--photo,
+  #rehabilita.is-expanded .product-guide-step--photo-duo,
+  #rehabilita.is-expanded .product-guide-step--stacked,
+  #rehabilita.is-expanded .product-guide-step--quadra,
+  #rehabilita.is-expanded .product-guide-step--homer,
+  #rehabilita.is-expanded .product-guide-step--homer-duo,
+  #rehabilita.is-expanded .product-guide-step--homer-07 {
+    display: flex;
+    flex: 0 0 var(--rehabilitar-step-width);
+    flex-direction: column;
+    gap: clamp(24px, 2.2vw, 40px);
+    height: 100%;
+    max-width: var(--rehabilitar-step-width);
+    min-width: 0;
+    overflow: hidden;
+    padding: clamp(28px, 3vw, 48px);
+    position: relative;
+    width: var(--rehabilitar-step-width);
+  }
+
+  #rehabilita.is-expanded .product-guide-step__content,
+  #rehabilita.is-expanded .product-guide-step--homer .product-guide-step__content,
+  #rehabilita.is-expanded .product-guide-step--valldoreix .product-guide-step__content {
+    align-self: auto;
+    bottom: auto;
+    flex: 0 0 auto;
+    left: auto;
+    margin: 0;
+    min-width: 0;
+    padding: 0;
+    position: static;
+    width: 100%;
+  }
+
+  #rehabilita.is-expanded .product-guide-step__media,
+  #rehabilita.is-expanded .product-guide-step--homer .product-guide-step__media,
+  #rehabilita.is-expanded .product-guide-step--valldoreix .product-guide-step__media {
+    align-items: flex-end;
+    aspect-ratio: auto;
+    bottom: auto;
+    display: flex;
+    flex: 1 1 0;
+    gap: clamp(8px, 1vw, 16px);
+    height: auto;
+    justify-content: center;
+    left: auto;
+    margin: 0;
+    min-height: 0;
+    position: static;
+    width: 100%;
+  }
+
+  #rehabilita.is-expanded .product-guide-step__image,
+  #rehabilita.is-expanded .product-guide-step--homer .product-guide-step__image,
+  #rehabilita.is-expanded .product-guide-step--valldoreix .product-guide-step__image {
+    aspect-ratio: auto;
+    flex: 1 1 0;
+    height: 100%;
+    max-height: 100%;
+    min-width: 0;
+    object-fit: contain;
+    object-position: center bottom;
+    width: 100%;
   }
 }

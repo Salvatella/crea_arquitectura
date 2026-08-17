@@ -1,107 +1,93 @@
-// Horizontal scroll-driven guides and requirements toggles.
+(() => {
+  const scrollByStep = (viewport, direction) => {
+    const steps = Array.from(viewport.querySelectorAll('.product-guide-step'));
+    if (!steps.length) return;
 
-(function () {
-  const BREAKPOINT = 1024;
-  const GUIDE_VH   = 0.96; // guide height as fraction of viewport height
+    const currentIndex = steps.reduce((closest, step, index) => (
+      Math.abs(step.offsetLeft - viewport.scrollLeft) < Math.abs(steps[closest].offsetLeft - viewport.scrollLeft)
+        ? index
+        : closest
+    ), 0);
+    const targetIndex = Math.max(0, Math.min(steps.length - 1, currentIndex + direction));
 
-  // Requirements panel toggle (mobile only)
-  function initRequirementsToggle() {
-    const btn  = document.querySelector('.product-guide-requirements__header');
-    const body = document.getElementById('requirements-body');
-    if (!btn || !body) return;
+    steps[targetIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start' });
+  };
 
-    btn.addEventListener('click', () => {
-      if (window.innerWidth >= BREAKPOINT) return;
-      const isOpen = body.classList.toggle('is-open');
-      btn.setAttribute('aria-expanded', String(isOpen));
-    });
-  }
-
-  // Init a single guide instance
-  function initGuideInstance(wrapper, instanceIndex) {
-    const guide    = wrapper.querySelector('.product-guide');
-    const track    = wrapper.querySelector('.product-guide-steps__track');
+  document.querySelectorAll('.product-guide-scroll-wrapper').forEach((wrapper) => {
+    const trigger = wrapper.querySelector('[data-open-guide]');
+    const intro = wrapper.querySelector('.concept-intro');
     const viewport = wrapper.querySelector('.product-guide__steps-viewport');
-    const steps    = wrapper.querySelectorAll('.product-guide-step');
-    const header   = document.getElementById('site-header');
+    const previous = wrapper.querySelector('[data-guide-prev]');
+    const next = wrapper.querySelector('[data-guide-next]');
+    if (!trigger || !viewport) return;
 
-    if (!guide || !track || !steps.length) return;
-
-    let active       = false;
-    let scrollAmount = 0;
-    let maxTranslate = 0;
-    // Vertical offset where this instance's scroll range begins.
-    // Second guide starts after the first guide's scroll space.
-    let scrollStart  = 0;
-
-    function setup() {
-      if (window.innerWidth < BREAKPOINT) {
-        wrapper.style.height  = '';
-        guide.style.top       = '';
-        guide.style.height    = '';
-        track.style.transform = '';
-        active = false;
-        return;
+    // The Rehabilitar guide uses one full viewport-wide frame per step.  The
+    // measured value avoids percentage widths being resolved against the
+    // max-content track instead of the visible carousel area.
+    const syncRehabilitarStepWidth = () => {
+      if (wrapper.id === 'rehabilita') {
+        viewport.style.setProperty('--rehabilitar-step-width', `${viewport.clientWidth}px`);
       }
+    };
 
-      active = true;
+    new ResizeObserver(syncRehabilitarStepWidth).observe(viewport);
 
-      const headerH = header ? header.offsetHeight : 0;
-      guide.style.top    = headerH + 'px';
-      const guideH       = Math.round(window.innerHeight * GUIDE_VH - headerH);
-      guide.style.height = guideH + 'px';
+    trigger.addEventListener('click', () => {
+      wrapper.classList.add('is-expanded');
+      trigger.setAttribute('aria-expanded', 'true');
+      // El recorrido de Rehabilitar está dispuesto de forma invertida: el
+      // primer ejemplo visual queda al extremo derecho del track.
+      if (wrapper.querySelector('.product-guide--reversed')) {
+        window.requestAnimationFrame(() => {
+          syncRehabilitarStepWidth();
+          viewport.scrollLeft = viewport.scrollWidth - viewport.clientWidth;
+        });
+      }
+      window.setTimeout(() => {
+        if (intro) intro.hidden = true;
+        wrapper.scrollIntoView({ block: 'start', behavior: 'auto' });
+      }, 520);
+      window.setTimeout(() => viewport.focus({ preventScroll: true }), 350);
+    }, { once: true });
 
-      scrollAmount        = guideH * steps.length;
-      wrapper.style.height = (guideH + scrollAmount) + 'px';
+    previous?.addEventListener('click', () => scrollByStep(viewport, -1));
+    next?.addEventListener('click', () => scrollByStep(viewport, 1));
 
-      // Begin the horizontal movement only when this guide actually reaches
-      // the page viewport. Using the accumulated wrapper heights ignored the
-      // header above the first guide, so it loaded already translated.
-      scrollStart = wrapper.getBoundingClientRect().top + window.scrollY;
+    viewport.addEventListener('wheel', (event) => {
+      if (event.shiftKey || !event.deltaY) return;
+      event.preventDefault();
+      viewport.scrollLeft += event.deltaY;
+    }, { passive: false });
 
-      // Steps have mixed widths (hero/duo 90%, normal 72%), so a per-step
-      // multiply is wrong. Slide by the real overflow: full track content
-      // width minus the visible viewport width.
-      const viewportW = viewport ? viewport.clientWidth : guide.clientWidth;
-      maxTranslate = Math.max(0, track.scrollWidth - viewportW);
-    }
+    viewport.addEventListener('keydown', (event) => {
+      if (event.key === 'ArrowLeft') {
+        event.preventDefault();
+        scrollByStep(viewport, -1);
+      }
+      if (event.key === 'ArrowRight') {
+        event.preventDefault();
+        scrollByStep(viewport, 1);
+      }
+    });
 
-    const reversed = guide.classList.contains('product-guide--reversed');
-
-    function update() {
-      if (!active) return;
-      const localScroll = window.scrollY - scrollStart;
-      const progress    = Math.min(1, Math.max(0, localScroll / scrollAmount));
-      // Reversed guide starts at last step and slides back to first
-      const translate   = reversed
-        ? (-maxTranslate + progress * maxTranslate)
-        : (-progress * maxTranslate);
-      track.style.transform = 'translate3d(' + translate.toFixed(2) + 'px,0,0)';
-    }
-
-    setup();
-    update();
-
-    return { setup, update };
-  }
-
-  // Initialize every horizontal guide instance.
-  function initAllGuides() {
-    const wrappers = document.querySelectorAll('.product-guide-scroll-wrapper');
-    if (!wrappers.length) return;
-
-    const instances = Array.from(wrappers).map((w, i) => initGuideInstance(w, i));
-
-    function updateAll() { instances.forEach(inst => inst && inst.update()); }
-    function setupAll()  { instances.forEach(inst => inst && inst.setup());
-                           updateAll(); }
-
-    window.addEventListener('scroll', updateAll, { passive: true });
-    window.addEventListener('resize', setupAll,  { passive: true });
-  }
-
-  document.addEventListener('DOMContentLoaded', () => {
-    initRequirementsToggle();
-    initAllGuides();
+    let startX = 0;
+    let startScroll = 0;
+    let dragging = false;
+    viewport.addEventListener('pointerdown', (event) => {
+      dragging = true;
+      startX = event.clientX;
+      startScroll = viewport.scrollLeft;
+      viewport.setPointerCapture(event.pointerId);
+      viewport.classList.add('is-dragging');
+    });
+    viewport.addEventListener('pointermove', (event) => {
+      if (dragging) viewport.scrollLeft = startScroll - (event.clientX - startX);
+    });
+    const stopDragging = () => {
+      dragging = false;
+      viewport.classList.remove('is-dragging');
+    };
+    viewport.addEventListener('pointerup', stopDragging);
+    viewport.addEventListener('pointercancel', stopDragging);
   });
 })();

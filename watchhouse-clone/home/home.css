@@ -9,9 +9,9 @@ body.template-index {
 #hero_banner_1 {
   background: #171717;
   color: #fff;
-  height: calc(100svh - 126px);
-  max-height: 600px;
-  min-height: 400px;
+  /* The desktop frame follows the panoramic source photography instead of
+     becoming progressively flatter on wide screens. */
+  height: clamp(480px, min(calc(100svh - 126px), 42.5vw), 820px);
   overflow: hidden;
   position: relative;
 }
@@ -415,8 +415,7 @@ body.template-index {
 
 @media (max-width: 1023px) {
   #hero_banner_1 {
-    height: calc(100svh - 118px);
-    min-height: 560px;
+    height: clamp(520px, min(calc(100svh - 118px), 58vw), 680px);
   }
 
   .hero-banner-thumbnail__content {
@@ -442,8 +441,7 @@ body.template-index {
 
 @media (max-width: 767px) {
   #hero_banner_1 {
-    height: 76svh;
-    min-height: 540px;
+    height: clamp(540px, 76svh, 720px);
   }
 
   .hero-banner__slide {
