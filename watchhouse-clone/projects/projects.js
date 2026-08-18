@@ -24,4 +24,12 @@
   filters.forEach((button) => {
     button.addEventListener('click', () => setFilter(button.dataset.filter));
   });
+
+  // Aplica el filtre indicat a la URL (?filter=residencial) en carregar la pàgina.
+  const requested = new URLSearchParams(window.location.search).get('filter');
+  const known = filters.map((button) => button.dataset.filter);
+
+  if (requested && known.includes(requested) && requested !== 'all') {
+    setFilter(requested);
+  }
 })();

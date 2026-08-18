@@ -294,7 +294,6 @@ body.template-index {
 }
 
 #consultoria-hook {
-  background: rgba(111, 140, 50, 0.36);
   color: var(--site-ink);
   margin-bottom: clamp(88px, 11vw, 176px);
 }

@@ -708,7 +708,7 @@ body.template-article img {
   }
 
   .product-guide-step--valldoreix-facade .product-guide-step__content {
-    bottom: calc(52vh + 24px);
+    bottom: calc(60vh + 24px);
     left: 0;
     margin: 0;
     position: absolute;
@@ -717,14 +717,13 @@ body.template-article img {
 
   .product-guide-step--valldoreix-facade .product-guide-step__media {
     bottom: 0;
-    flex: 0 0 52vh;
-    height: 52vh;
+    flex: 0 0 60vh;
+    height: 60vh;
     left: 0;
     position: absolute;
   }
 
   .product-guide-step--hero.product-guide-step--valldoreix-hero {
-    --valldoreix-image-columns: 1.12fr 0.8fr;
     flex-basis: 78%;
   }
 }
@@ -1035,6 +1034,40 @@ body.template-article img {
     object-fit: contain;
     object-position: center bottom;
     width: 100%;
+  }
+
+  /* Hero images use their own proportions and a shared baseline. */
+  #rehabilita.is-expanded .product-guide-step--valldoreix-hero,
+  #rehabilita.is-expanded .product-guide-step--hero.product-guide-step--homer {
+    gap: 24px;
+    padding-block: clamp(20px, 2vw, 32px);
+  }
+
+  #rehabilita.is-expanded .product-guide-step--valldoreix-hero .product-guide-step__media {
+    gap: 8px;
+    justify-content: flex-start;
+  }
+
+  #rehabilita.is-expanded .product-guide-step--valldoreix-hero .product-guide-step__image {
+    flex: 0 1 auto;
+    height: 100%;
+    max-width: 100%;
+    width: auto;
+  }
+
+  #rehabilita.is-expanded .product-guide-step--hero.product-guide-step--homer .product-guide-step__media {
+    justify-content: flex-start;
+  }
+
+  #rehabilita.is-expanded .product-guide-step--hero.product-guide-step--homer {
+    gap: 16px;
+    padding-block: 12px;
+  }
+
+  #rehabilita.is-expanded .product-guide-step--hero.product-guide-step--homer .product-guide-step__image {
+    height: 100%;
+    max-width: 100%;
+    width: auto;
   }
 }
 

@@ -112,7 +112,7 @@
 }
 
 .project-card__thumbnail {
-  aspect-ratio: 260 / 300;
+  aspect-ratio: 260 / 270;
   background: #e7d9c4;
   overflow: hidden;
   position: relative;
@@ -248,7 +248,7 @@
   }
 
   .project-card__thumbnail {
-    aspect-ratio: 260 / 300;
+    aspect-ratio: 260 / 270;
   }
 }
 
