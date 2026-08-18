@@ -3,9 +3,9 @@
 Marca cada uno al terminar de revisarlo.
 
 ## Equipaments (4)
-- [ ] Aparcament Laguna Lanao — `projects/equipaments/aparcament-laguna-lanao.html`
-- [ ] Aparcament Vall Palau — `projects/equipaments/aparcament-vall-palau.html`
-- [ ] Club Petanca — `projects/equipaments/club-petanca.html`
+- [x] Aparcament Laguna Lanao — `projects/equipaments/aparcament-laguna-lanao.html`
+- [x] Aparcament Vall Palau — `projects/equipaments/aparcament-vall-palau.html`
+- [x] Club Petanca — `projects/equipaments/club-petanca.html`
 - [ ] Escola Sadako — `projects/equipaments/escola-sadako.html`
 
 ## Oficines i Industrial (4)
