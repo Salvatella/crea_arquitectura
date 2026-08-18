@@ -1,1 +1,5 @@
 .project-page { --project-gallery-gap: 3px; }
+
+@media (min-width: 768px) {
+  .petunia-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}

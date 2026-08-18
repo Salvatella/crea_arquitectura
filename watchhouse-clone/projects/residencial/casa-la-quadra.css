@@ -2,8 +2,7 @@
 
 .sticky-gallery { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .sticky-gallery__column--left { grid-column: 1; }
-.sticky-gallery__column--center { grid-column: 1; grid-row: 2; height: auto; position: static; }
-.sticky-gallery__column--right { grid-column: 2; grid-row: 2; }
+.sticky-gallery__column--right { grid-column: 2; grid-row: 1; }
 .sticky-gallery figure, .sticky-gallery__column--center figure { aspect-ratio: 4 / 3; height: auto; }
 
 @media (max-width: 767px) { .sticky-gallery figure { aspect-ratio: 4 / 3; } }

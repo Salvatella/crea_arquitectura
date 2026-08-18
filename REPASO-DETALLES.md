@@ -6,18 +6,18 @@ Marca cada uno al terminar de revisarlo.
 - [x] Aparcament Laguna Lanao — `projects/equipaments/aparcament-laguna-lanao.html`
 - [x] Aparcament Vall Palau — `projects/equipaments/aparcament-vall-palau.html`
 - [x] Club Petanca — `projects/equipaments/club-petanca.html`
-- [ ] Escola Sadako — `projects/equipaments/escola-sadako.html`
+- [x] Escola Sadako — `projects/equipaments/escola-sadako.html`
 
 ## Oficines i Industrial (4)
-- [ ] Celler Nou Plus — `projects/oficines-industrial/celler-nou-plus.html`
-- [ ] Oficines Breda — `projects/oficines-industrial/oficines-breda.html`
-- [ ] Oficines Mèxic — `projects/oficines-industrial/oficines-mexic.html`
-- [ ] RP Economistes — `projects/oficines-industrial/rp-economistes.html`
+- [x] Celler Nou Plus — `projects/oficines-industrial/celler-nou-plus.html`
+- [x] Oficines Breda — `projects/oficines-industrial/oficines-breda.html`
+- [x] Oficines Mèxic — `projects/oficines-industrial/oficines-mexic.html`
+- [x] RP Economistes — `projects/oficines-industrial/rp-economistes.html`
 
 ## Residencial (11)
-- [ ] Casa Assutzena — `projects/residencial/casa-assutzena.html`
-- [ ] Casa La Quadra — `projects/residencial/casa-la-quadra.html`
-- [ ] Casa La Selva — `projects/residencial/casa-la-selva.html`
+- [x] Casa Assutzena — `projects/residencial/casa-assutzena.html`
+- [x] Casa La Quadra — `projects/residencial/casa-la-quadra.html`
+- [x] Casa La Selva — `projects/residencial/casa-la-selva.html`
 - [ ] Casa Petunia — `projects/residencial/casa-petunia.html`
 - [ ] Casa Troana — `projects/residencial/casa-troana.html`
 - [ ] Casa Valldoreix — `projects/residencial/casa-valldoreix.html`

@@ -1,1 +1,12 @@
 .project-page { --project-gallery-gap: 3px; }
+
+@media (min-width: 768px) {
+  .selva-gallery { display: block; }
+  .selva-gallery__top { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .selva-gallery__top figure { height: 84vh; }
+  .selva-gallery__top .selva-gallery__a1 { grid-column: 1 / span 2; }
+  .selva-gallery__top .selva-gallery__c1 { grid-column: 3; }
+  .selva-gallery__body { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--project-gallery-gap); }
+  .selva-gallery__body .sticky-gallery__column--center { height: calc(100vh - var(--project-gallery-gap)); position: sticky; top: 0; }
+  .selva-gallery__body .sticky-gallery__column--center figure { height: 100%; }
+}
