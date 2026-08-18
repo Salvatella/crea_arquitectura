@@ -3,6 +3,58 @@
 
   if (!section) return;
 
+  const heroSelections = {
+    selection1: [
+      ['Cases AGE', 'baixa_031.jpg', '../projects/residencial/cases-age.html'],
+      ['Aparcament Laguna Lanao', 'equipaments-laguna-lanao-01.jpg', '../projects/equipaments/aparcament-laguna-lanao.html'],
+      ['Celler Nou Plus', 'oficines-celler-nou-plus-01.jpg', '../projects/oficines-industrial/celler-nou-plus.html'],
+      ['Oficines Mèxic', 'oficines-mexic-01.jpg', '../projects/oficines-industrial/oficines-mexic.html'],
+      ['Casa Assutzena', 'residencial-assutzena-01.jpg', '../projects/residencial/casa-assutzena.html'],
+      ['Casa Petúnia', 'residencial-petunia-01.jpg', '../projects/residencial/casa-petunia.html'],
+      ['Casa Troana', 'residencial-troana-01.jpg', '../projects/residencial/casa-troana.html'],
+    ],
+    selection2: [
+      ['Cases AGE', 'residencial-cases-age-033.jpg', '../projects/residencial/cases-age.html'],
+      ['Celler Nou Plus', 'oficines-celler-nou-plus-03.jpg', '../projects/oficines-industrial/celler-nou-plus.html'],
+      ['Casa Assutzena', 'residencial-assutzena-02.jpg', '../projects/residencial/casa-assutzena.html'],
+      ['Casa Troana', 'residencial-troana-04.jpg', '../projects/residencial/casa-troana.html'],
+      ['Dexeus Hospital General de Catalunya', 'sanitari-dexeus-hgc-10.png', '../projects/sanitaris/dexeus-hospital-general-de-catalunya.html'],
+      ['Clínica Dexme-Midlife', 'sanitari-dexme-midlife-02.jpg', '../projects/sanitaris/clinica-dexme-midlife.html'],
+      ['Casa La Selva', 'residencial-selva-05.png', '../projects/residencial/casa-la-selva.html'],
+    ],
+  };
+  const heroItems = Math.random() < 0.5 ? heroSelections.selection1 : heroSelections.selection2;
+
+  const imageBasePath = '../imgs/hero_banner_imgs/';
+  const slider = section.querySelector('[data-hero-slider]');
+  const pagination = section.querySelector('#hero-banner-pagination');
+  const thumbnails = section.querySelector('#hero-banner-thumbnails');
+
+  slider.innerHTML = heroItems.map(([title, image, href, verticalPosition = 100], index) => `
+    <div class="hero-banner__slide${index === 0 ? ' is-active' : ''}" data-hero-slide data-index0="${index}" aria-hidden="${index !== 0}">
+      <a class="hero-banner__link" href="${href}" title="${title}."></a>
+      <img src="${imageBasePath}${image}" alt="${title}" class="hero-banner__primary-media" style="object-position: center ${verticalPosition}%" draggable="false">
+    </div>
+  `).join('');
+
+  pagination.innerHTML = heroItems.map((_, index) => `
+    <button class="hero-banner__pagination-button${index === 0 ? ' is-active' : ''}" type="button" data-hero-go-to="${index}"${index === 0 ? ' aria-current="true"' : ''}>
+      ${String(index + 1).padStart(2, '0')}
+    </button>
+  `).join('');
+
+  thumbnails.innerHTML = heroItems.map(([title, , href], index) => `
+    <div class="hero-banner-thumbnail${index === 0 ? ' is-active' : ''}" data-hero-thumb data-index0="${index}">
+      <div class="hero-banner-thumbnail__content">
+        <p class="hero-banner-thumbnail__title">${title}.</p>
+        <div class="hero-banner-thumbnail__footer">
+          <div class="hero-banner__progress"></div>
+          <a class="hero-banner-thumbnail__cta" href="${href}" data-mouseover="">Mirar el projecte</a>
+        </div>
+      </div>
+    </div>
+  `).join('');
+
   const slides = Array.from(section.querySelectorAll('[data-hero-slide]'));
   const thumbs = Array.from(section.querySelectorAll('[data-hero-thumb]'));
   const bullets = Array.from(section.querySelectorAll('[data-hero-go-to]'));
@@ -120,7 +172,7 @@
     return;
   }
 
-  const duration = 1400;
+  const duration = 2100;
   const easeOut = (t) => 1 - Math.pow(1 - t, 3);
 
   const run = () => {

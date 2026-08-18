@@ -25,9 +25,7 @@ body.template-index {
 }
 
 .hero-banner__slide {
-  display: grid;
-  gap: 2px;
-  grid-template-columns: minmax(0, 1fr);
+  display: block;
   opacity: 0;
   pointer-events: none;
   transition: opacity 480ms ease;
@@ -54,8 +52,10 @@ body.template-index {
 .hero-banner__primary-media,
 .hero-banner__secondary-media {
   height: 100%;
+  min-height: 0;
   min-width: 0;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center bottom;
   width: 100%;
 }
 
@@ -231,11 +231,10 @@ body.template-index {
 }
 
 #studio-figures {
-  border-top: 1px solid var(--site-line);
   display: grid;
   gap: var(--site-gap) 0;
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  padding: 72px var(--site-gutter) 96px;
+  padding: 84px var(--site-gutter);
 }
 
 .studio-figures__intro {
@@ -294,6 +293,7 @@ body.template-index {
 }
 
 #consultoria-hook {
+  border-top: 1px solid var(--site-line);
   color: var(--site-ink);
   margin-bottom: clamp(88px, 11vw, 176px);
 }
@@ -303,7 +303,7 @@ body.template-index {
   display: grid;
   gap: 28px var(--site-gap);
   grid-template-columns: repeat(12, minmax(0, 1fr));
-  padding: 88px var(--site-gutter) 92px;
+  padding: 90px var(--site-gutter);
 }
 
 .consultoria-hook__eyebrow {
@@ -415,6 +415,7 @@ body.template-index {
 .half-banners-block__background {
   height: 100%;
   object-fit: cover;
+  object-position: center 60%;
   transition: transform 600ms ease;
   width: 100%;
 }
