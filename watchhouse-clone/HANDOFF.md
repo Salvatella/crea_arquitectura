@@ -87,10 +87,11 @@ Los fragmentos residuales de las fichas residenciales Reforma HOMER y Edificio A
 - Estructura completa en `architecture-studio-barcelona/`, creada a partir de la versión castellana.
 - Selector de idioma funcional en las tres versiones, con enlaces a la página equivalente.
 - Interfaz común inglesa: navegación, accesibilidad, pie, newsletter, navegación de proyectos y etiquetas técnicas repetidas.
+- Páginas principales inglesas traducidas: Inicio, Consulting, About us, Concepts e índice de Projects.
 
 ### Pendiente
 
-- Traducir los contenidos específicos de Inicio, Consultoría, Nosotros, Conceptos, índice de Proyectos y las fichas de proyecto.
+- Traducir los contenidos específicos de las fichas de proyecto.
 
 ### Lorem ipsum
 

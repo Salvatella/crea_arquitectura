@@ -147,27 +147,56 @@
 
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
+  const language = document.documentElement.lang.toLowerCase().split('-')[0];
+  const messages = {
+    ca: {
+      nameRequired: 'Escriu el teu nom i cognoms.',
+      nameShort: 'El nom és massa curt.',
+      emailRequired: 'Escriu el teu correu electrònic.',
+      emailInvalid: 'El correu no té un format vàlid (ex. nom@domini.com).',
+      phoneShort: 'El telèfon ha de tenir com a mínim 9 xifres.',
+      messageRequired: 'Explica’ns breument en què et podem ajudar.',
+    },
+    es: {
+      nameRequired: 'Escribe tu nombre y apellidos.',
+      nameShort: 'El nombre es demasiado corto.',
+      emailRequired: 'Escribe tu correo electrónico.',
+      emailInvalid: 'El correo no tiene un formato válido (p. ej., nombre@dominio.com).',
+      phoneShort: 'El teléfono debe tener al menos 9 dígitos.',
+      messageRequired: 'Cuéntanos brevemente cómo podemos ayudarte.',
+    },
+    en: {
+      nameRequired: 'Enter your full name.',
+      nameShort: 'Your name is too short.',
+      emailRequired: 'Enter your email address.',
+      emailInvalid: 'Enter a valid email address (e.g. name@example.com).',
+      phoneShort: 'Phone number must have at least 9 digits.',
+      messageRequired: 'Briefly tell us how we can help.',
+    },
+  };
+  const copy = messages[language] || messages.ca;
+
   // Retorna missatge d'error o null si el camp és vàlid.
   const validators = {
     name(value) {
-      if (!value.trim()) return 'Escriu el teu nom i cognoms.';
-      if (value.trim().length < 2) return 'El nom és massa curt.';
+      if (!value.trim()) return copy.nameRequired;
+      if (value.trim().length < 2) return copy.nameShort;
       return null;
     },
     email(value) {
-      if (!value.trim()) return 'Escriu el teu correu electrònic.';
-      if (!emailPattern.test(value.trim())) return "El correu no té un format vàlid (ex. nom@domini.com).";
+      if (!value.trim()) return copy.emailRequired;
+      if (!emailPattern.test(value.trim())) return copy.emailInvalid;
       return null;
     },
     phone(value) {
       // Opcional: només es valida si l'usuari escriu alguna cosa.
       if (!value.trim()) return null;
       const digits = value.replace(/\D/g, '');
-      if (digits.length < 9) return 'El telèfon ha de tenir com a mínim 9 xifres.';
+      if (digits.length < 9) return copy.phoneShort;
       return null;
     },
     message(value) {
-      if (!value.trim()) return 'Explica’ns breument en què et podem ajudar.';
+      if (!value.trim()) return copy.messageRequired;
       return null;
     },
   };
