@@ -5,16 +5,16 @@
 
   const heroSelections = {
     selection1: [
-      ['Cases AGE', 'baixa_031.jpg', 'proyectos/residencial/cases-age.html'],
-      ['Laguna Lanao Car Park', 'equipaments-laguna-lanao-01.jpg', 'proyectos/equipamientos/aparcament-laguna-lanao.html'],
+      ['Cases AGE', 'baixa_031.jpg', 'proyectos/residencial/cases-age.html', 70],
       ['Celler Nou Plus', 'oficines-celler-nou-plus-01.jpg', 'proyectos/oficinas-industrial/celler-nou-plus.html'],
-      ['Mèxic Offices', 'oficines-mexic-01.jpg', 'proyectos/oficinas-industrial/oficines-mexic.html'],
-      ['Casa Assutzena', 'residencial-assutzena-01.jpg', 'proyectos/residencial/casa-assutzena.html'],
-      ['Casa Petúnia', 'residencial-petunia-01.jpg', 'proyectos/residencial/casa-petunia.html'],
-      ['Casa Troana', 'residencial-troana-01.jpg', 'proyectos/residencial/casa-troana.html'],
+      ['Mèxic Offices', 'oficines-mexic-01.jpg', 'proyectos/oficinas-industrial/oficines-mexic.html', 50],
+      ['Casa Assutzena', 'residencial-assutzena-01.jpg', 'proyectos/residencial/casa-assutzena.html', 75],
+      ['Casa Petúnia', 'residencial-petunia-01.jpg', 'proyectos/residencial/casa-petunia.html', 100],
+      ['Casa Troana', 'residencial-troana-01.jpg', 'proyectos/residencial/casa-troana.html', 25],
+      ['Cases AGE', 'baixa_052.jpg', 'proyectos/residencial/cases-age.html', 100],
     ],
     selection2: [
-      ['Cases AGE', 'residencial-cases-age-033.jpg', 'proyectos/residencial/cases-age.html'],
+      ['Cases AGE', 'residencial-cases-age-033.jpg', 'proyectos/residencial/cases-age.html', 80],
       ['Celler Nou Plus', 'oficines-celler-nou-plus-03.jpg', 'proyectos/oficinas-industrial/celler-nou-plus.html', 50],
       ['Casa Assutzena', 'residencial-assutzena-02.jpg', 'proyectos/residencial/casa-assutzena.html', 30],
       ['Casa Troana', 'residencial-troana-04.jpg', 'proyectos/residencial/casa-troana.html'],
