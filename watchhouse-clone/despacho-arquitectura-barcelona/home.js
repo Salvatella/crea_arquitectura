@@ -15,12 +15,12 @@
     ],
     selection2: [
       ['Casas AGE', 'residencial-cases-age-033.jpg', 'proyectos/residencial/cases-age.html'],
-      ['Celler Nou Plus', 'oficines-celler-nou-plus-03.jpg', 'proyectos/oficinas-industrial/celler-nou-plus.html'],
-      ['Casa Assutzena', 'residencial-assutzena-02.jpg', 'proyectos/residencial/casa-assutzena.html'],
+      ['Celler Nou Plus', 'oficines-celler-nou-plus-03.jpg', 'proyectos/oficinas-industrial/celler-nou-plus.html', 50],
+      ['Casa Assutzena', 'residencial-assutzena-02.jpg', 'proyectos/residencial/casa-assutzena.html', 30],
       ['Casa Troana', 'residencial-troana-04.jpg', 'proyectos/residencial/casa-troana.html'],
-      ['Dexeus Hospital General de Catalunya', 'sanitari-dexeus-hgc-10.png', 'proyectos/sanitarios/dexeus-hospital-general-de-catalunya.html'],
-      ['Clínica Dexme-Midlife', 'sanitari-dexme-midlife-02.jpg', 'proyectos/sanitarios/clinica-dexme-midlife.html'],
-      ['Casa La Selva', 'residencial-selva-05.png', 'proyectos/residencial/casa-la-selva.html'],
+      ['Dexeus Hospital General de Catalunya', 'sanitari-dexeus-hgc-10.png', 'proyectos/sanitarios/dexeus-hospital-general-de-catalunya.html', 5],
+      ['Clínica Dexme-Midlife', 'sanitari-dexme-midlife-02.jpg', 'proyectos/sanitarios/clinica-dexme-midlife.html', 50],
+      ['Dexeus Hospital General de Catalunya', 'dexeus_hgc_08.png', 'proyectos/sanitarios/dexeus-hospital-general-de-catalunya.html', 40],
     ],
   };
   const heroItems = Math.random() < 0.5 ? heroSelections.selection1 : heroSelections.selection2;
@@ -59,6 +59,7 @@
   const thumbs = Array.from(section.querySelectorAll('[data-hero-thumb]'));
   const bullets = Array.from(section.querySelectorAll('[data-hero-go-to]'));
   const interval = 3500;
+  const autoAdvance = false;
   let activeIndex = 0;
   let startedAt = performance.now();
   let isPaused = false;
@@ -107,7 +108,7 @@
   };
 
   const tick = (now) => {
-    if (!isPaused && slides.length > 1) {
+    if (autoAdvance && !isPaused && slides.length > 1) {
       const elapsed = now - startedAt;
       const progress = Math.min(elapsed / interval, 1);
       const percent = `${(progress * 100).toFixed(1)}%`;
