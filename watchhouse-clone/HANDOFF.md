@@ -2,7 +2,7 @@
 
 ## Objetivo actual
 
-Completar la versión castellana del sitio estático sin modificar la versión catalana. El catalán es el idioma por defecto.
+Completar la versión inglesa del sitio estático sin modificar las versiones catalana ni castellana. El catalán es el idioma por defecto.
 
 ## Estructura
 
@@ -21,7 +21,8 @@ watchhouse-clone/
 │     ├─ projects.css
 │     └─ project-detail-base.css
 ├─ despatx-arquitectura-barcelona/             # catalán
-└─ despacho-arquitectura-barcelona/            # castellano
+├─ despacho-arquitectura-barcelona/            # castellano
+└─ architecture-studio-barcelona/              # inglés
 ```
 
 En ambos idiomas, la estructura es equivalente:
@@ -46,7 +47,7 @@ En ambos idiomas, la estructura es equivalente:
 
 - La raíz `watchhouse-clone/index.html` redirige a `despatx-arquitectura-barcelona/`; por tanto el catalán es el idioma inicial.
 - La barra de idioma enlaza Català y Castellano con su página equivalente, también en todas las fichas de proyecto.
-- English sigue sin enlace porque su versión aún no existe.
+- English enlaza con su página equivalente desde las tres versiones.
 - Los detalles de proyecto son páginas HTML estáticas.
 - Cada detalle tiene su CSS propio junto al HTML, dentro de su carpeta de categoría. Los estilos compartidos están en `shared/styles/project-detail-base.css`.
 - El fondo del footer usa el fondo general de la web; solo las páginas de detalle usan el color de papel específico.
@@ -67,28 +68,29 @@ En ambos idiomas, la estructura es equivalente:
 - Fichas residenciales con contenido real: Casa La Selva, Casa La Quadra, Casa Assutzena, Casa Valldoreix y Reforma Homer.
 - Etiquetas técnicas repetidas en todas las fichas: navegación, créditos, accesibilidad, footer y newsletter.
 
-### Pendiente: textos narrativos de fichas
+### Verificaciones completadas
 
-Traducir manualmente los párrafos largos que permanecen en catalán en estas fichas:
+- Se han traducido los textos narrativos pendientes de las fichas de equipamientos, sanitarios y oficinas e industrial indicadas en el relevo anterior.
+- Las portadas del grid de proyectos castellano vuelven a cargar correctamente.
+- Se han corregido las rutas de imágenes de las fichas castellanas afectadas: Aparcamiento Laguna Lanao, Aparcamiento Vall Palau, Escuela Sadako, Oficinas Breda, Oficinas Mèxic y RP Economistes.
+- Las referencias de imágenes de todas las fichas de proyectos en castellano han sido comprobadas y apuntan a archivos existentes.
+- Se han comprobado visualmente la navegación, filtros, galerías y el cambio Català/Castellano; todo funciona correctamente.
 
-```text
-despacho-arquitectura-barcelona/proyectos/equipamientos/aparcament-laguna-lanao.html
+### Traducción castellana completada
 
-despacho-arquitectura-barcelona/proyectos/sanitarios/
-├─ casa-jove-marina.html
-├─ clinica-del-remei.html
-├─ clinica-dexme-midlife.html
-├─ dexeus-hospital-general-de-catalunya.html
-└─ dexeus-hospital-viamed-tarragona.html
+Los fragmentos residuales de las fichas residenciales Reforma HOMER y Edificio ARCADI BALAGUER ya se han traducido al castellano, incluidas sus etiquetas de accesibilidad.
 
-despacho-arquitectura-barcelona/proyectos/oficinas-industrial/
-├─ celler-nou-plus.html
-├─ oficines-breda.html
-├─ oficines-mexic.html
-└─ rp-economistes.html
-```
+## Versión inglesa: estado
 
-También conviene revisar las fichas restantes de equipamientos por si contienen párrafos no detectados.
+### Terminada
+
+- Estructura completa en `architecture-studio-barcelona/`, creada a partir de la versión castellana.
+- Selector de idioma funcional en las tres versiones, con enlaces a la página equivalente.
+- Interfaz común inglesa: navegación, accesibilidad, pie, newsletter, navegación de proyectos y etiquetas técnicas repetidas.
+
+### Pendiente
+
+- Traducir los contenidos específicos de Inicio, Consultoría, Nosotros, Conceptos, índice de Proyectos y las fichas de proyecto.
 
 ### Lorem ipsum
 

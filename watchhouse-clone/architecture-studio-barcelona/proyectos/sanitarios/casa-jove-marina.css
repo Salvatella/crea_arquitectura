@@ -1,0 +1,13 @@
+.project-page { --project-gallery-gap: 3px; }
+
+@media (min-width: 768px) {
+  .marina-gallery { display: block; }
+  .marina-gallery__row { display: grid; gap: var(--project-gallery-gap); margin-bottom: var(--project-gallery-gap); }
+  .marina-gallery__row:last-child { margin-bottom: 0; }
+  .marina-gallery__row--one { grid-template-columns: 3fr 2fr; }
+  .marina-gallery__row--two { grid-template-columns: 2fr 3fr; }
+  .marina-gallery__row--three { grid-template-columns: 3fr 2fr; }
+  .marina-gallery__row--one figure { height: 60vh; }
+  .marina-gallery__row--two figure { height: 58vh; }
+  .marina-gallery__row--three figure { height: 50vh; }
+}

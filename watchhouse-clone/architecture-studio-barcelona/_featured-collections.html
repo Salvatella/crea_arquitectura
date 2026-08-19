@@ -1,0 +1,244 @@
+<!doctype html>
+<html class="" lang="en">
+  <!--
+    STASH: Secció "Proyectos destacats" extreta de home/index.html.
+    Guardada per reutilitzar-la més endavant. CSS inline a sota.
+    Depèn de variables de ../shared/general-styles.css (--site-gutter, --site-gap,
+    --site-line, --font-heading, --font-body). Les rutes d'imatge són relatives a home/.
+  -->
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Proyectos destacats — stash</title>
+    <link rel="stylesheet" href="../shared/general-styles.css">
+    <style>
+      .featured-card__cta {
+        align-items: center;
+        display: inline-flex;
+        font-size: 13px;
+        font-weight: 500;
+        gap: 8px;
+        width: max-content;
+      }
+
+      #featured-collections {
+        border-top: 1px solid var(--site-line);
+        display: grid;
+        gap: var(--site-gap);
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        padding: 10px var(--site-gutter) 80px;
+      }
+
+      #featured-collections > h2 {
+        font-family: var(--font-heading);
+        font-size: clamp(30px, 3.15vw, 54px);
+        font-weight: 500;
+        grid-column: 1 / span 4;
+        letter-spacing: -0.03em;
+        line-height: 1;
+      }
+
+      .featured-collections__list {
+        display: flex;
+        gap: 16px;
+        grid-column: 5 / -1;
+        overflow-x: auto;
+        padding: 0 0 10px;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+      }
+
+      .featured-collections__list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .featured-card {
+        display: flex;
+        flex: 0 0 290px;
+        flex-direction: column;
+        gap: 8px;
+        max-width: 290px;
+        min-width: 0;
+        scroll-snap-align: start;
+      }
+
+      .featured-card img {
+        aspect-ratio: 262 / 364;
+        height: auto;
+        object-fit: cover;
+        transition: filter 260ms ease;
+        width: 100%;
+      }
+
+      .featured-card:hover img {
+        filter: brightness(0.86);
+      }
+
+      .featured-card__title {
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-weight: 500;
+        line-height: 1.2;
+        margin: 0;
+      }
+
+      .featured-card__cta {
+        border-bottom: 1px solid var(--site-line);
+        border-top: 1px solid var(--site-line);
+        display: flex;
+        font-size: 11px;
+        justify-content: space-between;
+        letter-spacing: 0.2em;
+        line-height: 1;
+        margin-top: -4px;
+        min-height: 45px;
+        text-transform: uppercase;
+        width: 100%;
+      }
+
+      .featured-card__cta svg {
+        height: 16px;
+        width: 16px;
+      }
+
+      @media (max-width: 1024px) {
+        .featured-card {
+          flex-basis: calc((100% - var(--site-gap) * 2) / 2.5);
+        }
+      }
+
+      @media (max-width: 767px) {
+        #featured-collections {
+          display: block;
+          padding-block: 10px 80px;
+        }
+
+        #featured-collections > h2 {
+          font-size: 34px;
+        }
+
+        .featured-collections__list {
+          margin-top: 24px;
+          padding-bottom: 10px;
+          gap: var(--site-gap);
+        }
+
+        .featured-card {
+          flex-basis: 70%;
+          max-width: 70%;
+        }
+
+        .featured-card__title {
+          font-size: 14px;
+        }
+      }
+
+      @media (max-width: 479px) {
+        .featured-card {
+          flex-basis: 80%;
+        }
+
+        .featured-card img {
+          aspect-ratio: 4 / 3;
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .featured-card img {
+          transition: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+
+    <section id="featured-collections">
+      <h2>Proyectos destacats.</h2>
+      <div class="featured-collections__list">
+        <a class="featured-card" href="#project-casa-assutzena">
+          <img src="../imgs/hero_banner_imgs/residencial-assutzena-01.jpg" alt="Casa Assutzena" draggable="false">
+          <p class="featured-card__title">Casa Assutzena.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="featured-card" href="#project-clinica-remei">
+          <img src="../imgs/hero_banner_imgs/sanitari-dexme-midlife-02.jpg" alt="Clínica del Remei" draggable="false">
+          <p class="featured-card__title">Clínica del Remei.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="featured-card" href="#project-habitatges-comerc">
+          <img src="../imgs/hero_banner_imgs/residencial-selva-05.png" alt="Casa La Selva" draggable="false">
+          <p class="featured-card__title">Habitatges Comerç.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="featured-card" href="#project-laguna-lanao">
+          <img src="../imgs/hero_banner_imgs/equipaments-laguna-lanao-01.jpg" alt="Aparcament Laguna Lanao" draggable="false">
+          <p class="featured-card__title">Aparcament Laguna Lanao.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="featured-card" href="#project-habitatges-ab">
+          <img src="../imgs/hero_banner_imgs/residencial-troana-01.jpg" alt="Casa Troana" draggable="false">
+          <p class="featured-card__title">Habitatges AB.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="featured-card" href="#project-oficines-mexic">
+          <img src="../imgs/hero_banner_imgs/oficines-mexic-01.jpg" alt="Oficines Mèxic" draggable="false">
+          <p class="featured-card__title">Oficines Mèxic.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="featured-card" href="#project-casa-petunia">
+          <img src="../imgs/hero_banner_imgs/residencial-petunia-01.jpg" alt="Casa Petúnia" draggable="false">
+          <p class="featured-card__title">Casa Petúnia.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+        <a class="featured-card" href="#project-casa-troana">
+          <img src="../imgs/hero_banner_imgs/residencial-troana-01.jpg" alt="Casa Troana" draggable="false">
+          <p class="featured-card__title">Casa Troana.</p>
+          <span class="featured-card__cta">
+            <span>Ver proyecto</span>
+            <svg viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M13.996 6.192c.32-.321.84-.321 1.161 0l5.227 5.227c.321.32.321.84 0 1.161l-5.227 5.227a.821.821 0 1 1-1.161-1.161l3.825-3.825H3.375v-1.643h14.446l-3.825-3.825a.82.82 0 0 1 0-1.161"></path>
+            </svg>
+          </span>
+        </a>
+      </div>
+    </section>
+
+  </body>
+</html>

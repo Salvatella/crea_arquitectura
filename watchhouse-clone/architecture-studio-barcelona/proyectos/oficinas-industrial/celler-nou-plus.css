@@ -1,0 +1,8 @@
+.project-page { --project-gallery-gap: 3px; }
+
+.celler-gallery { background: var(--project-ink); display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(2, minmax(0, 1fr)); padding: var(--project-gallery-gap); }
+.celler-gallery figure { margin: 0; }
+.celler-gallery img { display: block; height: auto; width: 100%; }
+.celler-gallery__featured { grid-column: 1 / -1; }
+
+@media (max-width: 767px) { .celler-gallery { display: block; padding: 0; } .celler-gallery figure { margin-bottom: var(--project-gallery-gap); } }
