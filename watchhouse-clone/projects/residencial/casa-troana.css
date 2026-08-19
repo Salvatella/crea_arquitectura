@@ -1,1 +1,16 @@
 .project-page { --project-gallery-gap: 3px; }
+
+.troana-gallery__body .sticky-gallery__column--right figure:nth-child(2) { height: 48vh; }
+.troana-gallery__body .sticky-gallery__column--right figure:nth-child(2) img { object-position: right center; }
+.troana-gallery__body .sticky-gallery__column--right figure:nth-child(3) { aspect-ratio: 1; height: auto; }
+.troana-gallery__body .sticky-gallery__column--left figure:nth-child(2) { aspect-ratio: 4 / 5; height: auto; }
+
+@media (min-width: 768px) {
+  .troana-gallery { display: block; }
+  .troana-gallery__top { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .troana-gallery__top .troana-gallery__a1 { grid-column: 1 / span 2; }
+  .troana-gallery__top .troana-gallery__c1 { grid-column: 3; }
+  .troana-gallery__body { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--project-gallery-gap); }
+  .troana-gallery__body .sticky-gallery__column--center { height: calc(100vh - var(--project-gallery-gap)); position: sticky; top: 0; }
+  .troana-gallery__body .sticky-gallery__column--center figure { height: 100%; }
+}

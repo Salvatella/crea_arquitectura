@@ -18,8 +18,8 @@ Marca cada uno al terminar de revisarlo.
 - [x] Casa Assutzena — `projects/residencial/casa-assutzena.html`
 - [x] Casa La Quadra — `projects/residencial/casa-la-quadra.html`
 - [x] Casa La Selva — `projects/residencial/casa-la-selva.html`
-- [ ] Casa Petunia — `projects/residencial/casa-petunia.html`
-- [ ] Casa Troana — `projects/residencial/casa-troana.html`
+- [x] Casa Petunia — `projects/residencial/casa-petunia.html`
+- [x] Casa Troana — `projects/residencial/casa-troana.html`
 - [ ] Casa Valldoreix — `projects/residencial/casa-valldoreix.html`
 - [ ] Cases AGE — `projects/residencial/cases-age.html`
 - [ ] Cases SH10 — `projects/residencial/cases-sh10.html`
