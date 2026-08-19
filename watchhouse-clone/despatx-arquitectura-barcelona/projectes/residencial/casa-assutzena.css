@@ -1,0 +1,12 @@
+.project-page { --project-gallery-gap: 3px; }
+
+.sticky-gallery--assutzena { display: block; }
+
+@media (min-width: 768px) {
+  .assutzena-gallery__top { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .assutzena-gallery__top .assutzena-gallery__a1 { grid-column: 1 / span 2; }
+  .assutzena-gallery__top .assutzena-gallery__c1 { grid-column: 3; }
+  .assutzena-gallery__body { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(2, minmax(0, 1fr)); margin-top: var(--project-gallery-gap); }
+}
+
+@media (max-width: 767px) { .assutzena-gallery__top { display: block; } }

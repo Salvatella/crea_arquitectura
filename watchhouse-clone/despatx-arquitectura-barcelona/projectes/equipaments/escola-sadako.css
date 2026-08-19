@@ -1,0 +1,13 @@
+.project-page { --project-gallery-gap: 12px; }
+
+@media (min-width: 768px) {
+  .sadako-gallery {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .sadako-gallery__static-row { display: grid; grid-column: 1 / -1; grid-row: 1; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .sadako-gallery__b1 { grid-column: 1 / span 2; }
+  .sadako-gallery__c1 { grid-column: 3; }
+  .sadako-gallery__flow { display: grid; gap: var(--project-gallery-gap); grid-column: 1 / -1; grid-row: 2; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sadako-gallery__flow-column { display: grid; gap: var(--project-gallery-gap); }
+}

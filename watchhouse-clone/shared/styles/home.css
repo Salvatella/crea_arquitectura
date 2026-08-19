@@ -55,7 +55,7 @@ body.template-index {
   min-height: 0;
   min-width: 0;
   object-fit: cover;
-  object-position: center bottom;
+  object-position: center 35%;
   width: 100%;
 }
 

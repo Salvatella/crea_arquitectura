@@ -1,0 +1,24 @@
+.project-page { --project-gallery-gap: 12px; }
+
+@media (min-width: 768px) {
+  .sticky-gallery--two-columns {
+    grid-template-columns: minmax(0, 2fr) minmax(0, 1fr);
+  }
+
+  .sticky-gallery--two-columns .sticky-gallery__column--center {
+    height: auto;
+    position: static;
+  }
+
+  .sticky-gallery--two-columns .sticky-gallery__column--center figure:first-child {
+    height: calc(100vh - var(--project-gallery-gap));
+  }
+
+  .sticky-gallery--two-columns .sticky-gallery__column--center figure:nth-child(3) {
+    margin-top: 28px;
+  }
+
+  .sticky-gallery--two-columns .sticky-gallery__column--right figure:nth-child(2) {
+    margin-top: 52px;
+  }
+}
