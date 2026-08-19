@@ -6,11 +6,18 @@
   .age-gallery__top .age-gallery__ab1 { grid-column: 1 / span 2; grid-row: 1; }
   .age-gallery__top .age-gallery__c1 { grid-column: 3; grid-row: 1; }
   .age-gallery__top .age-gallery__ab2 { grid-column: 1; grid-row: 2; }
+  .age-gallery__top .age-gallery__ab2 img { object-position: center 82%; }
   .age-gallery__top .age-gallery__c2 { grid-column: 2 / span 2; grid-row: 2; }
   .age-gallery__top .age-gallery__ab3 { grid-column: 1 / span 2; grid-row: 3; }
   .age-gallery__top .age-gallery__ab3 { align-self: start; aspect-ratio: 2000 / 1331; height: auto; }
   .age-gallery__top .age-gallery__c3 { grid-column: 3; grid-row: 3; }
   .age-gallery__body { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--project-gallery-gap); }
+  .age-gallery__body .sticky-gallery__column--left figure,
+  .age-gallery__body .sticky-gallery__column--right figure { height: auto; }
+  .age-gallery__body .sticky-gallery__column--left img,
+  .age-gallery__body .sticky-gallery__column--right img { height: auto; object-fit: contain; }
+  .age-gallery__body .sticky-gallery__column--left figure:nth-child(4) img { object-position: left center; }
+  .age-gallery__body .sticky-gallery__column--right figure:first-child { margin-top: -8vh; }
   .age-gallery__body .sticky-gallery__column--center { align-content: start; display: grid; gap: var(--project-gallery-gap); height: auto; position: static; }
   .age-gallery__body .sticky-gallery__column--center figure { height: calc(100vh - var(--project-gallery-gap)); }
   .age-gallery__body .age-gallery__sticky-first { margin-bottom: 32vh; position: sticky; top: 0; z-index: 1; }

@@ -21,14 +21,14 @@ Marca cada uno al terminar de revisarlo.
 - [x] Casa Petunia — `projects/residencial/casa-petunia.html`
 - [x] Casa Troana — `projects/residencial/casa-troana.html`
 - [x] Casa Valldoreix — `projects/residencial/casa-valldoreix.html`
-- [ ] Cases AGE — `projects/residencial/cases-age.html`
-- [ ] Cases SH10 — `projects/residencial/cases-sh10.html`
-- [ ] Habitatges AB — `projects/residencial/habitatges-ab.html`
-- [ ] Habitatges AG — `projects/residencial/habitatges-ag.html`
-- [ ] Reforma Homer — `projects/residencial/reforma-homer.html`
+- [x] Cases AGE — `projects/residencial/cases-age.html`
+- [x] Cases SH10 — `projects/residencial/cases-sh10.html`
+- [x] Habitatges AB — `projects/residencial/habitatges-ab.html`
+- [x] Habitatges AG — `projects/residencial/habitatges-ag.html`
+- [x] Reforma Homer — `projects/residencial/reforma-homer.html`
 
 ## Sanitaris (5)
-- [ ] Casa Jove Marina — `projects/sanitaris/casa-jove-marina.html`
+- [x] Casa Jove Marina — `projects/sanitaris/casa-jove-marina.html`
 - [ ] Clínica del Remei — `projects/sanitaris/clinica-del-remei.html`
 - [ ] Clínica Dexme Midlife — `projects/sanitaris/clinica-dexme-midlife.html`
 - [ ] Dexeus Hospital General de Catalunya — `projects/sanitaris/dexeus-hospital-general-de-catalunya.html`
