@@ -25,7 +25,7 @@
     button.addEventListener('click', () => setFilter(button.dataset.filter));
   });
 
-  // Aplica el filtre indicat a la URL (?filter=residencial) en carregar la pàgina.
+  // Aplica el filtro indicado en la URL (?filter=residencial) al cargar la página.
   const requested = new URLSearchParams(window.location.search).get('filter');
   const known = filters.map((button) => button.dataset.filter);
 
