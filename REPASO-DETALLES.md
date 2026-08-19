@@ -32,6 +32,6 @@ Marca cada uno al terminar de revisarlo.
 - [x] Clínica del Remei — `projects/sanitaris/clinica-del-remei.html`
 - [x] Clínica Dexme Midlife — `projects/sanitaris/clinica-dexme-midlife.html`
 - [x] Dexeus Hospital General de Catalunya — `projects/sanitaris/dexeus-hospital-general-de-catalunya.html`
-- [ ] Dexeus Hospital Viamed Tarragona — `projects/sanitaris/dexeus-hospital-viamed-tarragona.html`
+- [x] Dexeus Hospital Viamed Tarragona — `projects/sanitaris/dexeus-hospital-viamed-tarragona.html`
 </content>
 </invoke>
