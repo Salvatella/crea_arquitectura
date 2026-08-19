@@ -59,7 +59,7 @@
   const thumbs = Array.from(section.querySelectorAll('[data-hero-thumb]'));
   const bullets = Array.from(section.querySelectorAll('[data-hero-go-to]'));
   const interval = 3500;
-  const autoAdvance = false;
+  const autoAdvance = true;
   let activeIndex = 0;
   let startedAt = performance.now();
   let isPaused = false;
