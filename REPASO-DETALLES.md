@@ -29,9 +29,9 @@ Marca cada uno al terminar de revisarlo.
 
 ## Sanitaris (5)
 - [x] Casa Jove Marina — `projects/sanitaris/casa-jove-marina.html`
-- [ ] Clínica del Remei — `projects/sanitaris/clinica-del-remei.html`
-- [ ] Clínica Dexme Midlife — `projects/sanitaris/clinica-dexme-midlife.html`
-- [ ] Dexeus Hospital General de Catalunya — `projects/sanitaris/dexeus-hospital-general-de-catalunya.html`
+- [x] Clínica del Remei — `projects/sanitaris/clinica-del-remei.html`
+- [x] Clínica Dexme Midlife — `projects/sanitaris/clinica-dexme-midlife.html`
+- [x] Dexeus Hospital General de Catalunya — `projects/sanitaris/dexeus-hospital-general-de-catalunya.html`
 - [ ] Dexeus Hospital Viamed Tarragona — `projects/sanitaris/dexeus-hospital-viamed-tarragona.html`
 </content>
 </invoke>
