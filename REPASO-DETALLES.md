@@ -20,7 +20,7 @@ Marca cada uno al terminar de revisarlo.
 - [x] Casa La Selva — `projects/residencial/casa-la-selva.html`
 - [x] Casa Petunia — `projects/residencial/casa-petunia.html`
 - [x] Casa Troana — `projects/residencial/casa-troana.html`
-- [ ] Casa Valldoreix — `projects/residencial/casa-valldoreix.html`
+- [x] Casa Valldoreix — `projects/residencial/casa-valldoreix.html`
 - [ ] Cases AGE — `projects/residencial/cases-age.html`
 - [ ] Cases SH10 — `projects/residencial/cases-sh10.html`
 - [ ] Habitatges AB — `projects/residencial/habitatges-ab.html`
