@@ -92,8 +92,8 @@
 .consulting-accordion.is-open .consulting-accordion__number,
 .consulting-accordion.is-open .consulting-accordion__symbol { color: #92a91d; }
 
-.consulting-accordion.is-open .consulting-accordion__symbol::before { transform: rotate(45deg); }
-.consulting-accordion.is-open .consulting-accordion__symbol::after { transform: rotate(-45deg); }
+.consulting-accordion.is-open .consulting-accordion__symbol::before { transform: rotate(45deg) scaleX(1.4142); }
+.consulting-accordion.is-open .consulting-accordion__symbol::after { transform: rotate(-45deg) scaleX(1.4142); }
 
 .consulting-accordion__content {
   display: block;
