@@ -1,0 +1,33 @@
+{
+  "instructions": "Edit only the value of corrected_name. Keep id unchanged. Return this JSON when ready.",
+  "projects": [
+    { "id": "club-petanca", "current_name": "Club PETANCA", "corrected_name": "PETANCA Club" },
+    { "id": "aparcament-vall-palau", "current_name": "VALL PALAU Car Park", "corrected_name": "VALL PALAU Car Park" },
+    { "id": "escola-sadako", "current_name": "SADAKO School", "corrected_name": "" },
+    { "id": "aparcament-laguna-lanao", "current_name": "LAGUNA LANAO Car Park", "corrected_name": "" },
+    { "id": "escola-cultura-practica", "current_name": "CULTURA PRÀCTICA School", "corrected_name": "" },
+    { "id": "biblioteca-olesa", "current_name": "Biblioteca OLESA", "corrected_name": "OLESA Library" },
+    { "id": "centre-assistencial-encuny", "current_name": "ENCUNY Care Centre", "corrected_name": "" },
+    { "id": "rp-economistes", "current_name": "RP ECONOMISTES Offices", "corrected_name": "" },
+    { "id": "oficines-mexic", "current_name": "MÈXIC Offices", "corrected_name": "" },
+    { "id": "oficines-breda", "current_name": "BREDA Offices", "corrected_name": "" },
+    { "id": "celler-nou-plus", "current_name": "Celler NOU PLUS", "corrected_name": "NOU PLUS Winery" },
+    { "id": "habitatges-comerc", "current_name": "COMERÇ Homes", "corrected_name": "" },
+    { "id": "habitatges-ab", "current_name": "AB Homes", "corrected_name": "" },
+    { "id": "casa-petunia", "current_name": "Casa PETÚNIA", "corrected_name": "PETÚNIA House" },
+    { "id": "reforma-homer", "current_name": "Reforma HOMER", "corrected_name": "HOMER Remodeling" },
+    { "id": "habitatges-ag", "current_name": "ÀG Homes", "corrected_name": "" },
+    { "id": "cases-sh10", "current_name": "Cases SH10", "corrected_name": "SH10 Homes" },
+    { "id": "casa-troana", "current_name": "Casa TROANA", "corrected_name": "TROANA House" },
+    { "id": "cases-age", "current_name": "AGE Homes", "corrected_name": "" },
+    { "id": "clinica-del-remei", "current_name": "REMEI Clinic", "corrected_name": "" },
+    { "id": "casa-jove-marina", "current_name": "Casa JOVE MARINA", "corrected_name": "JOVE MARINA House" },
+    { "id": "dexeus-hospital-general-de-catalunya", "current_name": "DEXEUS Hospital General de Catalunya", "corrected_name": "DEXEUS General Hospital of Catalonia" },
+    { "id": "clinica-dexme-midlife", "current_name": "DEXME-MIDLIFE Clinic", "corrected_name": "" },
+    { "id": "dexeus-hospital-viamed-tarragona", "current_name": "DEXEUS Hospital Viamed TARRAGONA", "corrected_name": "DEXEUS Hospital Viamed TARRAGONA" },
+    { "id": "casa-la-selva", "current_name": "Casa LA SELVA", "corrected_name": "La SELVA Home" },
+    { "id": "casa-valldoreix", "current_name": "Casa VALLDOREIX", "corrected_name": "VALLDOREIX Home" },
+    { "id": "casa-la-quadra", "current_name": "Casa LA QUADRA", "corrected_name": "LA QUADRA Home" },
+    { "id": "casa-assutzena", "current_name": "Casa ASSUTZENA", "corrected_name": "ASSUTZENA Home" }
+  ]
+}
