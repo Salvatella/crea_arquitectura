@@ -50,8 +50,11 @@
       window.setTimeout(() => viewport.focus({ preventScroll: true }), 350);
     }, { once: true });
 
-    previous?.addEventListener('click', () => scrollByStep(viewport, -1));
-    next?.addEventListener('click', () => scrollByStep(viewport, 1));
+    // En el recorrido invertido (Rehabilitar) las flechas se giran para que
+    // la flecha derecha avance al siguiente paso, igual que en Reutilizar.
+    const stepDir = wrapper.querySelector('.product-guide--reversed') ? -1 : 1;
+    previous?.addEventListener('click', () => scrollByStep(viewport, -stepDir));
+    next?.addEventListener('click', () => scrollByStep(viewport, stepDir));
 
     viewport.addEventListener('wheel', (event) => {
       if (event.shiftKey || !event.deltaY) return;
@@ -62,11 +65,11 @@
     viewport.addEventListener('keydown', (event) => {
       if (event.key === 'ArrowLeft') {
         event.preventDefault();
-        scrollByStep(viewport, -1);
+        scrollByStep(viewport, -stepDir);
       }
       if (event.key === 'ArrowRight') {
         event.preventDefault();
-        scrollByStep(viewport, 1);
+        scrollByStep(viewport, stepDir);
       }
     });
 

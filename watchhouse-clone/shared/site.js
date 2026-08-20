@@ -145,6 +145,15 @@
 
   if (!forms.length) return;
 
+  // Base dinàmica del lloc (domini + subpath). Es llegeix de watchhouse-clone/
+  // base-url.txt perquè el redireccionament post-enviament (_next) no depengui
+  // de la plataforma (GitHub Pages, IONOS, etc.). Només canvia aquest fitxer.
+  let baseUrl = '';
+  fetch('../../base-url.txt')
+    .then((response) => (response.ok ? response.text() : ''))
+    .then((text) => { baseUrl = text.trim().replace(/\/$/, ''); })
+    .catch(() => {});
+
   const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
 
   const language = document.documentElement.lang.toLowerCase().split('-')[0];
@@ -252,6 +261,15 @@
       if (firstInvalid) {
         event.preventDefault();
         firstInvalid.focus();
+        return;
+      }
+
+      // Enviament vàlid: converteix el path estàtic de _next en URL absoluta
+      // amb la base actual. Si encara no s'ha carregat base-url.txt, es manté
+      // el valor tal qual.
+      const next = form.querySelector('input[name="_next"]');
+      if (next && baseUrl && next.value.startsWith('/')) {
+        next.value = baseUrl + next.value;
       }
     });
   });
