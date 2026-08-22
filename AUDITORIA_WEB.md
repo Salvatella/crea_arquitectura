@@ -67,9 +67,13 @@ Hallazgo adicional corregido: la versión inglesa (`EN/proyectos/index.html` y `
 
 ### P1 — SEO multilingüe incompleto
 
-**P1.a y P1.b siguen PENDIENTES** (reverificado 22 ago 2026): 70 archivos sin `meta description`, 90 sin `canonical`. La revisión de traducciones (R5) no tocó SEO.
-
 Estado a 22 ago 2026 (sobre 100 archivos HTML).
+
+- **P1.a — `meta description`: RESUELTO.** Las 100 páginas tienen descripción única. Fichas con texto real derivadas del `project-story__lead` (en su idioma, ≤160 car); las 4 fichas Lorem × 3 idiomas usan plantilla factual (nombre + categoría + CREA Arquitectura); `_featured-collections` y la raíz usan la descripción del home de su idioma. Es contenido puro sin dominio → válido también en producción.
+- **P1.b — `canonical`: PENDIENTE, aplazado.** Requiere URL absoluta. El sitio está en un enlace provisional de GitHub Pages sin dominio final conocido; se hará en un pase automatizado cuando exista el dominio, para no rehacerlo ni indexar la URL provisional.
+- **P1.c — `hreflang`: PENDIENTE, aplazado.** Igual que P1.b (URL absoluta). Base ya disponible en el `language-bar` de cada página.
+
+Nota: `noindex` provisional descartado por el usuario (no es un dominio público, sin interés SEO por ahora).
 
 **P1.a — Falta `meta description` (70 archivos).**
 Las páginas principales (inicio, consultoría, nosotros, conceptos, índice de proyectos y legales) sí la tienen. Falta en:
@@ -126,9 +130,11 @@ Decisión (22 ago 2026): no se añade `required` ni se retira `novalidate`. La v
 
 ## 📋 Orden de prioridad recomendado (22 ago 2026)
 
-1. **P1** — SEO: `meta description` en fichas, `canonical` por página, `hreflang` entre CA/ES/EN.
-2. **P2** — Jerarquía de `<h1>` en portadas y Conceptos.
-3. **P5** — Autoalojar la fuente Balto.
+1. **P2** — Jerarquía de `<h1>` en portadas y Conceptos.
+2. **P5** — Autoalojar la fuente Balto.
+3. **P1.b / P1.c** — `canonical`, `hreflang` y `sitemap.xml` (aplazados hasta tener dominio final).
+
+Nota: **P1.a** (`meta description`) ya resuelto; ver sección P1.
 
 Resueltos: R1, R2, R3, R4, R5. Decisión cerrada: D1.
 
