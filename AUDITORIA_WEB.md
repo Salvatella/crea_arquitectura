@@ -14,7 +14,7 @@ Abreviaturas de idioma usadas en las rutas:
 
 ## Resumen
 
-La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. **Los dos bloqueantes previos al lanzamiento (R1, R2) ya están resueltos.** Quedan pendientes mejoras de SEO (P1), jerarquía de encabezados (P2), mantenimiento multilingüe (P3), rutas con entidades HTML (P4) y dependencia de la fuente Balto (P5).
+La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. **Los dos bloqueantes previos al lanzamiento (R1, R2) ya están resueltos.** Quedan pendientes mejoras de SEO (P1), jerarquía de encabezados (P2) y dependencia de la fuente Balto (P5).
 
 ## ✅ Resuelto (verificado 22 ago 2026)
 
@@ -86,12 +86,6 @@ Impacto: Google entiende peor cada página y las versiones lingüísticas compit
 
 ✅ Acción: un único `<h1>` por página; el resto a `<h2>`/`<h3>` según jerarquía.
 
-### P3 — Mantenimiento multilingüe
-
-Tres árboles HTML completos (`CA/`, `ES/`, `EN/`) y contenido común duplicado en `watchhouse-clone/shared/`. Cada cambio común debe repetirse ×3; riesgo de desincronización.
-
-✅ Acción: lista de comprobación para cambios globales; a medio plazo, plantillas o generación estática desde contenido común.
-
 ### P4 — Rutas de recursos con entidades HTML
 
 RESUELTO. Ver R4 en la sección de resueltos.
@@ -125,8 +119,7 @@ Decisión (22 ago 2026): no se añade `required` ni se retira `novalidate`. La v
 
 1. **P1** — SEO: `meta description` en fichas, `canonical` por página, `hreflang` entre CA/ES/EN.
 2. **P2** — Jerarquía de `<h1>` en portadas y Conceptos.
-3. **P3** — Mantenibilidad multilingüe.
-4. **P5** — Autoalojar la fuente Balto.
+3. **P5** — Autoalojar la fuente Balto.
 
 Resueltos: R1, R2, R3, R4. Decisión cerrada: D1.
 
