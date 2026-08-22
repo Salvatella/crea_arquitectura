@@ -1,76 +1,65 @@
 # Auditoría global — Watchhouse Clone
 
-Fecha: 19 de agosto de 2026  
-Alcance: revisión estática de estructura, enlaces, recursos, formularios, accesibilidad, SEO y JavaScript.  
-Estado: no se han realizado modificaciones durante esta auditoría.
+Fecha auditoría original: 19 de agosto de 2026  
+Última actualización: 22 de agosto de 2026  
+Alcance: revisión estática de estructura, enlaces, recursos, formularios, accesibilidad, SEO y JavaScript.
 
 ## Resumen
 
-La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. Hay, no obstante, dos incidencias importantes que conviene resolver antes de publicar, además de mejoras de SEO, accesibilidad y mantenimiento.
+La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. **Los dos bloqueantes previos al lanzamiento ya están resueltos.** Quedan pendientes mejoras de SEO, jerarquía de encabezados, validación nativa de formularios y mantenimiento multilingüe.
 
-## 🔴 Errores a corregir antes de publicar
+## ✅ Resuelto desde la auditoría original (verificado 22 ago 2026)
 
-### Formularios con redirección a `127.0.0.1`
+### Formularios con redirección a `127.0.0.1` — RESUELTO
 
-Se han detectado 6 formularios con el campo oculto `_next` apuntando a `http://127.0.0.1:5641/...`.
+Los 6 formularios ya no apuntan a `http://127.0.0.1:5641/...`. Todos los campos ocultos `_next` usan ahora la URL de producción equivalente, por ejemplo:
 
-Tras enviar un formulario en producción, la persona visitante sería redirigida a una dirección local inexistente. Afecta a las páginas de Consultoría y Nosotros en catalán, castellano e inglés.
+- `.../despatx-arquitectura-barcelona/consultoria/#contacte`
+- `.../despacho-arquitectura-barcelona/nosaltres/#contacte`
+- `.../architecture-studio-barcelona/consultoria/#contacte`
 
-Ejemplos:
+Verificación: `0` apariciones de `127.0.0.1` en HTML.
 
-- `watchhouse-clone/despacho-arquitectura-barcelona/consultoria/index.html`
-- `watchhouse-clone/architecture-studio-barcelona/nosaltres/index.html`
+### Enlaces vacíos con `href="#"` — RESUELTO
 
-✅ Acción recomendada: sustituir cada valor `_next` por la URL definitiva de producción correspondiente o por una solución de redirección compatible con el proveedor de formularios.
+`0` apariciones de `href="#"` en todo el sitio. Los enlaces del pie (sociales, legales) y los iconos de equipo apuntan ahora a destinos reales o se han retirado. Las páginas legales (aviso legal, privacidad, cookies) están publicadas en los tres idiomas.
 
-### Enlaces vacíos con `href="#"`
+### Enlace de salto al contenido — RESUELTO en la práctica
 
-Hay 615 apariciones de `href="#"`. No son 615 fallos independientes: se trata de bloques de plantilla repetidos entre páginas e idiomas.
+96 de 100 archivos HTML incluyen el enlace `href="#MainContent"`. Los 4 restantes no son páginas navegables: 3 son fragmentos parciales `_featured-collections.html` y 1 es la raíz `index.html` (redirección). No requieren acción.
 
-Incluyen:
+## 🟠 Warnings y mejoras recomendadas (pendientes)
 
-- Tarjetas sociales del pie de página.
-- Enlaces legales: aviso legal, política de privacidad y cookies.
-- Iconos de LinkedIn en las fichas de equipo.
+### SEO multilingüe incompleto — PARCIAL
 
-Estos enlaces no llevan a contenido real y, al pulsarlos, desplazan la página al inicio.
+Estado a 22 ago 2026 (sobre 100 archivos HTML):
 
-✅ Acción recomendada: enlazar a destinos reales. Si una sección no va a existir, eliminar el enlace o convertirlo en un elemento no interactivo. Los enlaces legales deben estar publicados antes del lanzamiento.
-
-## 🟠 Warnings y mejoras recomendadas
-
-### SEO multilingüe incompleto
-
-- 70 de 91 archivos HTML no tienen `meta description`; el grupo principal son las fichas de proyecto.
-- 90 páginas no tienen etiqueta `canonical`.
-- No se han encontrado etiquetas `hreflang` para relacionar las versiones CA, ES y EN.
+- 70 archivos siguen sin `meta description`. Las páginas principales (inicio, consultoría, nosotros, conceptos, índice de proyectos y legales) sí la tienen; el grupo pendiente son las fichas de proyecto en los tres idiomas y los fragmentos `_featured-collections.html`.
+- 90 páginas siguen sin `canonical`. Solo lo incluyen las 9 páginas legales y la raíz `index.html`.
+- Siguen sin encontrarse etiquetas `hreflang` para relacionar las versiones CA, ES y EN (0 archivos).
 
 Impacto: Google puede entender peor el propósito de cada página y competir entre versiones lingüísticas equivalentes.
 
 ✅ Acción recomendada: añadir una descripción única en cada ficha, una URL canónica por página y enlaces `hreflang` entre sus equivalentes en catalán, castellano e inglés.
 
-### Jerarquía de encabezados
+### Jerarquía de encabezados — SIN CAMBIOS
 
-- Las tres páginas de inicio no incluyen un `<h1>`.
-- Cada página de Conceptos contiene seis `<h1>`.
+- Las tres páginas de inicio siguen sin incluir un `<h1>`.
+- Cada página de Conceptos sigue conteniendo seis `<h1>`.
 
 Esto no afecta al diseño visual, pero reduce la claridad semántica para buscadores y tecnologías de asistencia.
 
 ✅ Acción recomendada: mantener un único `<h1>` por página; convertir los demás títulos en `<h2>` o niveles posteriores según la jerarquía.
 
-### Formularios dependientes de JavaScript
+### Formularios dependientes de JavaScript — SIN CAMBIOS (decisión: mantener)
 
-Los 6 formularios utilizan `novalidate`, por lo que la comprobación de campos depende del JavaScript compartido.
+Los 6 formularios (Consultoría y Nosotros en CA/ES/EN) usan `novalidate` y `type="email"` en el campo de correo. Ninguno incluye `required`; toda la validación depende del JavaScript compartido `shared/site.js`.
 
-El comportamiento actual es correcto con JavaScript, pero si este falla, está bloqueado o tarda en cargar, no hay una validación nativa de respaldo.
+Reglas de validación en JS: `name` obligatorio (mín. 2 caracteres), `email` obligatorio con patrón, `message` obligatorio, `phone` opcional.
 
-✅ Acción recomendada: mantener la validación personalizada y añadir también atributos HTML nativos como `required` y `type="email"`.
+El comportamiento es correcto con JavaScript activo. Si el JS falla, está bloqueado o tarda en cargar, no hay validación nativa de respaldo.
 
-### Accesibilidad de navegación
-
-24 páginas no contienen un enlace para saltar directamente al contenido principal.
-
-✅ Acción recomendada: incorporar un enlace visualmente oculto al inicio que permita a quien navega con teclado ir a `<main>`.
+Decisión (22 ago 2026): se mantiene el comportamiento actual, sin añadir `required` ni retirar `novalidate`. La validación seguirá dependiendo de `site.js`.
 
 ### Mantenimiento de idiomas
 
@@ -95,13 +84,16 @@ El navegador las resuelve, pero ciertas herramientas de auditoría estática pue
 - Los enlaces externos con `target="_blank"` usan `rel="noreferrer"`, que incluye la protección equivalente a `noopener`.
 - La validación de formularios está centralizada y adapta correctamente los mensajes a catalán, castellano e inglés en `watchhouse-clone/shared/site.js`.
 
-## 📋 Orden de prioridad recomendado
+## 📋 Orden de prioridad recomendado (actualizado 22 ago 2026)
 
-1. 🔴 Sustituir las redirecciones `127.0.0.1` de todos los formularios.
-2. 🔴 Resolver o retirar los enlaces `href="#"`, especialmente los legales.
-3. 🟠 Completar SEO: descripciones, canónicas y `hreflang`.
-4. 🟠 Corregir la jerarquía de `<h1>` y añadir el enlace de salto al contenido.
-5. 🟡 Mejorar la mantenibilidad multilingüe y normalizar rutas de recursos.
+Bloqueantes previos (`_next` a `127.0.0.1` y `href="#"`) ya resueltos. Pendiente:
+
+1. 🟠 Completar SEO: `meta description` en las fichas de proyecto, `canonical` por página y `hreflang` entre equivalentes CA/ES/EN.
+2. 🟠 Corregir la jerarquía de `<h1>`: añadir un único `<h1>` en las tres portadas; reducir los seis `<h1>` de Conceptos a uno.
+3. 🟡 Mejorar la mantenibilidad multilingüe y normalizar rutas de recursos con entidades HTML.
+4. 🟡 Valorar autoalojar la fuente Balto (hoy depende del CDN externo `watchhouse.com`).
+
+Nota: la validación nativa de formularios (`required` / retirar `novalidate`) se ha descartado por decisión; se mantiene la validación por JavaScript.
 
 ## Límites de esta auditoría
 
