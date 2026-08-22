@@ -47,6 +47,13 @@ Verificación: 801 referencias al árbol comprobadas, `0` rotas. `0` rutas con `
 
 Hallazgo adicional corregido: la versión inglesa (`EN/proyectos/index.html` y `EN/conceptes/index.html`) tenía 10 referencias a carpetas con el nombre traducido al inglés (p. ej. `2003. VALLDOREIX Home`, `2005. PETANCA Club`) que **nunca existieron en disco** — enlaces rotos previos a P4. Se han redirigido a las carpetas reales normalizadas.
 
+### R5 — Traducciones de fichas ES/EN (revisión 22 ago 2026)
+
+- **EN**: nombres de proyecto de `<title>`, `<h1>`, `alt` y etiqueta de galería alineados al grid (fuente de verdad); `title == h1` en las 24 fichas; eyebrow `Residencial` → `Residential`; alts descriptivos que quedaban en español/catalán traducidos (`celler-nou-plus`, `casa-assutzena`); nombres de fundación unificados al oficial catalán `Fundació` (se eliminó el español `Fundación`).
+- **ES**: cuerpo de `casa-assutzena` y `casa-petunia` estaba en catalán → traducido; etiqueta de galería `Galeria de` → `Galería de` (21 fichas); alts catalanes de `casa-assutzena` → español; genéricos catalanes `Cases` → `Casas` y `Habitatges` → `Viviendas` en fichas, grid, home, featured y `home.js` (incluidas las variantes con `<br>` en los `<h1>`); alts catalanes del home (`façana`, `jardí`) → español.
+- Pendiente/decisión abierta: `Celler NOU PLUS` se mantiene en ES por ser nombre comercial de la bodega (y del cliente). Cambiar a `Bodega` solo si se confirma.
+- Lorem ipsum intacto (`casa-troana`, `cases-age`, `cases-sh10`, `habitatges-ag`).
+
 ### R3 — Enlace de salto al contenido
 
 96 de 100 archivos HTML incluyen `href="#MainContent"`. Los 4 restantes no son páginas navegables y no requieren acción:
@@ -59,6 +66,8 @@ Hallazgo adicional corregido: la versión inglesa (`EN/proyectos/index.html` y `
 ## 🟠 Pendiente
 
 ### P1 — SEO multilingüe incompleto
+
+**P1.a y P1.b siguen PENDIENTES** (reverificado 22 ago 2026): 70 archivos sin `meta description`, 90 sin `canonical`. La revisión de traducciones (R5) no tocó SEO.
 
 Estado a 22 ago 2026 (sobre 100 archivos HTML).
 
@@ -121,7 +130,7 @@ Decisión (22 ago 2026): no se añade `required` ni se retira `novalidate`. La v
 2. **P2** — Jerarquía de `<h1>` en portadas y Conceptos.
 3. **P5** — Autoalojar la fuente Balto.
 
-Resueltos: R1, R2, R3, R4. Decisión cerrada: D1.
+Resueltos: R1, R2, R3, R4, R5. Decisión cerrada: D1.
 
 ## Límites de esta auditoría
 
