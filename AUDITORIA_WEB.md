@@ -4,76 +4,113 @@ Fecha auditoría original: 19 de agosto de 2026
 Última actualización: 22 de agosto de 2026  
 Alcance: revisión estática de estructura, enlaces, recursos, formularios, accesibilidad, SEO y JavaScript.
 
+Cada incidencia tiene un identificador (`R#` resuelto, `P#` pendiente, `D#` decisión) y la lista de rutas/recursos afectados.
+
+Abreviaturas de idioma usadas en las rutas:
+
+- `CA` = `watchhouse-clone/despatx-arquitectura-barcelona/`
+- `ES` = `watchhouse-clone/despacho-arquitectura-barcelona/`
+- `EN` = `watchhouse-clone/architecture-studio-barcelona/`
+
 ## Resumen
 
-La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. **Los dos bloqueantes previos al lanzamiento ya están resueltos.** Quedan pendientes mejoras de SEO, jerarquía de encabezados, validación nativa de formularios y mantenimiento multilingüe.
+La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. **Los dos bloqueantes previos al lanzamiento (R1, R2) ya están resueltos.** Quedan pendientes mejoras de SEO (P1), jerarquía de encabezados (P2), mantenimiento multilingüe (P3), rutas con entidades HTML (P4) y dependencia de la fuente Balto (P5).
 
-## ✅ Resuelto desde la auditoría original (verificado 22 ago 2026)
+## ✅ Resuelto (verificado 22 ago 2026)
 
-### Formularios con redirección a `127.0.0.1` — RESUELTO
+### R1 — Formularios con redirección a `127.0.0.1`
 
-Los 6 formularios ya no apuntan a `http://127.0.0.1:5641/...`. Todos los campos ocultos `_next` usan ahora la URL de producción equivalente, por ejemplo:
+Los 6 formularios ya no apuntan a `http://127.0.0.1:5641/...`. Todos los campos ocultos `_next` usan la URL de producción equivalente. Verificación: `0` apariciones de `127.0.0.1` en HTML.
 
-- `.../despatx-arquitectura-barcelona/consultoria/#contacte`
-- `.../despacho-arquitectura-barcelona/nosaltres/#contacte`
-- `.../architecture-studio-barcelona/consultoria/#contacte`
+Rutas afectadas (ya corregidas):
 
-Verificación: `0` apariciones de `127.0.0.1` en HTML.
+- `CA/consultoria/index.html`
+- `CA/nosaltres/index.html`
+- `ES/consultoria/index.html`
+- `ES/nosaltres/index.html`
+- `EN/consultoria/index.html`
+- `EN/nosaltres/index.html`
 
-### Enlaces vacíos con `href="#"` — RESUELTO
+### R2 — Enlaces vacíos con `href="#"`
 
-`0` apariciones de `href="#"` en todo el sitio. Los enlaces del pie (sociales, legales) y los iconos de equipo apuntan ahora a destinos reales o se han retirado. Las páginas legales (aviso legal, privacidad, cookies) están publicadas en los tres idiomas.
+`0` apariciones de `href="#"` en todo el sitio. Los enlaces del pie (sociales, legales) y los iconos de equipo apuntan ahora a destinos reales o se han retirado. Las páginas legales están publicadas en los tres idiomas:
 
-### Enlace de salto al contenido — RESUELTO en la práctica
+- `CA/legal/avis-legal/`, `CA/legal/politica-privacitat/`, `CA/legal/politica-cookies/`
+- `ES/legal/aviso-legal/`, `ES/legal/politica-privacidad/`, `ES/legal/politica-cookies/`
+- `EN/legal/legal-notice/`, `EN/legal/privacy-policy/`, `EN/legal/cookie-policy/`
 
-96 de 100 archivos HTML incluyen el enlace `href="#MainContent"`. Los 4 restantes no son páginas navegables: 3 son fragmentos parciales `_featured-collections.html` y 1 es la raíz `index.html` (redirección). No requieren acción.
+### R4 — Rutas de recursos con entidades HTML (antes P4)
 
-## 🟠 Warnings y mejoras recomendadas (pendientes)
+Normalizadas a `snake_case` ASCII todas las carpetas del árbol `imgs/enviament_1_2026-05-09/...` (minúsculas, sin acentos, sin puntos, espacios → `_`; se mantienen los guiones de fechas). Se renombraron 317 archivos (`git mv`, conservando la jerarquía) y se reescribieron las referencias en 79 archivos HTML/JS en sus tres codificaciones anteriores (cruda, `%xx`, `&#nnn;`).
 
-### SEO multilingüe incompleto — PARCIAL
+Verificación: 801 referencias al árbol comprobadas, `0` rotas. `0` rutas con `%20`/`%C3`/`&#`/espacios en todo el sitio.
 
-Estado a 22 ago 2026 (sobre 100 archivos HTML):
+Hallazgo adicional corregido: la versión inglesa (`EN/proyectos/index.html` y `EN/conceptes/index.html`) tenía 10 referencias a carpetas con el nombre traducido al inglés (p. ej. `2003. VALLDOREIX Home`, `2005. PETANCA Club`) que **nunca existieron en disco** — enlaces rotos previos a P4. Se han redirigido a las carpetas reales normalizadas.
 
-- 70 archivos siguen sin `meta description`. Las páginas principales (inicio, consultoría, nosotros, conceptos, índice de proyectos y legales) sí la tienen; el grupo pendiente son las fichas de proyecto en los tres idiomas y los fragmentos `_featured-collections.html`.
-- 90 páginas siguen sin `canonical`. Solo lo incluyen las 9 páginas legales y la raíz `index.html`.
-- Siguen sin encontrarse etiquetas `hreflang` para relacionar las versiones CA, ES y EN (0 archivos).
+### R3 — Enlace de salto al contenido
 
-Impacto: Google puede entender peor el propósito de cada página y competir entre versiones lingüísticas equivalentes.
+96 de 100 archivos HTML incluyen `href="#MainContent"`. Los 4 restantes no son páginas navegables y no requieren acción:
 
-✅ Acción recomendada: añadir una descripción única en cada ficha, una URL canónica por página y enlaces `hreflang` entre sus equivalentes en catalán, castellano e inglés.
+- `CA/_featured-collections.html`
+- `ES/_featured-collections.html`
+- `EN/_featured-collections.html`
+- `watchhouse-clone/index.html` (redirección a CA)
 
-### Jerarquía de encabezados — SIN CAMBIOS
+## 🟠 Pendiente
 
-- Las tres páginas de inicio siguen sin incluir un `<h1>`.
-- Cada página de Conceptos sigue conteniendo seis `<h1>`.
+### P1 — SEO multilingüe incompleto
 
-Esto no afecta al diseño visual, pero reduce la claridad semántica para buscadores y tecnologías de asistencia.
+Estado a 22 ago 2026 (sobre 100 archivos HTML).
 
-✅ Acción recomendada: mantener un único `<h1>` por página; convertir los demás títulos en `<h2>` o niveles posteriores según la jerarquía.
+**P1.a — Falta `meta description` (70 archivos).**
+Las páginas principales (inicio, consultoría, nosotros, conceptos, índice de proyectos y legales) sí la tienen. Falta en:
 
-### Formularios dependientes de JavaScript — SIN CAMBIOS (decisión: mantener)
+- Fichas de proyecto: 22 por idioma → `CA/projectes/**/*.html`, `ES/proyectos/**/*.html`, `EN/proyectos/**/*.html` (todas menos `casa-assutzena` y `celler-nou-plus`, que ya la tienen).
+- Fragmentos: `CA/_featured-collections.html`, `ES/_featured-collections.html`, `EN/_featured-collections.html`.
+- Raíz: `watchhouse-clone/index.html` (opcional; es solo redirección).
 
-Los 6 formularios (Consultoría y Nosotros en CA/ES/EN) usan `novalidate` y `type="email"` en el campo de correo. Ninguno incluye `required`; toda la validación depende del JavaScript compartido `shared/site.js`.
+**P1.b — Falta `canonical` (90 archivos, 30 por idioma).**
+Solo lo incluyen las 9 páginas legales y `watchhouse-clone/index.html`. Falta en todo lo demás: portada, consultoría, nosotros, conceptos, índice de proyectos, las 24 fichas y `_featured-collections.html` de cada idioma (`CA/**`, `ES/**`, `EN/**`).
 
-Reglas de validación en JS: `name` obligatorio (mín. 2 caracteres), `email` obligatorio con patrón, `message` obligatorio, `phone` opcional.
+**P1.c — No hay `hreflang` (0 archivos).**
+Ninguna página relaciona sus equivalentes CA/ES/EN.
 
-El comportamiento es correcto con JavaScript activo. Si el JS falla, está bloqueado o tarda en cargar, no hay validación nativa de respaldo.
+Impacto: Google entiende peor cada página y las versiones lingüísticas compiten entre sí.
 
-Decisión (22 ago 2026): se mantiene el comportamiento actual, sin añadir `required` ni retirar `novalidate`. La validación seguirá dependiendo de `site.js`.
+✅ Acción: descripción única por ficha, `canonical` por página y bloque `hreflang` (ca/es/en + `x-default`) enlazando equivalentes.
 
-### Mantenimiento de idiomas
+### P2 — Jerarquía de encabezados
 
-El sitio contiene tres árboles HTML completos: catalán, castellano e inglés. Es válido para un sitio estático, pero cada cambio común debe repetirse en todos los idiomas y existe riesgo de desincronización.
+- Sin `<h1>` (0): `CA/index.html`, `ES/index.html`, `EN/index.html`.
+- Con seis `<h1>` (debería ser uno): `CA/conceptes/index.html`, `ES/conceptes/index.html`, `EN/conceptes/index.html`.
 
-✅ Acción recomendada: documentar una lista de comprobación para cambios globales. A medio plazo, valorar plantillas o generación estática desde contenido común.
+✅ Acción: un único `<h1>` por página; el resto a `<h2>`/`<h3>` según jerarquía.
 
-### Nombres de rutas con entidades HTML
+### P3 — Mantenimiento multilingüe
 
-Algunos recursos usan entidades HTML dentro del nombre de carpeta, por ejemplo `&#192;` o `&#199;`.
+Tres árboles HTML completos (`CA/`, `ES/`, `EN/`) y contenido común duplicado en `watchhouse-clone/shared/`. Cada cambio común debe repetirse ×3; riesgo de desincronización.
 
-El navegador las resuelve, pero ciertas herramientas de auditoría estática pueden interpretarlas como rutas inexistentes.
+✅ Acción: lista de comprobación para cambios globales; a medio plazo, plantillas o generación estática desde contenido común.
 
-✅ Acción recomendada: normalizar progresivamente los nombres de recursos con caracteres ASCII o codificación URL coherente.
+### P4 — Rutas de recursos con entidades HTML
+
+RESUELTO. Ver R4 en la sección de resueltos.
+
+### P5 — Fuente Balto desde CDN externo
+
+`watchhouse-clone/shared/general-styles.css` (líneas 6 y 14) carga Balto desde `https://watchhouse.com/cdn/shop/...`. Dependencia de un dominio de terceros: si cambia o se retira, la tipografía cae al fallback Arial sin aviso.
+
+✅ Acción: autoalojar `Balto-Book.otf` y `Balto-Medium.otf` en `watchhouse-clone/shared/` y actualizar los `@font-face`.
+
+## ⚪ Decisiones
+
+### D1 — Validación nativa de formularios (se mantiene el estado actual)
+
+Los 6 formularios (rutas en R1) usan `novalidate` y `type="email"` en el campo de correo. Ninguno incluye `required`; toda la validación depende de `watchhouse-clone/shared/site.js`.
+
+Reglas en JS: `name` obligatorio (mín. 2 caracteres), `email` obligatorio con patrón, `message` obligatorio, `phone` opcional.
+
+Decisión (22 ago 2026): no se añade `required` ni se retira `novalidate`. La validación seguirá dependiendo de `site.js`. Riesgo asumido: si el JS falla o tarda, no hay validación nativa de respaldo.
 
 ## 🟢 Comprobaciones correctas
 
@@ -81,20 +118,18 @@ El navegador las resuelve, pero ciertas herramientas de auditoría estática pue
 - No se han detectado imágenes sin atributo `alt`.
 - No hay IDs HTML duplicados dentro de una misma página.
 - Todas las páginas incluyen `lang`, `charset` y `viewport`.
-- Los enlaces externos con `target="_blank"` usan `rel="noreferrer"`, que incluye la protección equivalente a `noopener`.
-- La validación de formularios está centralizada y adapta correctamente los mensajes a catalán, castellano e inglés en `watchhouse-clone/shared/site.js`.
+- Los enlaces externos con `target="_blank"` usan `rel="noreferrer"`.
+- Validación de formularios centralizada y multilingüe (CA/ES/EN) en `watchhouse-clone/shared/site.js`.
 
-## 📋 Orden de prioridad recomendado (actualizado 22 ago 2026)
+## 📋 Orden de prioridad recomendado (22 ago 2026)
 
-Bloqueantes previos (`_next` a `127.0.0.1` y `href="#"`) ya resueltos. Pendiente:
+1. **P1** — SEO: `meta description` en fichas, `canonical` por página, `hreflang` entre CA/ES/EN.
+2. **P2** — Jerarquía de `<h1>` en portadas y Conceptos.
+3. **P3** — Mantenibilidad multilingüe.
+4. **P5** — Autoalojar la fuente Balto.
 
-1. 🟠 Completar SEO: `meta description` en las fichas de proyecto, `canonical` por página y `hreflang` entre equivalentes CA/ES/EN.
-2. 🟠 Corregir la jerarquía de `<h1>`: añadir un único `<h1>` en las tres portadas; reducir los seis `<h1>` de Conceptos a uno.
-3. 🟡 Mejorar la mantenibilidad multilingüe y normalizar rutas de recursos con entidades HTML.
-4. 🟡 Valorar autoalojar la fuente Balto (hoy depende del CDN externo `watchhouse.com`).
-
-Nota: la validación nativa de formularios (`required` / retirar `novalidate`) se ha descartado por decisión; se mantiene la validación por JavaScript.
+Resueltos: R1, R2, R3, R4. Decisión cerrada: D1.
 
 ## Límites de esta auditoría
 
-La revisión ha sido estática y local. No incluye medición de rendimiento con Lighthouse, prueba de diseño responsive en dispositivos reales, encabezados de seguridad del servidor, indexación en producción ni envío real de formularios.
+Revisión estática y local. No incluye Lighthouse, pruebas responsive en dispositivos reales, cabeceras de seguridad del servidor, indexación en producción ni envío real de formularios.
