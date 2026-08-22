@@ -745,6 +745,18 @@
   }
 }
 
+/* Tablet/mobile: keep the name clear of the always-visible LinkedIn icon
+   (top-right) and drop the surname to its own line. */
+@media (max-width: 1023px) {
+  .team-half-banner__overlay h2 {
+    padding-right: 52px;
+  }
+
+  .team-half-banner__surname {
+    display: block;
+  }
+}
+
 @media (hover: none) {
   .team-half-banner__linkedin {
     opacity: 1;
