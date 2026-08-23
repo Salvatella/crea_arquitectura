@@ -92,12 +92,12 @@ Impacto: Google entiende peor cada página y las versiones lingüísticas compit
 
 ✅ Acción: descripción única por ficha, `canonical` por página y bloque `hreflang` (ca/es/en + `x-default`) enlazando equivalentes.
 
-### P2 — Jerarquía de encabezados
+### P2 — Jerarquía de encabezados — RESUELTO (23 ago 2026)
 
-- Sin `<h1>` (0): `CA/index.html`, `ES/index.html`, `EN/index.html`.
-- Con seis `<h1>` (debería ser uno): `CA/conceptes/index.html`, `ES/conceptes/index.html`, `EN/conceptes/index.html`.
+- Portadas (3): añadido un `<h1 class="visually-hidden">CREA Arquitectura</h1>` dentro de `<main>` (invisible; sin cambio estético). Nombre de la web sin traducir en los tres idiomas.
+- Conceptos (3): los 6 `<h1>` degradados a `<h2>` conservando sus clases (`concept-intro__title`, `guide-title text-h2`) → aspecto idéntico; añadido un único `<h1 class="visually-hidden">` con el nombre de la página (`Conceptes`/`Conceptos`/`Concepts`).
 
-✅ Acción: un único `<h1>` por página; el resto a `<h2>`/`<h3>` según jerarquía.
+Resultado verificado: 1 `<h1>` por página en las 6; jerarquía correcta; estética sin cambios (estilos por clase, no por etiqueta).
 
 ### P4 — Rutas de recursos con entidades HTML
 
@@ -130,11 +130,10 @@ Decisión (22 ago 2026): no se añade `required` ni se retira `novalidate`. La v
 
 ## 📋 Orden de prioridad recomendado (22 ago 2026)
 
-1. **P2** — Jerarquía de `<h1>` en portadas y Conceptos.
-2. **P5** — Autoalojar la fuente Balto.
-3. **P1.b / P1.c** — `canonical`, `hreflang` y `sitemap.xml` (aplazados hasta tener dominio final).
+1. **P5** — Autoalojar la fuente Balto.
+2. **P1.b / P1.c** — `canonical`, `hreflang` y `sitemap.xml` (aplazados hasta tener dominio final).
 
-Nota: **P1.a** (`meta description`) ya resuelto; ver sección P1.
+Nota: **P1.a** (`meta description`) y **P2** (`<h1>`) ya resueltos; ver sus secciones.
 
 Resueltos: R1, R2, R3, R4, R5. Decisión cerrada: D1.
 
