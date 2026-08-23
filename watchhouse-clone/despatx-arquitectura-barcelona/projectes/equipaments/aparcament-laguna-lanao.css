@@ -1,4 +1,4 @@
-.project-page { --project-gallery-gap: 12px; }
+.project-page { --project-gallery-gap: 3px; }
 
 @media (min-width: 768px) {
   .sticky-gallery--two-columns {

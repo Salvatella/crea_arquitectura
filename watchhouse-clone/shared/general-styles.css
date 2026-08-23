@@ -3,7 +3,7 @@
   font-family: "Balto";
   font-style: normal;
   font-weight: 300;
-  src: url("https://watchhouse.com/cdn/shop/t/221/assets/Balto-Book.otf?v=160914856282604254941761664540");
+  src: url("./Balto-Book.otf") format("opentype");
 }
 
 @font-face {
@@ -11,7 +11,7 @@
   font-family: "Balto";
   font-style: normal;
   font-weight: 500;
-  src: url("https://watchhouse.com/cdn/shop/t/221/assets/Balto-Medium.otf?v=44404204925061886291761664541");
+  src: url("./Balto-Medium.otf") format("opentype");
 }
 
 :root {

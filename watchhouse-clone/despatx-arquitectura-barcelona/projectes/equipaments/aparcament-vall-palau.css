@@ -1,4 +1,4 @@
-.project-page { --project-gallery-gap: 4px; }
+.project-page { --project-gallery-gap: 3px; }
 
 @media (min-width: 768px) {
   .vallpalau-gallery {

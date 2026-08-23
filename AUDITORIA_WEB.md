@@ -14,7 +14,7 @@ Abreviaturas de idioma usadas en las rutas:
 
 ## Resumen
 
-La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. **Los dos bloqueantes previos al lanzamiento (R1, R2) ya están resueltos.** Quedan pendientes mejoras de SEO (P1), jerarquía de encabezados (P2) y dependencia de la fuente Balto (P5).
+La base del sitio está bien planteada como web estática y las tres versiones de idioma están operativas a nivel de estructura. **Los dos bloqueantes previos al lanzamiento (R1, R2) ya están resueltos.** La dependencia de la fuente Balto (antes P5) también se ha resuelto (R6, autoalojada). Quedan pendientes solo mejoras de SEO aplazadas hasta tener dominio final (`canonical` P1.b, `hreflang` P1.c).
 
 ## ✅ Resuelto (verificado 22 ago 2026)
 
@@ -54,6 +54,12 @@ Hallazgo adicional corregido: la versión inglesa (`EN/proyectos/index.html` y `
 - Pendiente/decisión abierta: `Celler NOU PLUS` se mantiene en ES por ser nombre comercial de la bodega (y del cliente). Cambiar a `Bodega` solo si se confirma.
 - Lorem ipsum intacto (`casa-troana`, `cases-age`, `cases-sh10`, `habitatges-ag`).
 
+### R6 — Fuente Balto autoalojada (antes P5)
+
+`watchhouse-clone/shared/general-styles.css` ya no carga Balto desde `https://watchhouse.com/cdn/shop/...`. Se descargaron `Balto-Book.otf` (98.792 B) y `Balto-Medium.otf` (112.012 B) a `watchhouse-clone/shared/` y los dos `@font-face` apuntan a rutas locales (`./Balto-Book.otf`, `./Balto-Medium.otf`) con `format("opentype")`. Eliminada la dependencia del dominio de terceros.
+
+Verificación: `0` referencias a fuentes Balto en `watchhouse.com/cdn`; solo las 2 rutas locales.
+
 ### R3 — Enlace de salto al contenido
 
 96 de 100 archivos HTML incluyen `href="#MainContent"`. Los 4 restantes no son páginas navegables y no requieren acción:
@@ -92,22 +98,8 @@ Impacto: Google entiende peor cada página y las versiones lingüísticas compit
 
 ✅ Acción: descripción única por ficha, `canonical` por página y bloque `hreflang` (ca/es/en + `x-default`) enlazando equivalentes.
 
-### P2 — Jerarquía de encabezados — RESUELTO (23 ago 2026)
 
-- Portadas (3): añadido un `<h1 class="visually-hidden">CREA Arquitectura</h1>` dentro de `<main>` (invisible; sin cambio estético). Nombre de la web sin traducir en los tres idiomas.
-- Conceptos (3): los 6 `<h1>` degradados a `<h2>` conservando sus clases (`concept-intro__title`, `guide-title text-h2`) → aspecto idéntico; añadido un único `<h1 class="visually-hidden">` con el nombre de la página (`Conceptes`/`Conceptos`/`Concepts`).
 
-Resultado verificado: 1 `<h1>` por página en las 6; jerarquía correcta; estética sin cambios (estilos por clase, no por etiqueta).
-
-### P4 — Rutas de recursos con entidades HTML
-
-RESUELTO. Ver R4 en la sección de resueltos.
-
-### P5 — Fuente Balto desde CDN externo
-
-`watchhouse-clone/shared/general-styles.css` (líneas 6 y 14) carga Balto desde `https://watchhouse.com/cdn/shop/...`. Dependencia de un dominio de terceros: si cambia o se retira, la tipografía cae al fallback Arial sin aviso.
-
-✅ Acción: autoalojar `Balto-Book.otf` y `Balto-Medium.otf` en `watchhouse-clone/shared/` y actualizar los `@font-face`.
 
 ## ⚪ Decisiones
 
@@ -130,12 +122,11 @@ Decisión (22 ago 2026): no se añade `required` ni se retira `novalidate`. La v
 
 ## 📋 Orden de prioridad recomendado (22 ago 2026)
 
-1. **P5** — Autoalojar la fuente Balto.
-2. **P1.b / P1.c** — `canonical`, `hreflang` y `sitemap.xml` (aplazados hasta tener dominio final).
+1. **P1.b / P1.c** — `canonical`, `hreflang` y `sitemap.xml` (aplazados hasta tener dominio final).
 
-Nota: **P1.a** (`meta description`) y **P2** (`<h1>`) ya resueltos; ver sus secciones.
+Nota: **P1.a** (`meta description`), **P2** (`<h1>`) y **P5** (fuente Balto, ahora R6) ya resueltos; ver sus secciones.
 
-Resueltos: R1, R2, R3, R4, R5. Decisión cerrada: D1.
+Resueltos: R1, R2, R3, R4, R5, R6. Decisión cerrada: D1.
 
 ## Límites de esta auditoría
 
