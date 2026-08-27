@@ -1,4 +1,4 @@
-# Auditoría global — Watchhouse Clone
+# Auditoría global — CREA Barcelona
 
 Fecha auditoría original: 19 de agosto de 2026  
 Última actualización: 22 de agosto de 2026  
@@ -8,9 +8,9 @@ Cada incidencia tiene un identificador (`R#` resuelto, `P#` pendiente, `D#` deci
 
 Abreviaturas de idioma usadas en las rutas:
 
-- `CA` = `watchhouse-clone/despatx-arquitectura-barcelona/`
-- `ES` = `watchhouse-clone/despacho-arquitectura-barcelona/`
-- `EN` = `watchhouse-clone/architecture-studio-barcelona/`
+- `CA` = `crea-barcelona/despatx-arquitectura-barcelona/`
+- `ES` = `crea-barcelona/despacho-arquitectura-barcelona/`
+- `EN` = `crea-barcelona/architecture-studio-barcelona/`
 
 ## Resumen
 
@@ -56,7 +56,7 @@ Hallazgo adicional corregido: la versión inglesa (`EN/proyectos/index.html` y `
 
 ### R6 — Fuente Balto autoalojada (antes P5)
 
-`watchhouse-clone/shared/general-styles.css` ya no carga Balto desde `https://watchhouse.com/cdn/shop/...`. Se descargaron `Balto-Book.otf` (98.792 B) y `Balto-Medium.otf` (112.012 B) a `watchhouse-clone/shared/` y los dos `@font-face` apuntan a rutas locales (`./Balto-Book.otf`, `./Balto-Medium.otf`) con `format("opentype")`. Eliminada la dependencia del dominio de terceros.
+`crea-barcelona/shared/general-styles.css` ya no carga Balto desde `https://watchhouse.com/cdn/shop/...`. Se descargaron `Balto-Book.otf` (98.792 B) y `Balto-Medium.otf` (112.012 B) a `crea-barcelona/shared/` y los dos `@font-face` apuntan a rutas locales (`./Balto-Book.otf`, `./Balto-Medium.otf`) con `format("opentype")`. Eliminada la dependencia del dominio de terceros.
 
 Verificación: `0` referencias a fuentes Balto en `watchhouse.com/cdn`; solo las 2 rutas locales.
 
@@ -67,7 +67,7 @@ Verificación: `0` referencias a fuentes Balto en `watchhouse.com/cdn`; solo las
 - `CA/_featured-collections.html`
 - `ES/_featured-collections.html`
 - `EN/_featured-collections.html`
-- `watchhouse-clone/index.html` (redirección a CA)
+- `crea-barcelona/index.html` (redirección a CA)
 
 ## 🟠 Pendiente
 
@@ -86,10 +86,10 @@ Las páginas principales (inicio, consultoría, nosotros, conceptos, índice de 
 
 - Fichas de proyecto: 22 por idioma → `CA/projectes/**/*.html`, `ES/proyectos/**/*.html`, `EN/proyectos/**/*.html` (todas menos `casa-assutzena` y `celler-nou-plus`, que ya la tienen).
 - Fragmentos: `CA/_featured-collections.html`, `ES/_featured-collections.html`, `EN/_featured-collections.html`.
-- Raíz: `watchhouse-clone/index.html` (opcional; es solo redirección).
+- Raíz: `crea-barcelona/index.html` (opcional; es solo redirección).
 
 **P1.b — Falta `canonical` (90 archivos, 30 por idioma).**
-Solo lo incluyen las 9 páginas legales y `watchhouse-clone/index.html`. Falta en todo lo demás: portada, consultoría, nosotros, conceptos, índice de proyectos, las 24 fichas y `_featured-collections.html` de cada idioma (`CA/**`, `ES/**`, `EN/**`).
+Solo lo incluyen las 9 páginas legales y `crea-barcelona/index.html`. Falta en todo lo demás: portada, consultoría, nosotros, conceptos, índice de proyectos, las 24 fichas y `_featured-collections.html` de cada idioma (`CA/**`, `ES/**`, `EN/**`).
 
 **P1.c — No hay `hreflang` (0 archivos).**
 Ninguna página relaciona sus equivalentes CA/ES/EN.
@@ -105,7 +105,7 @@ Impacto: Google entiende peor cada página y las versiones lingüísticas compit
 
 ### D1 — Validación nativa de formularios (se mantiene el estado actual)
 
-Los 6 formularios (rutas en R1) usan `novalidate` y `type="email"` en el campo de correo. Ninguno incluye `required`; toda la validación depende de `watchhouse-clone/shared/site.js`.
+Los 6 formularios (rutas en R1) usan `novalidate` y `type="email"` en el campo de correo. Ninguno incluye `required`; toda la validación depende de `crea-barcelona/shared/site.js`.
 
 Reglas en JS: `name` obligatorio (mín. 2 caracteres), `email` obligatorio con patrón, `message` obligatorio, `phone` opcional.
 
@@ -118,7 +118,7 @@ Decisión (22 ago 2026): no se añade `required` ni se retira `novalidate`. La v
 - No hay IDs HTML duplicados dentro de una misma página.
 - Todas las páginas incluyen `lang`, `charset` y `viewport`.
 - Los enlaces externos con `target="_blank"` usan `rel="noreferrer"`.
-- Validación de formularios centralizada y multilingüe (CA/ES/EN) en `watchhouse-clone/shared/site.js`.
+- Validación de formularios centralizada y multilingüe (CA/ES/EN) en `crea-barcelona/shared/site.js`.
 
 ## 📋 Orden de prioridad recomendado (22 ago 2026)
 

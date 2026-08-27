@@ -4,6 +4,8 @@ falta_jose.txt
 
 .md
 
+Enviament_2/
+
 projectes_ubicacions.json
 
 # System files
@@ -36,7 +38,7 @@ coverage/
 exports/
 tmp/
 scratch/
-watchhouse-clone/imgs/originales/
+crea-barcelona/imgs/originales/
 *.psd
 *.ai
 *.sketch
