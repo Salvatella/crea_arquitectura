@@ -53,7 +53,7 @@ Objetivo: separar las altas reales de los proyectos existentes con un nombre dis
 
 ### Fichas de detalle que se crearán en este paso
 
-- **Habitatges Comerç / Viviendas Comerç**, **Escola Cultura Pràctica**, **Biblioteca Olesa** y **Centre Encuny** ya aparecen como tarjetas en los índices, pero no disponen de página HTML de detalle: sus enlaces son anclas temporales del tipo `#project-...`. Por ello, la creación de sus tres fichas de detalle, el enlace de las tarjetas y la incorporación de sus textos pertenecen al paso 3, no al paso 2.
+- **Habitatges Comerç / Viviendas Comerç**, **Escola Cultura Pràctica**, **Biblioteca Olesa** y **Centre Encuny** ya aparecen como tarjetas en los índices, pero no disponen de página HTML de detalle: sus enlaces son anclas temporales del tipo `#project-...`. Por ello, la creación de sus cuatro fichas de detalle, el enlace de las tarjetas y la incorporación de sus textos pertenecen al paso 3, no al paso 2.
 
 - Inventariar las carpetas y recursos incorporados en `crea-barcelona/imgs/Enviament 1`.
 - Cruzar cada proyecto con las fichas existentes y sus equivalencias de nombre en los tres idiomas.
