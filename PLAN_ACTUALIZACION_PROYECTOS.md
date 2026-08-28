@@ -51,9 +51,11 @@ Para cada proyecto:
 
 Objetivo: separar las altas reales de los proyectos existentes con un nombre distinto.
 
+**Estado: completado el 28 de agosto de 2026.** Se han creado las veintiuna fichas (siete proyectos en CA/ES/EN), conectado las tarjetas y las colecciones destacadas, y verificado las rutas de imágenes, navegación y selector de idioma.
+
 ### Fichas de detalle que se crearán en este paso
 
-- **Habitatges Comerç / Viviendas Comerç**, **Escola Cultura Pràctica**, **Biblioteca Olesa** y **Centre Encuny** ya aparecen como tarjetas en los índices, pero no disponen de página HTML de detalle: sus enlaces son anclas temporales del tipo `#project-...`. Por ello, la creación de sus cuatro fichas de detalle, el enlace de las tarjetas y la incorporación de sus textos pertenecen al paso 3, no al paso 2.
+- **Habitatges Comerç / Viviendas Comerç**, **Escola Cultura Pràctica**, **Biblioteca Olesa**, **Centre Encuny**, **Rehabilitació CAVALLERS**, **Casa BP** y **Oficines GRAMEPARK** son altas reales. Las siete disponen ahora de ficha de detalle, tarjeta y enlaces CA/ES/EN.
 
 - Inventariar las carpetas y recursos incorporados en `crea-barcelona/imgs/Enviament 1`.
 - Cruzar cada proyecto con las fichas existentes y sus equivalencias de nombre en los tres idiomas.
@@ -75,12 +77,14 @@ Objetivo: separar las altas reales de los proyectos existentes con un nombre dis
 
 Objetivo: cambiar solamente el orden de los elementos de navegación, conservando exactamente la distribución actual, el `flex`, los estilos, los espaciados y el comportamiento responsive.
 
+**Estado: completado el 28 de agosto de 2026.** El orden y los enlaces se han actualizado en las 120 páginas con navegación. Se han creado las tres páginas temporales de Management y obra, y Consultoría se muestra como Serveis / Servicios / Services, incluidos título y metadatos de su página.
+
 Nuevo orden visual, de izquierda a derecha:
 
 1. Proyectos
 2. Management y obra
 3. Nosotros
-4. Consultoría
+4. Serveis / Servicios / Services
 
 Se aplicará en las tres versiones lingüísticas y en todas las páginas que comparten la navegación:
 
@@ -117,6 +121,7 @@ Objetivo: comprobar si la entrega incluye imágenes nuevas para proyectos que ya
 
 - Inventariar las imágenes de cada proyecto en la entrega y compararlas con las ya utilizadas en `crea-barcelona/imgs`.
 - Identificar imágenes nuevas, duplicadas y sustituidas.
+- Repasar las imágenes ya publicadas de cada proyecto: comprobar proporciones, encuadre, orden y distribución de cada galería; ajustar la composición cuando una imagen panorámica, vertical o de formato singular requiera más espacio.
 - Revisar los comentarios generales asociados a imágenes; por ejemplo, las fotografías nuevas de Celler Nou Plus y la reorganización de dos fotos de fachada de Casa La Selva.
 - Determinar para cada recurso nuevo su destino: portada, galería, plano, vídeo enlazado o archivo sin publicar.
 - Incorporar únicamente las imágenes aprobadas, con rutas válidas, carga diferida y textos alternativos adecuados en los tres idiomas.

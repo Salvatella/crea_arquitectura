@@ -1,0 +1,65 @@
+.project-page { --project-gallery-gap: 3px; }
+
+@media (min-width: 768px) {
+  .sticky-gallery.gallery--cavallers,
+  .sticky-gallery.gallery--bp,
+  .sticky-gallery.gallery--cultura-practica,
+  .sticky-gallery.gallery--biblioteca-olesa,
+  .sticky-gallery.gallery--comerc {
+    align-items: start;
+    grid-auto-flow: dense;
+  }
+
+  .sticky-gallery.gallery--cavallers figure,
+  .sticky-gallery.gallery--bp figure,
+  .sticky-gallery.gallery--cultura-practica figure,
+  .sticky-gallery.gallery--biblioteca-olesa figure,
+  .sticky-gallery.gallery--encuny figure,
+  .sticky-gallery.gallery--comerc figure,
+  .sticky-gallery.gallery--gramepark figure {
+    height: auto;
+  }
+
+  .sticky-gallery.gallery--cavallers img,
+  .sticky-gallery.gallery--bp img,
+  .sticky-gallery.gallery--cultura-practica img,
+  .sticky-gallery.gallery--biblioteca-olesa img,
+  .sticky-gallery.gallery--encuny img,
+  .sticky-gallery.gallery--comerc img,
+  .sticky-gallery.gallery--gramepark img {
+    height: auto;
+    object-fit: contain;
+  }
+
+  /* La única vertical de CAVALLERS equilibra dos vistas panorámicas. */
+  .sticky-gallery.gallery--cavallers figure:nth-child(1),
+  .sticky-gallery.gallery--cavallers figure:nth-child(3),
+  .sticky-gallery.gallery--cavallers figure:nth-child(5),
+  .sticky-gallery.gallery--cavallers figure:nth-child(7) { grid-column: span 2; }
+  .sticky-gallery.gallery--cavallers figure:nth-child(2) { grid-row: span 2; }
+
+  /* BP combina renders panorámicos con perspectivas de formato más compacto. */
+  .sticky-gallery.gallery--bp figure:nth-child(1),
+  .sticky-gallery.gallery--bp figure:nth-child(4),
+  .sticky-gallery.gallery--bp figure:nth-child(6) { grid-column: span 2; }
+
+  /* Las dos panorámicas de Cultura Pràctica se muestran como piezas principales. */
+  .sticky-gallery.gallery--cultura-practica figure:nth-child(1),
+  .sticky-gallery.gallery--cultura-practica figure:nth-child(3),
+  .sticky-gallery.gallery--cultura-practica figure:nth-child(9),
+  .sticky-gallery.gallery--cultura-practica figure:nth-child(15) { grid-column: span 2; }
+
+  /* Biblioteca y Comerç usan una secuencia alterna de imagen amplia y contrapunto. */
+  .sticky-gallery.gallery--biblioteca-olesa figure:nth-child(1),
+  .sticky-gallery.gallery--biblioteca-olesa figure:nth-child(4),
+  .sticky-gallery.gallery--comerc figure:nth-child(1),
+  .sticky-gallery.gallery--comerc figure:nth-child(4) { grid-column: span 2; }
+
+  /* Los tres renders 16:9 de ENCUNY abren con una imagen completa. */
+  .sticky-gallery.gallery--encuny { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sticky-gallery.gallery--encuny figure:first-child { grid-column: 1 / -1; }
+
+  /* La primera imagen de GRAMEPARK tiene la resolución necesaria para funcionar como apertura. */
+  .sticky-gallery.gallery--gramepark { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sticky-gallery.gallery--gramepark figure:first-child { grid-column: 1 / -1; }
+}
