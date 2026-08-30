@@ -5,4 +5,6 @@
 .celler-gallery img { display: block; height: auto; width: 100%; }
 .celler-gallery__featured { grid-column: 1 / -1; }
 
+@media (min-width: 768px) { .celler-gallery > figure:nth-child(3) img { height: 100%; object-fit: cover; } }
+
 @media (max-width: 767px) { .celler-gallery { display: block; padding: 0; } .celler-gallery figure { margin-bottom: var(--project-gallery-gap); } }

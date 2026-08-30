@@ -40,6 +40,14 @@
     }
   }
 
+  if (filename === 'habitatges-ag.html') {
+    const gallery = document.querySelector('#gallery');
+    if (gallery) {
+      gallery.setAttribute('aria-label', 'Galeria d’Habitatges AG.');
+      gallery.querySelectorAll('img').forEach((image) => image.setAttribute('alt', 'Habitatges AG'));
+    }
+  }
+
   document.querySelectorAll('.project-next__top').forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
