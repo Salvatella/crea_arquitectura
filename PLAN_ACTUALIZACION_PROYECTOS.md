@@ -77,31 +77,30 @@ Objetivo: separar las altas reales de los proyectos existentes con un nombre dis
 
 Objetivo: cambiar solamente el orden de los elementos de navegación, conservando exactamente la distribución actual, el `flex`, los estilos, los espaciados y el comportamiento responsive.
 
-**Estado: completado el 28 de agosto de 2026.** El orden y los enlaces se han actualizado en las 120 páginas con navegación. Se han creado las tres páginas temporales de Management y obra, y Consultoría se muestra como Serveis / Servicios / Services, incluidos título y metadatos de su página.
+**Estado: completado y ajustado el 30 de agosto de 2026.** Management y obra se ha retirado exclusivamente de la navegación principal. Sus filtros, enlaces de pie y las tres páginas temporales se conservan. Consultoría se muestra como Serveis / Servicios / Services, incluidos título y metadatos de su página.
 
 Nuevo orden visual, de izquierda a derecha:
 
 1. Proyectos
-2. Management y obra
-3. Nosotros
-4. Serveis / Servicios / Services
+2. Nosotros
+3. Serveis / Servicios / Services
 
 Se aplicará en las tres versiones lingüísticas y en todas las páginas que comparten la navegación:
 
-- Catalán: `Projectes`, `Management i obra`, `Nosaltres`, `Serveis`.
-- Castellano: `Proyectos`, `Gestión y obra`, `Nosotros`, `Servicios`.
-- Inglés: `Projects`, `Management and construction`, `About us`, `Services`.
+- Catalán: `Projectes`, `Nosaltres`, `Serveis`.
+- Castellano: `Proyectos`, `Nosotros`, `Servicios`.
+- Inglés: `Projects`, `About us`, `Services`.
 
 No se modificarán las clases, contenedores, reglas CSS ni el alineamiento actual.
 
-### Nueva página temporal: Management y Obra
+### Página temporal existente: Management y Obra
 
-Se creará una página nueva de `404 Not Found` para Management y Obra, en catalán, castellano e inglés. Será una página temporal mientras se prepara su contenido definitivo y deberá:
+Se mantienen las páginas `404 Not Found` de Management y Obra, en catalán, castellano e inglés, accesibles por sus rutas directas pero sin enlace desde el navbar. Seguirán siendo temporales mientras se prepara su contenido definitivo y deberán:
 
 - Mantener la identidad visual, tipografía, cabecera, pie y composición del sitio actual.
 - Comunicar claramente que el contenido aún no está disponible.
 - Incluir una acción para volver a Proyectos o a la página de inicio.
-- Estar enlazada desde el segundo elemento de navegación de cada idioma.
+- Conservar sus enlaces internos y selector de idioma.
 
 ### Renombrado de Consultoría
 

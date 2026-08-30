@@ -26,7 +26,10 @@
   const facts = document.querySelector('.project-facts');
 
   if (year && facts) {
-    facts.insertAdjacentHTML('beforeend', `<div><dt>Year.</dt><dd>${year}</dd></div>`);
+    const location = Array.from(facts.children).find((fact) => fact.querySelector('dt')?.textContent.trim() === 'Location.');
+    const yearFact = `<div><dt>Year.</dt><dd>${year}</dd></div>`;
+    if (location) location.insertAdjacentHTML('afterend', yearFact);
+    else facts.insertAdjacentHTML('beforeend', yearFact);
   }
 
   document.querySelectorAll('.project-next__top').forEach((link) => {
