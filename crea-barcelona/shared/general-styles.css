@@ -291,6 +291,25 @@ textarea.is-invalid {
   font-size: 14px;
 }
 
+.footer-projects-cta {
+  align-items: center;
+  border-block: 1px solid rgba(255, 255, 255, 0.5);
+  color: inherit;
+  display: flex;
+  font-size: 13px;
+  font-weight: 500;
+  justify-content: space-between;
+  max-width: 370px;
+  min-height: 40px;
+  width: 100%;
+}
+
+.footer-projects-cta svg {
+  fill: currentColor;
+  height: 18px;
+  width: 18px;
+}
+
 .newsletter-form__field {
   align-items: center;
   border-block: 1px solid rgba(255, 255, 255, 0.2);
@@ -411,6 +430,13 @@ textarea.is-invalid {
   gap: 16px 48px;
 }
 
+.site-footer__social > .site-footer__links {
+  font-size: 14px;
+  gap: 16px 48px;
+  justify-content: flex-start;
+  margin-top: auto;
+}
+
 @media (min-width: 768px) {
   .site-footer__overlay {
     display: grid;
@@ -449,13 +475,8 @@ textarea.is-invalid {
   }
 
   .site-footer__copy {
-    grid-column-end: span 4;
-    padding-right: 48px;
-  }
-
-  .site-footer__links {
-    gap: 16px 48px;
-    grid-column-end: span 8;
+    grid-column: 1 / -1;
+    padding-right: 0;
   }
 }
 
@@ -618,6 +639,11 @@ textarea.is-invalid {
 
   .site-footer__misc {
     margin-top: 48px;
+  }
+
+  .footer-projects-cta {
+    font-size: 11px;
+    min-height: 42px;
   }
 }
 

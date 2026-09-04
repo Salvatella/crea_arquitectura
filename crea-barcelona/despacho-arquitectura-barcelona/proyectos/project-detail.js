@@ -48,6 +48,13 @@
     }
   }
 
+  if (filename === 'casa-troana.html') {
+    const topRow = document.querySelector('.troana-gallery__top');
+    if (topRow && !document.querySelector('.troana-gallery__plan')) {
+      topRow.insertAdjacentHTML('afterend', '<div class="troana-gallery__plan"><figure><img loading="lazy" src="../../../imgs/enviament_1_2026-05-09/enviament_1_2025-05-09/crea_web_residencial/2023_casa_troana/troana_planta_baixa.jpg" alt="Planta baja de Casa TROANA"></figure></div>');
+    }
+  }
+
   document.querySelectorAll('.project-next__top').forEach((link) => {
     link.addEventListener('click', (event) => {
       event.preventDefault();
