@@ -37,6 +37,7 @@
   .sticky-gallery.gallery--cavallers figure:nth-child(5),
   .sticky-gallery.gallery--cavallers figure:nth-child(7) { grid-column: span 2; }
   .sticky-gallery.gallery--cavallers figure:nth-child(2) { grid-row: span 2; }
+  .sticky-gallery.gallery--cavallers figure:nth-child(8) { grid-column: 1 / -1; }
 
   /* BP: apertura y tercera fila panorámicas; la última fila respeta sus ratios. */
   .sticky-gallery.gallery--bp { grid-template-columns: repeat(6, minmax(0, 1fr)); }
@@ -66,7 +67,15 @@
   .sticky-gallery.gallery--encuny { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .sticky-gallery.gallery--encuny figure:first-child { grid-column: 1 / -1; }
 
-  /* La primera imagen de GRAMEPARK tiene la resolución necesaria para funcionar como apertura. */
-  .sticky-gallery.gallery--gramepark { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-  .sticky-gallery.gallery--gramepark figure:first-child { grid-column: 1 / -1; }
+  /* GRAMEPARK: pareja de apertura 4:3, dos cuadrados y un cierre compacto. */
+  .sticky-gallery.gallery--gramepark { align-items: start; grid-template-columns: repeat(14, minmax(0, 1fr)); }
+  .sticky-gallery.gallery--gramepark figure:nth-child(1) { grid-column: span 8; }
+  .sticky-gallery.gallery--gramepark figure:nth-child(2) { grid-column: span 6; }
+  .sticky-gallery.gallery--gramepark figure:nth-child(3),
+  .sticky-gallery.gallery--gramepark figure:nth-child(4) { grid-column: span 7; }
+  .sticky-gallery.gallery--gramepark figure:nth-child(5) { grid-column: span 4; }
+}
+
+@media (max-width: 767px) {
+  .sticky-gallery.gallery--gramepark img { aspect-ratio: auto; height: auto; object-fit: contain; }
 }

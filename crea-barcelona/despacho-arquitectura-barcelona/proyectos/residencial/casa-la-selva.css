@@ -1,12 +1,23 @@
 .project-page { --project-gallery-gap: 3px; }
 
+.selva-gallery { display: block; }
+.selva-gallery__top,
+.selva-gallery__rows,
+.selva-gallery__row { display: grid; gap: var(--project-gallery-gap); }
+.selva-gallery__top,
+.selva-gallery__row { grid-template-columns: minmax(0, 1fr); }
+.selva-gallery__rows { margin-top: var(--project-gallery-gap); }
+.selva-gallery figure { height: auto; }
+.selva-gallery img { display: block; width: 100%; height: auto; object-fit: contain; }
+
 @media (min-width: 768px) {
-  .selva-gallery { display: block; }
-  .selva-gallery__top { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .selva-gallery__top { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .selva-gallery__top figure { height: 84vh; }
+  .selva-gallery__top img { height: 100%; object-fit: cover; }
   .selva-gallery__top .selva-gallery__a1 { grid-column: 1 / span 2; }
   .selva-gallery__top .selva-gallery__c1 { grid-column: 3; }
-  .selva-gallery__body { display: grid; gap: var(--project-gallery-gap); grid-template-columns: repeat(3, minmax(0, 1fr)); margin-top: var(--project-gallery-gap); }
-  .selva-gallery__body .sticky-gallery__column--center { height: calc(100vh - var(--project-gallery-gap)); position: sticky; top: 0; }
-  .selva-gallery__body .sticky-gallery__column--center figure { height: 100%; }
+  .selva-gallery__row--halves,
+  .selva-gallery__row--landscapes { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .selva-gallery__row--portrait-left { grid-template-columns: 1fr 2fr; }
+  .selva-gallery__row--portrait-right { grid-template-columns: 2fr 1fr; }
 }

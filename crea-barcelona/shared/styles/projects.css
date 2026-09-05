@@ -78,6 +78,17 @@
   display: none;
 }
 
+/* Proyectos destacados al inicio del listado. */
+.results-list-grid > li { order: 100; }
+.results-list-grid > li:nth-child(18) { order: 1; }
+.results-list-grid > li:nth-child(13) { order: 2; }
+.results-list-grid > li:nth-child(28) { order: 3; }
+.results-list-grid > li:nth-child(25) { order: 4; }
+.results-list-grid > li:nth-child(14) { order: 5; }
+.results-list-grid > li:nth-child(29) { order: 6; }
+.results-list-grid > li:nth-child(27) { order: 7; }
+.results-list-grid > li:nth-child(26) { order: 8; }
+
 .project-card {
   display: flex;
   flex-direction: column;
@@ -312,7 +323,7 @@
 
 @media (min-width: 1680px) {
   .results-list-grid {
-    grid-template-columns: repeat(5, minmax(0, 1fr));
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 
