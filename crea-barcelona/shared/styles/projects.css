@@ -82,12 +82,18 @@
 .results-list-grid > li { order: 100; }
 .results-list-grid > li:nth-child(18) { order: 1; }
 .results-list-grid > li:nth-child(13) { order: 2; }
-.results-list-grid > li:nth-child(28) { order: 3; }
-.results-list-grid > li:nth-child(25) { order: 4; }
+.results-list-grid > li:nth-child(26) { order: 3; }
+.results-list-grid > li:nth-child(11) { order: 4; }
 .results-list-grid > li:nth-child(14) { order: 5; }
 .results-list-grid > li:nth-child(29) { order: 6; }
-.results-list-grid > li:nth-child(27) { order: 7; }
-.results-list-grid > li:nth-child(26) { order: 8; }
+.results-list-grid > li:nth-child(28) { order: 7; }
+.results-list-grid > li:nth-child(27) { order: 8; }
+.results-list-grid > li:nth-child(25) { order: 9; }
+.results-list-grid > li:nth-child(3) { order: 10; }
+.results-list-grid > li:nth-child(1) { order: 11; }
+.results-list-grid > li:nth-child(15) { order: 12; }
+.results-list-grid > li:nth-child(19) { order: 13; }
+.results-list-grid > li:nth-child(23) { order: 14; }
 
 .project-card {
   display: flex;
