@@ -1,5 +1,7 @@
 .project-page { --project-gallery-gap: 3px; }
 
+.marina-gallery__row--four img { object-fit: contain; }
+
 @media (min-width: 768px) {
   .marina-gallery { display: block; }
   .marina-gallery__row { display: grid; gap: var(--project-gallery-gap); margin-bottom: var(--project-gallery-gap); }

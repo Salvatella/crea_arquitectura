@@ -38,10 +38,17 @@
   .sticky-gallery.gallery--cavallers figure:nth-child(7) { grid-column: span 2; }
   .sticky-gallery.gallery--cavallers figure:nth-child(2) { grid-row: span 2; }
 
-  /* BP combina renders panorámicos con perspectivas de formato más compacto. */
-  .sticky-gallery.gallery--bp figure:nth-child(1),
-  .sticky-gallery.gallery--bp figure:nth-child(4),
-  .sticky-gallery.gallery--bp figure:nth-child(6) { grid-column: span 2; }
+  /* BP: apertura y tercera fila panorámicas; la última fila respeta sus ratios. */
+  .sticky-gallery.gallery--bp { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+  .sticky-gallery.gallery--bp > .bp-gallery__full,
+  .sticky-gallery.gallery--bp > .bp-gallery__row { grid-column: 1 / -1; }
+  .sticky-gallery.gallery--bp .bp-gallery__row { display: grid; gap: var(--project-gallery-gap); }
+  .sticky-gallery.gallery--bp .bp-gallery__row--halves { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sticky-gallery.gallery--bp > .bp-gallery__hero { height: clamp(360px, 44vw, 640px); }
+  .sticky-gallery.gallery--bp > .bp-gallery__hero img { height: 100%; object-fit: cover; object-position: center bottom; }
+  .sticky-gallery.gallery--bp .bp-gallery__row--feature { grid-template-columns: 7fr 3fr; height: clamp(260px, 32vw, 460px); }
+  .sticky-gallery.gallery--bp .bp-gallery__row--feature figure { height: 100%; }
+  .sticky-gallery.gallery--bp .bp-gallery__row--feature img { height: 100%; object-fit: cover; }
 
   /* Las dos panorámicas de Cultura Pràctica se muestran como piezas principales. */
   .sticky-gallery.gallery--cultura-practica figure:nth-child(1),
