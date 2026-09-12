@@ -1,5 +1,5 @@
 (() => {
-  const guideOpeningDelay = 1000;
+  const guideOpeningDelay = 1500;
   const openingTimers = new WeakMap();
 
   const scrollByStep = (viewport, direction) => {
@@ -27,24 +27,35 @@
     const layout = wrapper.closest('.content-for-layout');
     const guides = Array.from(document.querySelectorAll('.product-guide-scroll-wrapper'));
 
-    const animateGuideReflow = (beforePositions) => {
-      window.requestAnimationFrame(() => {
-        guides.forEach((guide) => {
-          const before = beforePositions.get(guide);
-          const after = guide.getBoundingClientRect();
-          if (!before) return;
+    const previewOtherGuideMove = () => {
+      if (!layout) return [];
 
-          const deltaX = before.left - after.left;
-          const deltaY = before.top - after.top;
-          if (!deltaX && !deltaY) return;
+      const hadExpandedLayout = layout.classList.contains('has-expanded');
+      const hasPrimaryGuide = Boolean(layout.querySelector('.is-primary-guide'));
+      const currentPositions = new Map(guides.map((guide) => [guide, guide.getBoundingClientRect()]));
 
-          guide.animate([
-            { transform: `translate(${deltaX}px, ${deltaY}px)` },
-            { transform: 'translate(0, 0)' },
-          ], {
-            duration: 520,
-            easing: 'cubic-bezier(.22,.61,.36,1)',
-          });
+      if (!hasPrimaryGuide) wrapper.classList.add('is-primary-guide');
+      layout.classList.add('has-expanded');
+
+      const targetPositions = new Map(guides.map((guide) => [guide, guide.getBoundingClientRect()]));
+
+      if (!hasPrimaryGuide) wrapper.classList.remove('is-primary-guide');
+      if (!hadExpandedLayout) layout.classList.remove('has-expanded');
+
+      return guides.filter((guide) => guide !== wrapper).flatMap((guide) => {
+        const current = currentPositions.get(guide);
+        const target = targetPositions.get(guide);
+        const deltaX = target.left - current.left;
+        const deltaY = target.top - current.top;
+        if (!deltaX && !deltaY) return [];
+
+        return guide.animate([
+          { transform: 'translate(0, 0)' },
+          { transform: `translate(${deltaX}px, ${deltaY}px)` },
+        ], {
+          duration: guideOpeningDelay,
+          easing: 'cubic-bezier(.22,.61,.36,1)',
+          fill: 'forwards',
         });
       });
     };
@@ -61,7 +72,6 @@
     new ResizeObserver(syncRehabilitarStepWidth).observe(viewport);
 
     trigger.addEventListener('click', () => {
-      const beforePositions = new Map(guides.map((guide) => [guide, guide.getBoundingClientRect()]));
       guides.forEach((guide) => {
         window.clearTimeout(openingTimers.get(guide));
         if (guide === wrapper) return;
@@ -70,11 +80,15 @@
         guide.querySelector('[data-open-guide]')?.setAttribute('aria-expanded', 'false');
       });
 
+      const guideMoveAnimations = previewOtherGuideMove();
       wrapper.classList.add('is-opening');
-      layout?.classList.add('has-expanded');
       trigger.setAttribute('aria-expanded', 'true');
-      animateGuideReflow(beforePositions);
       const openingTimer = window.setTimeout(() => {
+        guideMoveAnimations.forEach((animation) => animation.cancel());
+        if (!layout?.querySelector('.is-primary-guide')) {
+          wrapper.classList.add('is-primary-guide');
+        }
+        layout?.classList.add('has-expanded');
         wrapper.classList.remove('is-opening');
         wrapper.classList.add('is-expanded');
         // El recorrido de Rehabilitar está dispuesto de forma invertida: el
