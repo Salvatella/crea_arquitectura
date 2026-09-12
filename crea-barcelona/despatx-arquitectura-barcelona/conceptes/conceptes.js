@@ -21,6 +21,31 @@
     const next = wrapper.querySelector('[data-guide-next]');
     if (!trigger || !viewport) return;
 
+    const layout = wrapper.closest('.content-for-layout');
+    const guides = Array.from(document.querySelectorAll('.product-guide-scroll-wrapper'));
+
+    const animateGuideReflow = (beforePositions) => {
+      window.requestAnimationFrame(() => {
+        guides.forEach((guide) => {
+          const before = beforePositions.get(guide);
+          const after = guide.getBoundingClientRect();
+          if (!before) return;
+
+          const deltaX = before.left - after.left;
+          const deltaY = before.top - after.top;
+          if (!deltaX && !deltaY) return;
+
+          guide.animate([
+            { transform: `translate(${deltaX}px, ${deltaY}px)` },
+            { transform: 'translate(0, 0)' },
+          ], {
+            duration: 520,
+            easing: 'cubic-bezier(.22,.61,.36,1)',
+          });
+        });
+      });
+    };
+
     // The Rehabilitar guide uses one full viewport-wide frame per step.  The
     // measured value avoids percentage widths being resolved against the
     // max-content track instead of the visible carousel area.
@@ -33,8 +58,17 @@
     new ResizeObserver(syncRehabilitarStepWidth).observe(viewport);
 
     trigger.addEventListener('click', () => {
+      const beforePositions = new Map(guides.map((guide) => [guide, guide.getBoundingClientRect()]));
+      guides.forEach((guide) => {
+        if (guide === wrapper) return;
+        guide.classList.remove('is-expanded');
+        guide.querySelector('[data-open-guide]')?.setAttribute('aria-expanded', 'false');
+      });
+
       wrapper.classList.add('is-expanded');
+      layout?.classList.add('has-expanded');
       trigger.setAttribute('aria-expanded', 'true');
+      animateGuideReflow(beforePositions);
       // El recorrido de Rehabilitar está dispuesto de forma invertida: el
       // primer ejemplo visual queda al extremo derecho del track.
       if (wrapper.querySelector('.product-guide--reversed')) {
@@ -44,11 +78,10 @@
         });
       }
       window.setTimeout(() => {
-        if (intro) intro.hidden = true;
         wrapper.scrollIntoView({ block: 'start', behavior: 'auto' });
       }, 520);
       window.setTimeout(() => viewport.focus({ preventScroll: true }), 350);
-    }, { once: true });
+    });
 
     // En el recorrido invertido (Rehabilitar) las flechas se giran para que
     // la flecha derecha avance al siguiente paso, igual que en Reutilizar.
@@ -56,41 +89,5 @@
     previous?.addEventListener('click', () => scrollByStep(viewport, -stepDir));
     next?.addEventListener('click', () => scrollByStep(viewport, stepDir));
 
-    viewport.addEventListener('wheel', (event) => {
-      if (event.shiftKey || !event.deltaY) return;
-      event.preventDefault();
-      viewport.scrollLeft += event.deltaY;
-    }, { passive: false });
-
-    viewport.addEventListener('keydown', (event) => {
-      if (event.key === 'ArrowLeft') {
-        event.preventDefault();
-        scrollByStep(viewport, -stepDir);
-      }
-      if (event.key === 'ArrowRight') {
-        event.preventDefault();
-        scrollByStep(viewport, stepDir);
-      }
-    });
-
-    let startX = 0;
-    let startScroll = 0;
-    let dragging = false;
-    viewport.addEventListener('pointerdown', (event) => {
-      dragging = true;
-      startX = event.clientX;
-      startScroll = viewport.scrollLeft;
-      viewport.setPointerCapture(event.pointerId);
-      viewport.classList.add('is-dragging');
-    });
-    viewport.addEventListener('pointermove', (event) => {
-      if (dragging) viewport.scrollLeft = startScroll - (event.clientX - startX);
-    });
-    const stopDragging = () => {
-      dragging = false;
-      viewport.classList.remove('is-dragging');
-    };
-    viewport.addEventListener('pointerup', stopDragging);
-    viewport.addEventListener('pointercancel', stopDragging);
   });
 })();

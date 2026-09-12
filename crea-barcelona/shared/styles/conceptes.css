@@ -98,7 +98,24 @@ body.template-article img {
 
 /* Project guides: structural layout */
 .content-for-layout {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   width: 100%;
+}
+
+.content-for-layout > .product-guide-scroll-wrapper {
+  grid-column: span 6;
+  transition: grid-column 520ms cubic-bezier(.22,.61,.36,1);
+}
+
+.content-for-layout.has-expanded > .product-guide-scroll-wrapper.is-expanded {
+  grid-column: 1 / -1;
+  grid-row: 1;
+}
+
+.content-for-layout.has-expanded > .product-guide-scroll-wrapper:not(.is-expanded) {
+  grid-column: 1 / -1;
+  grid-row: 2;
 }
 
 .product-guide-scroll-wrapper {
@@ -486,15 +503,15 @@ body.template-article img {
 }
 
 .product-guide-scroll-wrapper.is-expanded .product-guide__steps-viewport {
-  cursor: grab;
   -ms-overflow-style: none;
-  overflow-x: auto;
+  cursor: default;
+  overflow-x: hidden;
   overflow-y: hidden;
-  overscroll-behavior-x: contain;
+  overscroll-behavior-x: auto;
   scrollbar-width: none;
   scroll-behavior: smooth;
   scroll-snap-type: x proximity;
-  touch-action: pan-x;
+  touch-action: pan-y;
 }
 
 .product-guide-scroll-wrapper.is-expanded .product-guide__steps-viewport::-webkit-scrollbar {
@@ -1174,5 +1191,20 @@ body.template-article img {
   .product-guide-scroll-wrapper.is-expanded .product-guide-step--photo-duo .product-guide-step__image {
     object-fit: contain;
     object-position: center bottom;
+  }
+}
+
+/* Las dos entradas se leen como secciones distintas en móvil y tablet. */
+@media (max-width: 1023px) {
+  .content-for-layout { grid-template-columns: minmax(0, 1fr); }
+
+  .content-for-layout > .product-guide-scroll-wrapper,
+  .content-for-layout.has-expanded > .product-guide-scroll-wrapper.is-expanded,
+  .content-for-layout.has-expanded > .product-guide-scroll-wrapper:not(.is-expanded) {
+    grid-column: 1;
+  }
+
+  .content-for-layout > .product-guide-scroll-wrapper:not(.is-expanded) {
+    min-height: clamp(360px, 52svh, 560px);
   }
 }
