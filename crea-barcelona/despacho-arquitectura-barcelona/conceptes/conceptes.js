@@ -1,4 +1,7 @@
 (() => {
+  const guideOpeningDelay = 1000;
+  const openingTimers = new WeakMap();
+
   const scrollByStep = (viewport, direction) => {
     const steps = Array.from(viewport.querySelectorAll('.product-guide-step'));
     if (!steps.length) return;
@@ -60,27 +63,32 @@
     trigger.addEventListener('click', () => {
       const beforePositions = new Map(guides.map((guide) => [guide, guide.getBoundingClientRect()]));
       guides.forEach((guide) => {
+        window.clearTimeout(openingTimers.get(guide));
         if (guide === wrapper) return;
         guide.classList.remove('is-expanded');
+        guide.classList.remove('is-opening');
         guide.querySelector('[data-open-guide]')?.setAttribute('aria-expanded', 'false');
       });
 
-      wrapper.classList.add('is-expanded');
+      wrapper.classList.add('is-opening');
       layout?.classList.add('has-expanded');
       trigger.setAttribute('aria-expanded', 'true');
       animateGuideReflow(beforePositions);
-      // El recorrido de Rehabilitar está dispuesto de forma invertida: el
-      // primer ejemplo visual queda al extremo derecho del track.
-      if (wrapper.querySelector('.product-guide--reversed')) {
-        window.requestAnimationFrame(() => {
-          syncRehabilitarStepWidth();
-          viewport.scrollLeft = viewport.scrollWidth - viewport.clientWidth;
-        });
-      }
-      window.setTimeout(() => {
+      const openingTimer = window.setTimeout(() => {
+        wrapper.classList.remove('is-opening');
+        wrapper.classList.add('is-expanded');
+        // El recorrido de Rehabilitar está dispuesto de forma invertida: el
+        // primer ejemplo visual queda al extremo derecho del track.
+        if (wrapper.querySelector('.product-guide--reversed')) {
+          window.requestAnimationFrame(() => {
+            syncRehabilitarStepWidth();
+            viewport.scrollLeft = viewport.scrollWidth - viewport.clientWidth;
+          });
+        }
         wrapper.scrollIntoView({ block: 'start', behavior: 'auto' });
-      }, 520);
-      window.setTimeout(() => viewport.focus({ preventScroll: true }), 350);
+        window.setTimeout(() => viewport.focus({ preventScroll: true }), 350);
+      }, guideOpeningDelay);
+      openingTimers.set(wrapper, openingTimer);
     });
 
     // En el recorrido invertido (Rehabilitar) las flechas se giran para que
