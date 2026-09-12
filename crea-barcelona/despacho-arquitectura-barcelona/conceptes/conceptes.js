@@ -1,5 +1,6 @@
 (() => {
-  const guideOpeningDelay = 1500;
+  const guideOpeningDelay = 650;
+  const guideMoveDuration = 650;
   const openingTimers = new WeakMap();
 
   const scrollByStep = (viewport, direction) => {
@@ -45,7 +46,7 @@
       return guides.filter((guide) => guide !== wrapper).flatMap((guide) => {
         const current = currentPositions.get(guide);
         const target = targetPositions.get(guide);
-        const deltaX = target.left - current.left;
+        const deltaX = guide.id === 'rehabilita' ? 0 : target.left - current.left;
         const deltaY = target.top - current.top;
         if (!deltaX && !deltaY) return [];
 
@@ -53,7 +54,7 @@
           { transform: 'translate(0, 0)' },
           { transform: `translate(${deltaX}px, ${deltaY}px)` },
         ], {
-          duration: guideOpeningDelay,
+          duration: guideMoveDuration,
           easing: 'cubic-bezier(.22,.61,.36,1)',
           fill: 'forwards',
         });
